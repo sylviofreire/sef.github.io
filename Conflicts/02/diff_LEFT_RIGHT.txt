@@ -1,0 +1,87 @@
+188c188
+<         return deserialze(parser, type, fieldName, null, features, null);
+---
+>         return deserialze(parser, type, fieldName, null, features);
+270,271c270
+<                                int features, //
+<                                int[] setFlags) {
+---
+>                                int features) {
+540c539
+<                             if (typeName.equals(beanInfo.typeName)) {
+---
+>                             if (typeName.equals(beanInfo.typeName)|| parser.isEnabled(Feature.IgnoreType)) {
+549c548
+<                             ObjectDeserializer deserizer = getSeeAlso(config, this.beanInfo, typeName);
+---
+>                             ObjectDeserializer deserializer = getSeeAlso(config, this.beanInfo, typeName);
+551c550,552
+<                             if (deserizer == null) {
+---
+>                             if (deserializer == null) {
+>                                 userType = TypeUtils.loadClass(typeName, config.getDefaultClassLoader());
+>                                 
+553,554c554,559
+<                                 userType = config.checkAutoType(typeName, expectClass);
+<                                 deserizer = parser.getConfig().getDeserializer(userType);
+---
+>                                 if (expectClass == null || 
+>                                     (userType != null && expectClass.isAssignableFrom(userType))) {
+>                                     deserializer = parser.getConfig().getDeserializer(userType);
+>                                 } else {
+>                                     throw new JSONException("type not match");
+>                                 }
+557c562
+<                             return (T) deserizer.deserialze(parser, userType, fieldName);
+---
+>                             return (T) deserializer.deserialze(parser, userType, fieldName);
+595c600
+<                     boolean match = parseField(parser, key, object, type, fieldValues, setFlags);
+---
+>                     boolean match = parseField(parser, key, object, type, fieldValues);
+714,718d718
+< 
+<     public boolean parseField(DefaultJSONParser parser, String key, Object object, Type objectType,
+<                               Map<String, Object> fieldValues) {
+<         return parseField(parser, key, object, objectType, fieldValues, null);
+<     }
+721c721
+<                               Map<String, Object> fieldValues, int[] setFlags) {
+---
+>                               Map<String, Object> fieldValues) {
+771,787d770
+<         int fieldIndex = -1;
+<         for (int i = 0; i < sortedFieldDeserializers.length; ++i) {
+<             if (sortedFieldDeserializers[i] == fieldDeserializer) {
+<                 fieldIndex = i;
+<                 break;
+<             }
+<         }
+<         if (fieldIndex != -1 && setFlags != null && key.startsWith("_")) {
+<             int flagIndex = fieldIndex / 32;
+<             if (flagIndex < setFlags.length) {
+<                 if ((setFlags[flagIndex] & (1 << flagIndex)) != 0) {
+<                     parser.parseExtra(object, key);
+<                     return false;
+<                 }
+<             }
+<         }
+< 
+937c920
+< 
+---
+>     
+939,948c922
+<         return parseRest(parser, type, fieldName, instance, features, new int[0]);
+<     }
+< 
+<     protected Object parseRest(DefaultJSONParser parser
+<             , Type type
+<             , Object fieldName
+<             , Object instance
+<             , int features
+<             , int[] setFlags) {
+<         Object value = deserialze(parser, type, fieldName, instance, features, setFlags);
+---
+>         Object value = deserialze(parser, type, fieldName, instance, features);
+
