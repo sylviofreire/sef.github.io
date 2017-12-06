@@ -1,0 +1,2830 @@
+19,29c19
+< import java.lang.reflect.AccessibleObject;
+< import java.lang.reflect.Array;
+< import java.lang.reflect.Constructor;
+< import java.lang.reflect.Field;
+< import java.lang.reflect.Method;
+< import java.lang.reflect.Modifier;
+< import java.lang.reflect.ParameterizedType;
+< import java.lang.reflect.Proxy;
+< import java.lang.reflect.Type;
+< import java.lang.reflect.TypeVariable;
+< import java.lang.reflect.WildcardType;
+---
+> import java.lang.reflect.*;
+35,52c25
+< import java.util.AbstractCollection;
+< import java.util.ArrayList;
+< import java.util.Arrays;
+< import java.util.Calendar;
+< import java.util.Collection;
+< import java.util.Collections;
+< import java.util.Date;
+< import java.util.EnumSet;
+< import java.util.HashMap;
+< import java.util.HashSet;
+< import java.util.Iterator;
+< import java.util.LinkedHashMap;
+< import java.util.LinkedHashSet;
+< import java.util.List;
+< import java.util.Locale;
+< import java.util.Map;
+< import java.util.Set;
+< import java.util.TreeSet;
+---
+> import java.util.*;
+67a41
+> import com.alibaba.fastjson.serializer.DateCodec;
+74c48
+< public class TypeUtils{
+---
+> public class TypeUtils {
+76,84c50,63
+<     public static boolean compatibleWithJavaBean = false;
+<     /** 根据field name的大小写输出输入数据 */
+<     public static boolean compatibleWithFieldName = false;
+<     private static boolean setAccessibleEnable = true;
+<     private static boolean oracleTimestampMethodInited = false;
+<     private static Method oracleTimestampMethod;
+<     private static boolean oracleDateMethodInited = false;
+<     private static Method oracleDateMethod;
+<     private static boolean optionalClassInited = false;
+---
+>     public static boolean   compatibleWithJavaBean      = false;
+>     
+>     /** 根据field name的大小写输出输入数据*/
+>     public static boolean   compatibleWithFieldName      = false;
+>     
+>     private static boolean  setAccessibleEnable         = true;
+> 
+>     private static boolean  oracleTimestampMethodInited = false;
+>     private static Method   oracleTimestampMethod;
+> 
+>     private static boolean  oracleDateMethodInited      = false;
+>     private static Method   oracleDateMethod;
+> 
+>     private static boolean  optionalClassInited         = false;
+86c65,66
+<     private static boolean transientClassInited = false;
+---
+> 
+>     private static boolean transientClassInited         = false;
+87a68
+> 
+89a71
+> 
+91a74
+> 
+93a77
+> 
+98a83
+> 
+100c85,86
+<     private static volatile Map<Class,String[]> kotlinIgnores;
+---
+> 
+>     private static volatile Map<Class, String[]> kotlinIgnores;
+102,104d87
+<     private static ConcurrentMap<String,Class<?>> mappings = new ConcurrentHashMap<String,Class<?>>(16, 0.75f, 1);
+<     private static Class<?> pathClass;
+<     private static boolean pathClass_error = false;
+106,107c89,90
+<     static{
+<         try{
+---
+>     static {
+>         try {
+110c93
+<         } catch(Throwable e){
+---
+>         } catch (Throwable e) {
+115,117d97
+<     static{
+<         addBaseClassMappings();
+<     }
+119,120c99,100
+<     public static String castToString(Object value){
+<         if(value == null){
+---
+>     public static String castToString(Object value) {
+>         if (value == null) {
+122a103
+> 
+126,127c107,108
+<     public static Byte castToByte(Object value){
+<         if(value == null){
+---
+>     public static Byte castToByte(Object value) {
+>         if (value == null) {
+130c111,112
+<         if(value instanceof Number){
+---
+> 
+>         if (value instanceof Number) {
+133c115,116
+<         if(value instanceof String){
+---
+> 
+>         if (value instanceof String) {
+135,137c118,120
+<             if(strVal.length() == 0 //
+<                     || "null".equals(strVal) //
+<                     || "NULL".equals(strVal)){
+---
+>             if (strVal.length() == 0 //
+>                 || "null".equals(strVal) //
+>                 || "NULL".equals(strVal)) {
+139a123
+> 
+141a126
+> 
+145,146c130,131
+<     public static Character castToChar(Object value){
+<         if(value == null){
+---
+>     public static Character castToChar(Object value) {
+>         if (value == null) {
+149c134,135
+<         if(value instanceof Character){
+---
+> 
+>         if (value instanceof Character) {
+152c138,139
+<         if(value instanceof String){
+---
+> 
+>         if (value instanceof String) {
+154c141,142
+<             if(strVal.length() == 0){
+---
+> 
+>             if (strVal.length() == 0) {
+157c145,146
+<             if(strVal.length() != 1){
+---
+> 
+>             if (strVal.length() != 1) {
+159a149
+> 
+161a152
+> 
+165,166c156,157
+<     public static Short castToShort(Object value){
+<         if(value == null){
+---
+>     public static Short castToShort(Object value) {
+>         if (value == null) {
+169c160,161
+<         if(value instanceof Number){
+---
+> 
+>         if (value instanceof Number) {
+172c164,165
+<         if(value instanceof String){
+---
+> 
+>         if (value instanceof String) {
+174,176c167,170
+<             if(strVal.length() == 0 //
+<                     || "null".equals(strVal) //
+<                     || "NULL".equals(strVal)){
+---
+> 
+>             if (strVal.length() == 0 //
+>                 || "null".equals(strVal) //
+>                 || "NULL".equals(strVal)) {
+178a173
+> 
+180a176
+> 
+184,185c180,181
+<     public static BigDecimal castToBigDecimal(Object value){
+<         if(value == null){
+---
+>     public static BigDecimal castToBigDecimal(Object value) {
+>         if (value == null) {
+188c184,185
+<         if(value instanceof BigDecimal){
+---
+> 
+>         if (value instanceof BigDecimal) {
+191c188,189
+<         if(value instanceof BigInteger){
+---
+> 
+>         if (value instanceof BigInteger) {
+193a192
+> 
+195c194
+<         if(strVal.length() == 0){
+---
+>         if (strVal.length() == 0) {
+198c197,198
+<         if(value instanceof Map && ((Map) value).size() == 0){
+---
+> 
+>         if (value instanceof Map && ((Map) value).size() == 0) {
+200a201
+> 
+204,205c205,206
+<     public static BigInteger castToBigInteger(Object value){
+<         if(value == null){
+---
+>     public static BigInteger castToBigInteger(Object value) {
+>         if (value == null) {
+208c209,210
+<         if(value instanceof BigInteger){
+---
+> 
+>         if (value instanceof BigInteger) {
+211c213,214
+<         if(value instanceof Float || value instanceof Double){
+---
+> 
+>         if (value instanceof Float || value instanceof Double) {
+213a217
+> 
+215,217c219,221
+<         if(strVal.length() == 0 //
+<                 || "null".equals(strVal) //
+<                 || "NULL".equals(strVal)){
+---
+>         if (strVal.length() == 0 //
+>             || "null".equals(strVal) //
+>             || "NULL".equals(strVal)) {
+219a224
+> 
+223,224c228,229
+<     public static Float castToFloat(Object value){
+<         if(value == null){
+---
+>     public static Float castToFloat(Object value) {
+>         if (value == null) {
+227c232,233
+<         if(value instanceof Number){
+---
+> 
+>         if (value instanceof Number) {
+230c236,237
+<         if(value instanceof String){
+---
+> 
+>         if (value instanceof String) {
+232,234c239,241
+<             if(strVal.length() == 0 //
+<                     || "null".equals(strVal) //
+<                     || "NULL".equals(strVal)){
+---
+>             if (strVal.length() == 0 //
+>                 || "null".equals(strVal) //
+>                 || "NULL".equals(strVal)) {
+237c244,245
+<             if(strVal.indexOf(',') != 0){
+---
+>             
+>             if (strVal.indexOf(',') != 0) {
+239a248
+> 
+241a251
+> 
+245,246c255,256
+<     public static Double castToDouble(Object value){
+<         if(value == null){
+---
+>     public static Double castToDouble(Object value) {
+>         if (value == null) {
+249c259,260
+<         if(value instanceof Number){
+---
+> 
+>         if (value instanceof Number) {
+252c263,264
+<         if(value instanceof String){
+---
+> 
+>         if (value instanceof String) {
+254,256c266,268
+<             if(strVal.length() == 0 //
+<                     || "null".equals(strVal) //
+<                     || "NULL".equals(strVal)){
+---
+>             if (strVal.length() == 0 //
+>                 || "null".equals(strVal) //
+>                 || "NULL".equals(strVal)) {
+259c271,272
+<             if(strVal.indexOf(',') != 0){
+---
+> 
+>             if (strVal.indexOf(',') != 0) {
+261a275
+> 
+263a278
+> 
+267,268c282,283
+<     public static Date castToDate(Object value){
+<         if(value == null){
+---
+>     public static Date castToDate(Object value) {
+>         if (value == null) {
+271c286,287
+<         if(value instanceof Date){ // 使用频率最高的，应优先处理
+---
+> 
+>         if (value instanceof Date) { // 使用频率最高的，应优先处理
+274c290,291
+<         if(value instanceof Calendar){
+---
+> 
+>         if (value instanceof Calendar) {
+276a294
+> 
+278c296,297
+<         if(value instanceof Number){
+---
+> 
+>         if (value instanceof Number) {
+282c301,302
+<         if(value instanceof String){
+---
+> 
+>         if (value instanceof String) {
+283a304
+>             
+285,286c306,307
+<             try{
+<                 if(dateLexer.scanISO8601DateIfMatch(false)){
+---
+>             try {
+>                 if (dateLexer.scanISO8601DateIfMatch(false)) {
+290c311
+<             } finally{
+---
+>             } finally {
+293c314,315
+<             if(strVal.startsWith("/Date(") && strVal.endsWith(")/")){
+---
+>             
+>             if (strVal.startsWith("/Date(") && strVal.endsWith(")/")) {
+297c319,320
+<             if(strVal.indexOf('-') != -1){
+---
+> 
+>             if (strVal.indexOf('-') != -1) {
+299c322
+<                 if(strVal.length() == JSON.DEFFAULT_DATE_FORMAT.length()){
+---
+>                 if (strVal.length() == JSON.DEFFAULT_DATE_FORMAT.length()) {
+301c324
+<                 } else if(strVal.length() == 10){
+---
+>                 } else if (strVal.length() == 10) {
+303c326
+<                 } else if(strVal.length() == "yyyy-MM-dd HH:mm:ss".length()){
+---
+>                 } else if (strVal.length() == "yyyy-MM-dd HH:mm:ss".length()) {
+305c328
+<                 } else if(strVal.length() == 29
+---
+>                 } else if (strVal.length() == 29
+307c330
+<                         && strVal.charAt(28) == '0'){
+---
+>                         && strVal.charAt(28) == '0') {
+309c332
+<                 } else{
+---
+>                 } else {
+311a335
+> 
+314c338
+<                 try{
+---
+>                 try {
+316c340
+<                 } catch(ParseException e){
+---
+>                 } catch (ParseException e) {
+320c344,345
+<             if(strVal.length() == 0){
+---
+> 
+>             if (strVal.length() == 0) {
+322a348
+> 
+325c351,352
+<         if(longValue < 0){
+---
+> 
+>         if (longValue < 0) {
+327,329c354,356
+<             if("oracle.sql.TIMESTAMP".equals(clazz.getName())){
+<                 if(oracleTimestampMethod == null && !oracleTimestampMethodInited){
+<                     try{
+---
+>             if ("oracle.sql.TIMESTAMP".equals(clazz.getName())) {
+>                 if (oracleTimestampMethod == null && !oracleTimestampMethodInited) {
+>                     try {
+331c358
+<                     } catch(NoSuchMethodException e){
+---
+>                     } catch (NoSuchMethodException e) {
+333c360
+<                     } finally{
+---
+>                     } finally {
+336a364
+> 
+338c366
+<                 try{
+---
+>                 try {
+340c368
+<                 } catch(Exception e){
+---
+>                 } catch (Exception e) {
+345,347c373,376
+<             if("oracle.sql.DATE".equals(clazz.getName())){
+<                 if(oracleDateMethod == null && !oracleDateMethodInited){
+<                     try{
+---
+> 
+>             if ("oracle.sql.DATE".equals(clazz.getName())) {
+>                 if (oracleDateMethod == null && !oracleDateMethodInited) {
+>                     try {
+349c378
+<                     } catch(NoSuchMethodException e){
+---
+>                     } catch (NoSuchMethodException e) {
+351c380
+<                     } finally{
+---
+>                     } finally {
+354a384
+> 
+356c386
+<                 try{
+---
+>                 try {
+358c388
+<                 } catch(Exception e){
+---
+>                 } catch (Exception e) {
+362a393
+> 
+364a396
+> 
+368,369c400,401
+<     public static java.sql.Date castToSqlDate(Object value){
+<         if(value == null){
+---
+>     public static java.sql.Date castToSqlDate(Object value) {
+>         if (value == null) {
+372c404,405
+<         if(value instanceof java.sql.Date){
+---
+> 
+>         if (value instanceof java.sql.Date) {
+375c408,409
+<         if(value instanceof java.util.Date){
+---
+> 
+>         if (value instanceof java.util.Date) {
+378c412,413
+<         if(value instanceof Calendar){
+---
+> 
+>         if (value instanceof Calendar) {
+380a416
+> 
+382c418,419
+<         if(value instanceof Number){
+---
+> 
+>         if (value instanceof Number) {
+385c422,423
+<         if(value instanceof String){
+---
+> 
+>         if (value instanceof String) {
+387,389c425,427
+<             if(strVal.length() == 0 //
+<                     || "null".equals(strVal) //
+<                     || "NULL".equals(strVal)){
+---
+>             if (strVal.length() == 0 //
+>                 || "null".equals(strVal) //
+>                 || "NULL".equals(strVal)) {
+392c430,431
+<             if(isNumber(strVal)){
+---
+> 
+>             if (isNumber(strVal)) {
+394c433
+<             } else{
+---
+>             } else {
+396c435
+<                 if(scanner.scanISO8601DateIfMatch(false)){
+---
+>                 if (scanner.scanISO8601DateIfMatch(false)) {
+398c437
+<                 } else{
+---
+>                 } else {
+403c442,443
+<         if(longValue <= 0){
+---
+> 
+>         if (longValue <= 0) {
+405a446
+> 
+409,410c450,451
+<     public static java.sql.Timestamp castToTimestamp(Object value){
+<         if(value == null){
+---
+>     public static java.sql.Timestamp castToTimestamp(Object value) {
+>         if (value == null) {
+413c454,455
+<         if(value instanceof Calendar){
+---
+> 
+>         if (value instanceof Calendar) {
+416c458,459
+<         if(value instanceof java.sql.Timestamp){
+---
+> 
+>         if (value instanceof java.sql.Timestamp) {
+419c462,463
+<         if(value instanceof java.util.Date){
+---
+> 
+>         if (value instanceof java.util.Date) {
+421a466
+> 
+423c468,469
+<         if(value instanceof Number){
+---
+> 
+>         if (value instanceof Number) {
+426c472,473
+<         if(value instanceof String){
+---
+> 
+>         if (value instanceof String) {
+428,430c475,477
+<             if(strVal.length() == 0 //
+<                     || "null".equals(strVal) //
+<                     || "NULL".equals(strVal)){
+---
+>             if (strVal.length() == 0 //
+>                 || "null".equals(strVal) //
+>                 || "NULL".equals(strVal)) {
+433c480,481
+<             if(strVal.endsWith(".000000000")){
+---
+> 
+>             if (strVal.endsWith(".000000000")) {
+435c483
+<             } else if(strVal.endsWith(".000000")){
+---
+>             } else  if (strVal.endsWith(".000000")) {
+438c486,487
+<             if(isNumber(strVal)){
+---
+> 
+>             if (isNumber(strVal)) {
+440c489
+<             } else{
+---
+>             } else {
+442c491
+<                 if(scanner.scanISO8601DateIfMatch(false)){
+---
+>                 if (scanner.scanISO8601DateIfMatch(false)) {
+444c493
+<                 } else{
+---
+>                 } else {
+449c498,499
+<         if(longValue <= 0){
+---
+> 
+>         if (longValue <= 0) {
+451a502
+> 
+455,456c506,507
+<     public static boolean isNumber(String str){
+<         for(int i = 0; i < str.length(); ++i){
+---
+>     public static boolean isNumber(String str) {
+>         for (int i = 0; i < str.length(); ++i) {
+458,459c509,510
+<             if(ch == '+' || ch == '-'){
+<                 if(i != 0){
+---
+>             if (ch == '+' || ch == '-') {
+>                 if (i != 0) {
+461c512
+<                 } else{
+---
+>                 } else {
+464c515
+<             } else if(ch < '0' || ch > '9'){
+---
+>             } else if (ch < '0' || ch > '9') {
+467a519
+> 
+471,472c523,524
+<     public static Long castToLong(Object value){
+<         if(value == null){
+---
+>     public static Long castToLong(Object value) {
+>         if (value == null) {
+475c527,528
+<         if(value instanceof Number){
+---
+> 
+>         if (value instanceof Number) {
+478c531,532
+<         if(value instanceof String){
+---
+> 
+>         if (value instanceof String) {
+480,482c534,536
+<             if(strVal.length() == 0 //
+<                     || "null".equals(strVal) //
+<                     || "NULL".equals(strVal)){
+---
+>             if (strVal.length() == 0 //
+>                 || "null".equals(strVal) //
+>                 || "NULL".equals(strVal)) {
+485c539,540
+<             if(strVal.indexOf(',') != 0){
+---
+>             
+>             if (strVal.indexOf(',') != 0) {
+488c543,544
+<             try{
+---
+> 
+>             try {
+490c546
+<             } catch(NumberFormatException ex){
+---
+>             } catch (NumberFormatException ex) {
+492a549
+> 
+495c552
+<             if(dateParser.scanISO8601DateIfMatch(false)){
+---
+>             if (dateParser.scanISO8601DateIfMatch(false)) {
+499c556,557
+<             if(calendar != null){
+---
+> 
+>             if (calendar != null) {
+503c561,562
+<         if(value instanceof Map){
+---
+> 
+>         if (value instanceof Map) {
+505c564
+<             if(map.size() == 2
+---
+>             if (map.size() == 2
+507c566
+<                     && map.containsKey("andDecrement")){
+---
+>                     && map.containsKey("andDecrement")) {
+513a573
+> 
+517,518c577,578
+<     public static Integer castToInt(Object value){
+<         if(value == null){
+---
+>     public static Integer castToInt(Object value) {
+>         if (value == null) {
+521c581,582
+<         if(value instanceof Integer){
+---
+> 
+>         if (value instanceof Integer) {
+524c585,586
+<         if(value instanceof Number){
+---
+> 
+>         if (value instanceof Number) {
+527c589,590
+<         if(value instanceof String){
+---
+> 
+>         if (value instanceof String) {
+529,531c592,595
+<             if(strVal.length() == 0 //
+<                     || "null".equals(strVal) //
+<                     || "NULL".equals(strVal)){
+---
+> 
+>             if (strVal.length() == 0 //
+>                 || "null".equals(strVal) //
+>                 || "NULL".equals(strVal)) {
+534c598,599
+<             if(strVal.indexOf(',') != 0){
+---
+>             
+>             if (strVal.indexOf(',') != 0) {
+536a602
+> 
+539c605,606
+<         if(value instanceof Boolean){
+---
+> 
+>         if (value instanceof Boolean) {
+542c609,610
+<         if(value instanceof Map){
+---
+> 
+>         if (value instanceof Map) {
+544c612
+<             if(map.size() == 2
+---
+>             if (map.size() == 2
+546c614
+<                     && map.containsKey("andDecrement")){
+---
+>                     && map.containsKey("andDecrement")) {
+552a621
+> 
+556,557c625,626
+<     public static byte[] castToBytes(Object value){
+<         if(value instanceof byte[]){
+---
+>     public static byte[] castToBytes(Object value) {
+>         if (value instanceof byte[]) {
+560c629,630
+<         if(value instanceof String){
+---
+> 
+>         if (value instanceof String) {
+566,567c636,637
+<     public static Boolean castToBoolean(Object value){
+<         if(value == null){
+---
+>     public static Boolean castToBoolean(Object value) {
+>         if (value == null) {
+570c640,641
+<         if(value instanceof Boolean){
+---
+> 
+>         if (value instanceof Boolean) {
+573c644,645
+<         if(value instanceof Number){
+---
+> 
+>         if (value instanceof Number) {
+576c648,649
+<         if(value instanceof String){
+---
+> 
+>         if (value instanceof String) {
+578,580c651,654
+<             if(strVal.length() == 0 //
+<                     || "null".equals(strVal) //
+<                     || "NULL".equals(strVal)){
+---
+> 
+>             if (strVal.length() == 0 //
+>                 || "null".equals(strVal) //
+>                 || "NULL".equals(strVal)) {
+583,584c657,659
+<             if("true".equalsIgnoreCase(strVal) //
+<                     || "1".equals(strVal)){
+---
+> 
+>             if ("true".equalsIgnoreCase(strVal) //
+>                 || "1".equals(strVal)) {
+587,588c662,664
+<             if("false".equalsIgnoreCase(strVal) //
+<                     || "0".equals(strVal)){
+---
+>             
+>             if ("false".equalsIgnoreCase(strVal) //
+>                 || "0".equals(strVal)) {
+591,592c667,669
+<             if("Y".equalsIgnoreCase(strVal) //
+<                     || "T".equals(strVal)){
+---
+> 
+>             if ("Y".equalsIgnoreCase(strVal) //
+>                     || "T".equals(strVal)) {
+595,596c672,674
+<             if("F".equalsIgnoreCase(strVal) //
+<                     || "N".equals(strVal)){
+---
+> 
+>             if ("F".equalsIgnoreCase(strVal) //
+>                     || "N".equals(strVal)) {
+599a678
+> 
+603c682
+<     public static <T> T castToJavaBean(Object obj, Class<T> clazz){
+---
+>     public static <T> T castToJavaBean(Object obj, Class<T> clazz) {
+607,610c686,689
+<     @SuppressWarnings({"unchecked", "rawtypes"})
+<     public static <T> T cast(Object obj, Class<T> clazz, ParserConfig config){
+<         if(obj == null){
+<             if(clazz == int.class){
+---
+>     @SuppressWarnings({ "unchecked", "rawtypes" })
+>     public static <T> T cast(Object obj, Class<T> clazz, ParserConfig config) {
+>         if (obj == null) {
+>             if (clazz == int.class) {
+612c691
+<             } else if(clazz == long.class){
+---
+>             } else if (clazz == long.class) {
+614c693
+<             } else if(clazz == short.class){
+---
+>             } else if (clazz == short.class) {
+616c695
+<             } else if(clazz == byte.class){
+---
+>             } else if (clazz == byte.class) {
+618c697
+<             } else if(clazz == float.class){
+---
+>             } else if (clazz == float.class) {
+620c699
+<             } else if(clazz == double.class){
+---
+>             } else if (clazz == double.class) {
+622c701
+<             } else if(clazz == boolean.class){
+---
+>             } else if (clazz == boolean.class) {
+627c706,707
+<         if(clazz == null){
+---
+> 
+>         if (clazz == null) {
+630c710,711
+<         if(clazz == obj.getClass()){
+---
+> 
+>         if (clazz == obj.getClass()) {
+633,634c714,716
+<         if(obj instanceof Map){
+<             if(clazz == Map.class){
+---
+> 
+>         if (obj instanceof Map) {
+>             if (clazz == Map.class) {
+636a719
+> 
+638c721
+<             if(clazz == Object.class && !map.containsKey(JSON.DEFAULT_TYPE_KEY)){
+---
+>             if (clazz == Object.class && !map.containsKey(JSON.DEFAULT_TYPE_KEY)) {
+641c724,725
+<             return castToJavaBean((Map<String,Object>) obj, clazz, config);
+---
+> 
+>             return castToJavaBean((Map<String, Object>) obj, clazz, config);
+643,644c727,730
+<         if(clazz.isArray()){
+<             if(obj instanceof Collection){
+---
+> 
+>         if (clazz.isArray()) {
+>             if (obj instanceof Collection) {
+> 
+648c734
+<                 for(Object item : collection){
+---
+>                 for (Object item : collection) {
+652a739
+> 
+655c742,743
+<             if(clazz == byte[].class){
+---
+> 
+>             if (clazz == byte[].class) {
+659c747,748
+<         if(clazz.isAssignableFrom(obj.getClass())){
+---
+> 
+>         if (clazz.isAssignableFrom(obj.getClass())) {
+662c751,752
+<         if(clazz == boolean.class || clazz == Boolean.class){
+---
+> 
+>         if (clazz == boolean.class || clazz == Boolean.class) {
+665c755,756
+<         if(clazz == byte.class || clazz == Byte.class){
+---
+> 
+>         if (clazz == byte.class || clazz == Byte.class) {
+668c759,760
+<         if(clazz == char.class || clazz == Character.class){
+---
+> 
+>         if (clazz == char.class || clazz == Character.class) {
+671c763,764
+<         if(clazz == short.class || clazz == Short.class){
+---
+> 
+>         if (clazz == short.class || clazz == Short.class) {
+674c767,768
+<         if(clazz == int.class || clazz == Integer.class){
+---
+> 
+>         if (clazz == int.class || clazz == Integer.class) {
+677c771,772
+<         if(clazz == long.class || clazz == Long.class){
+---
+> 
+>         if (clazz == long.class || clazz == Long.class) {
+680c775,776
+<         if(clazz == float.class || clazz == Float.class){
+---
+> 
+>         if (clazz == float.class || clazz == Float.class) {
+683c779,780
+<         if(clazz == double.class || clazz == Double.class){
+---
+> 
+>         if (clazz == double.class || clazz == Double.class) {
+686c783,784
+<         if(clazz == String.class){
+---
+> 
+>         if (clazz == String.class) {
+689c787,788
+<         if(clazz == BigDecimal.class){
+---
+> 
+>         if (clazz == BigDecimal.class) {
+692c791,792
+<         if(clazz == BigInteger.class){
+---
+> 
+>         if (clazz == BigInteger.class) {
+695c795,796
+<         if(clazz == Date.class){
+---
+> 
+>         if (clazz == Date.class) {
+698c799,800
+<         if(clazz == java.sql.Date.class){
+---
+> 
+>         if (clazz == java.sql.Date.class) {
+701c803,804
+<         if(clazz == java.sql.Timestamp.class){
+---
+> 
+>         if (clazz == java.sql.Timestamp.class) {
+704c807,808
+<         if(clazz.isEnum()){
+---
+> 
+>         if (clazz.isEnum()) {
+707c811,812
+<         if(Calendar.class.isAssignableFrom(clazz)){
+---
+> 
+>         if (Calendar.class.isAssignableFrom(clazz)) {
+710c815
+<             if(clazz == Calendar.class){
+---
+>             if (clazz == Calendar.class) {
+712,713c817,818
+<             } else{
+<                 try{
+---
+>             } else {
+>                 try {
+715c820
+<                 } catch(Exception e){
+---
+>                 } catch (Exception e) {
+722c827,828
+<         if(clazz.getName().equals("javax.xml.datatype.XMLGregorianCalendar")){
+---
+> 
+>         if (clazz.getName().equals("javax.xml.datatype.XMLGregorianCalendar")) {
+725a832
+> 
+728c835,836
+<         if(obj instanceof String){
+---
+> 
+>         if (obj instanceof String) {
+730,732c838,841
+<             if(strVal.length() == 0 //
+<                     || "null".equals(strVal) //
+<                     || "NULL".equals(strVal)){
+---
+> 
+>             if (strVal.length() == 0 //
+>                 || "null".equals(strVal) //
+>                 || "NULL".equals(strVal)) {
+735c844,845
+<             if(clazz == java.util.Currency.class){
+---
+> 
+>             if (clazz == java.util.Currency.class) {
+738c848,849
+<             if(clazz == java.util.Locale.class){
+---
+> 
+>             if (clazz == java.util.Locale.class) {
+741a853
+> 
+745c857
+<     public static Locale toLocale(String strVal){
+---
+>     public static Locale toLocale(String strVal) {
+747c859,860
+<         if(items.length == 1){
+---
+> 
+>         if (items.length == 1) {
+750c863,864
+<         if(items.length == 2){
+---
+> 
+>         if (items.length == 2) {
+752a867
+> 
+756,759c871,874
+<     @SuppressWarnings({"unchecked", "rawtypes"})
+<     public static <T> T castToEnum(Object obj, Class<T> clazz, ParserConfig mapping){
+<         try{
+<             if(obj instanceof String){
+---
+>     @SuppressWarnings({ "unchecked", "rawtypes" })
+>     public static <T> T castToEnum(Object obj, Class<T> clazz, ParserConfig mapping) {
+>         try {
+>             if (obj instanceof String) {
+761c876
+<                 if(name.length() == 0){
+---
+>                 if (name.length() == 0) {
+763a879
+> 
+766c882,883
+<             if(obj instanceof Number){
+---
+> 
+>             if (obj instanceof Number) {
+769c886
+<                 if(ordinal < values.length){
+---
+>                 if (ordinal < values.length) {
+773c890
+<         } catch(Exception ex){
+---
+>         } catch (Exception ex) {
+775a893
+> 
+780,781c898,899
+<     public static <T> T cast(Object obj, Type type, ParserConfig mapping){
+<         if(obj == null){
+---
+>     public static <T> T cast(Object obj, Type type, ParserConfig mapping) {
+>         if (obj == null) {
+784c902,903
+<         if(type instanceof Class){
+---
+> 
+>         if (type instanceof Class) {
+787c906,907
+<         if(type instanceof ParameterizedType){
+---
+> 
+>         if (type instanceof ParameterizedType) {
+790c910,911
+<         if(obj instanceof String){
+---
+> 
+>         if (obj instanceof String) {
+792,794c913,915
+<             if(strVal.length() == 0 //
+<                     || "null".equals(strVal) //
+<                     || "NULL".equals(strVal)){
+---
+>             if (strVal.length() == 0 //
+>                 || "null".equals(strVal) //
+>                 || "NULL".equals(strVal)) {
+798c919,920
+<         if(type instanceof TypeVariable){
+---
+> 
+>         if (type instanceof TypeVariable) {
+800a923
+> 
+804,805c927,928
+<     @SuppressWarnings({"rawtypes", "unchecked"})
+<     public static <T> T cast(Object obj, ParameterizedType type, ParserConfig mapping){
+---
+>     @SuppressWarnings({ "rawtypes", "unchecked" })
+>     public static <T> T cast(Object obj, ParameterizedType type, ParserConfig mapping) {
+807,810c930,934
+<         if(rawTye == Set.class || rawTye == HashSet.class //
+<                 || rawTye == TreeSet.class //
+<                 || rawTye == List.class //
+<                 || rawTye == ArrayList.class){
+---
+> 
+>         if (rawTye == Set.class || rawTye == HashSet.class //
+>             || rawTye == TreeSet.class //
+>             || rawTye == List.class //
+>             || rawTye == ArrayList.class) {
+812c936,937
+<             if(obj instanceof Iterable){
+---
+> 
+>             if (obj instanceof Iterable) {
+814c939
+<                 if(rawTye == Set.class || rawTye == HashSet.class){
+---
+>                 if (rawTye == Set.class || rawTye == HashSet.class) {
+816c941
+<                 } else if(rawTye == TreeSet.class){
+---
+>                 } else if (rawTye == TreeSet.class) {
+818c943
+<                 } else{
+---
+>                 } else {
+821c946,947
+<                 for(Iterator it = ((Iterable) obj).iterator(); it.hasNext(); ){
+---
+> 
+>                 for (Iterator it = ((Iterable) obj).iterator(); it.hasNext();) {
+824a951
+> 
+828c955,956
+<         if(rawTye == Map.class || rawTye == HashMap.class){
+---
+> 
+>         if (rawTye == Map.class || rawTye == HashMap.class) {
+831c959,960
+<             if(obj instanceof Map){
+---
+> 
+>             if (obj instanceof Map) {
+833c962,963
+<                 for(Map.Entry entry : ((Map<?,?>) obj).entrySet()){
+---
+> 
+>                 for (Map.Entry entry : ((Map<?, ?>) obj).entrySet()) {
+835a966
+> 
+837a969
+> 
+841c973,974
+<         if(obj instanceof String){
+---
+> 
+>         if (obj instanceof String) {
+843c976
+<             if(strVal.length() == 0){
+---
+>             if (strVal.length() == 0) {
+847c980,981
+<         if(type.getActualTypeArguments().length == 1){
+---
+> 
+>         if (type.getActualTypeArguments().length == 1) {
+849c983
+<             if(argType instanceof WildcardType){
+---
+>             if (argType instanceof WildcardType) {
+852a987
+> 
+856,859c991,994
+<     @SuppressWarnings({"unchecked"})
+<     public static <T> T castToJavaBean(Map<String,Object> map, Class<T> clazz, ParserConfig config){
+<         try{
+<             if(clazz == StackTraceElement.class){
+---
+>     @SuppressWarnings({ "unchecked" })
+>     public static <T> T castToJavaBean(Map<String, Object> map, Class<T> clazz, ParserConfig config) {
+>         try {
+>             if (clazz == StackTraceElement.class) {
+866c1001
+<                     if(value == null){
+---
+>                     if (value == null) {
+868c1003
+<                     } else{
+---
+>                     } else {
+871a1007
+> 
+873a1010
+> 
+876c1013
+<                 if(iClassObject instanceof String){
+---
+>                 if (iClassObject instanceof String) {
+877a1015
+> 
+879c1017
+<                     if(config == null){
+---
+>                     if (config == null) {
+883c1021,1022
+<                     if(loadClazz == null){
+---
+> 
+>                     if (loadClazz == null) {
+886c1025,1026
+<                     if(!loadClazz.equals(clazz)){
+---
+> 
+>                     if (!loadClazz.equals(clazz)) {
+891c1031,1032
+<             if(clazz.isInterface()){
+---
+> 
+>             if (clazz.isInterface()) {
+893c1034,1035
+<                 if(map instanceof JSONObject){
+---
+> 
+>                 if (map instanceof JSONObject) {
+895c1037
+<                 } else{
+---
+>                 } else {
+898c1040,1041
+<                 if(config == null){
+---
+> 
+>                 if (config == null) {
+902c1045
+<                 if(deserializer != null){
+---
+>                 if (deserializer != null) {
+905a1049
+> 
+907c1051
+<                         new Class<?>[]{clazz}, object);
+---
+>                                                   new Class<?>[] { clazz }, object);
+909c1053,1054
+<             if(clazz == Locale.class){
+---
+> 
+>             if (clazz == Locale.class) {
+912c1057
+<                 if(arg0 instanceof String){
+---
+>                 if (arg0 instanceof String) {
+914c1059
+<                     if(arg1 instanceof String){
+---
+>                     if (arg1 instanceof String) {
+917c1062
+<                     } else if(arg1 == null){
+---
+>                     } else if (arg1 == null) {
+922c1067,1068
+<             if(clazz == String.class && map instanceof JSONObject){
+---
+> 
+>             if (clazz == String.class && map instanceof JSONObject) {
+925c1071,1072
+<             if(config == null){
+---
+> 
+>             if (config == null) {
+927a1075
+> 
+930c1078
+<             if(deserizer instanceof JavaBeanDeserializer){
+---
+>             if (deserizer instanceof JavaBeanDeserializer) {
+933c1081,1082
+<             if(javaBeanDeser == null){
+---
+>             
+>             if (javaBeanDeser == null) {
+935a1085
+>             
+937c1087
+<         } catch(Exception e){
+---
+>         } catch (Exception e) {
+942c1092,1098
+<     private static void addBaseClassMappings(){
+---
+>     private static ConcurrentMap<String, Class<?>> mappings = new ConcurrentHashMap<String, Class<?>>(16, 0.75f, 1);
+> 
+>     static {
+>         addBaseClassMappings();
+>     }
+> 
+>     private static void addBaseClassMappings() {
+950a1107
+> 
+958a1116
+> 
+967c1125,1126
+<         Class<?>[] classes = new Class[]{
+---
+> 
+>         Class<?>[] classes = new Class[] {
+1027,1028c1186,1188
+<         for(Class clazz : classes){
+<             if(clazz == null){
+---
+> 
+>         for (Class clazz : classes) {
+>             if (clazz == null) {
+1033c1193,1194
+<         String[] awt = new String[]{
+---
+> 
+>         String[] awt = new String[] {
+1038c1199
+<         for(String className : awt){
+---
+>         for (String className : awt) {
+1040c1201
+<             if(clazz == null){
+---
+>             if (clazz == null) {
+1045c1206,1207
+<         String[] spring = new String[]{
+---
+> 
+>         String[] spring = new String[] {
+1049a1212
+> 
+1059c1222
+<         for(String className : spring){
+---
+>         for (String className : spring) {
+1061c1224
+<             if(clazz == null){
+---
+>             if (clazz == null) {
+1068c1231
+<     public static void clearClassMapping(){
+---
+>     public static void clearClassMapping() {
+1073c1236
+<     public static Class<?> loadClass(String className){
+---
+>     public static Class<?> loadClass(String className) {
+1076,1079c1239,1244
+< 
+<     public static boolean isPath(Class<?> clazz){
+<         if(pathClass == null && !pathClass_error){
+<             try{
+---
+>     
+>     private static Class<?> pathClass;
+>     private static boolean pathClass_error = false;
+>     public static boolean isPath(Class<?> clazz) {
+>         if (pathClass == null && !pathClass_error) {
+>             try {
+1081c1246
+<             } catch(Throwable ex){
+---
+>             } catch (Throwable ex) {
+1085c1250,1251
+<         if(pathClass != null){
+---
+>         
+>         if (pathClass != null) {
+1087a1254
+>         
+1091c1258
+<     public static Class<?> getClassFromMapping(String className){
+---
+>     public static Class<?> getClassFromMapping(String className) {
+1095,1096c1262,1263
+<     public static Class<?> loadClass(String className, ClassLoader classLoader){
+<         if(className == null || className.length() == 0){
+---
+>     public static Class<?> loadClass(String className, ClassLoader classLoader) {
+>         if (className == null || className.length() == 0) {
+1098a1266
+> 
+1100c1268,1269
+<         if(clazz != null){
+---
+> 
+>         if (clazz != null) {
+1103c1272,1273
+<         if(className.charAt(0) == '['){
+---
+> 
+>         if (className.charAt(0) == '[') {
+1107c1277,1278
+<         if(className.startsWith("L") && className.endsWith(";")){
+---
+> 
+>         if (className.startsWith("L") && className.endsWith(";")) {
+1111,1112c1282,1284
+<         try{
+<             if(classLoader != null){
+---
+> 
+>         try {
+>             if (classLoader != null) {
+1114a1287
+> 
+1117c1290
+<         } catch(Throwable e){
+---
+>         } catch (Throwable e) {
+1121c1294,1295
+<         try{
+---
+> 
+>         try {
+1123c1297,1298
+<             if(contextClassLoader != null && contextClassLoader != classLoader){
+---
+> 
+>             if (contextClassLoader != null && contextClassLoader != classLoader) {
+1125a1301
+> 
+1128c1304
+<         } catch(Throwable e){
+---
+>         } catch (Throwable e) {
+1131c1307,1308
+<         try{
+---
+> 
+>         try {
+1133a1311
+> 
+1135c1313
+<         } catch(Throwable e){
+---
+>         } catch (Throwable e) {
+1137a1316
+> 
+1142,1143c1321,1322
+<             , Map<String,String> aliasMap //
+<             , PropertyNamingStrategy propertyNamingStrategy){
+---
+>             , Map<String, String> aliasMap //
+>             , PropertyNamingStrategy propertyNamingStrategy) {
+1148c1327
+<             , Map<String,String> aliasMap //
+---
+>             , Map<String, String> aliasMap //
+1151,1152c1330,1332
+<     ){
+<         JSONType jsonType = TypeUtils.getAnnotation(beanType,JSONType.class);
+---
+>     ) {
+>         
+>         JSONType jsonType = beanType.getAnnotation(JSONType.class);
+1153a1334
+> 
+1156c1337
+<         if(jsonType != null){
+---
+>         if (jsonType != null) {
+1159c1340
+<             if(typeName.length() == 0){
+---
+>             if (typeName.length() == 0) {
+1163,1167c1344,1348
+<             for(Class<?> supperClass = beanType.getSuperclass()
+<                 ; supperClass != null && supperClass != Object.class
+<                     ; supperClass = supperClass.getSuperclass()){
+<                 JSONType superJsonType = TypeUtils.getAnnotation(supperClass,JSONType.class);
+<                 if(superJsonType == null){
+---
+>             for (Class<?> supperClass = beanType.getSuperclass()
+>                  ; supperClass != null && supperClass != Object.class
+>                     ; supperClass = supperClass.getSuperclass()) {
+>                 JSONType superJsonType = supperClass.getAnnotation(JSONType.class);
+>                 if (superJsonType == null) {
+1169a1351
+> 
+1171c1353
+<                 if(typeKey.length() != 0){
+---
+>                 if (typeKey.length() != 0) {
+1175,1177c1357,1360
+<             for(Class<?> interfaceClass : beanType.getInterfaces()){
+<                 JSONType superJsonType = TypeUtils.getAnnotation(interfaceClass,JSONType.class);
+<                 if(superJsonType != null){
+---
+> 
+>             for (Class<?> interfaceClass : beanType.getInterfaces()) {
+>                 JSONType superJsonType = interfaceClass.getAnnotation(JSONType.class);
+>                 if (superJsonType != null) {
+1179c1362
+<                     if(typeKey.length() != 0){
+---
+>                     if (typeKey.length() != 0) {
+1184c1367
+<             if(typeKey != null && typeKey.length() == 0){
+---
+>             if (typeKey != null && typeKey.length() == 0) {
+1187c1370
+<         } else{
+---
+>         } else {
+1189a1373
+> 
+1191c1375
+<         Map<String,Field> fieldCacheMap = new HashMap<String,Field>();
+---
+>         Map<String, Field> fieldCacheMap = new HashMap<String, Field>();
+1192a1377
+> 
+1197a1383
+>         
+1200c1386
+<         if(orders != null && orders.length != 0){
+---
+>         if (orders != null && orders.length != 0) {
+1203,1204c1389,1390
+<                     : computeGetters(beanType, jsonType, aliasMap, fieldCacheMap, true, propertyNamingStrategy);
+<         } else{
+---
+>                     : computeGetters(beanType, jsonType, aliasMap,fieldCacheMap, true, propertyNamingStrategy);
+>         } else {
+1210c1396,1397
+<         if(Arrays.equals(sortedFields, fields)){
+---
+>         
+>         if (Arrays.equals(sortedFields, fields)) {
+1212a1400
+>         
+1218c1406
+<             Map<String,String> aliasMap, //
+---
+>             Map<String, String> aliasMap, //
+1220,1222c1408,1411
+<             PropertyNamingStrategy propertyNamingStrategy){
+<         Map<String,FieldInfo> fieldInfoMap = new LinkedHashMap<String,FieldInfo>();
+<         for(Class<?> currentClass = clazz; currentClass != null; currentClass = currentClass.getSuperclass()){
+---
+>             PropertyNamingStrategy propertyNamingStrategy) {
+>         Map<String, FieldInfo> fieldInfoMap = new LinkedHashMap<String, FieldInfo>();
+> 
+>         for (Class<?> currentClass = clazz; currentClass != null; currentClass = currentClass.getSuperclass()) {
+1223a1413
+> 
+1225a1416
+> 
+1229c1420
+<     public static List<FieldInfo> computeGetters(Class<?> clazz, Map<String,String> aliasMap){
+---
+>     public static List<FieldInfo> computeGetters(Class<?> clazz, Map<String, String> aliasMap) {
+1233,1235c1424,1426
+<     public static List<FieldInfo> computeGetters(Class<?> clazz, Map<String,String> aliasMap, boolean sorted){
+<         JSONType jsonType = TypeUtils.getAnnotation(clazz,JSONType.class);
+<         Map<String,Field> fieldCacheMap = new HashMap<String,Field>();
+---
+>     public static List<FieldInfo> computeGetters(Class<?> clazz, Map<String, String> aliasMap, boolean sorted) {
+>         JSONType jsonType = clazz.getAnnotation(JSONType.class);
+>         Map<String, Field> fieldCacheMap = new HashMap<String, Field>();
+1236a1428
+> 
+1242,1243c1434,1435
+<                                                  Map<String,String> aliasMap, //
+<                                                  Map<String,Field> fieldCacheMap, //
+---
+>                                                  Map<String, String> aliasMap, //
+>                                                  Map<String, Field> fieldCacheMap, //
+1246,1247c1438,1440
+<     ){
+<         Map<String,FieldInfo> fieldInfoMap = new LinkedHashMap<String,FieldInfo>();
+---
+>     ) {
+>         Map<String, FieldInfo> fieldInfoMap = new LinkedHashMap<String, FieldInfo>();
+> 
+1248a1442
+> 
+1254c1448,1449
+<         for(Method method : clazz.getMethods()){
+---
+> 
+>         for (Method method : clazz.getMethods()) {
+1258c1453,1454
+<             if(Modifier.isStatic(method.getModifiers())){
+---
+> 
+>             if (Modifier.isStatic(method.getModifiers())) {
+1261c1457,1458
+<             if(method.getReturnType().equals(Void.TYPE)){
+---
+> 
+>             if (method.getReturnType().equals(Void.TYPE)) {
+1264c1461,1462
+<             if(method.getParameterTypes().length != 0){
+---
+> 
+>             if (method.getParameterTypes().length != 0) {
+1267c1465,1466
+<             if(method.getReturnType() == ClassLoader.class){
+---
+> 
+>             if (method.getReturnType() == ClassLoader.class) {
+1270,1271c1469,1471
+<             if(method.getName().equals("getMetaClass")
+<                     && method.getReturnType().getName().equals("groovy.lang.MetaClass")){
+---
+> 
+>             if (method.getName().equals("getMetaClass")
+>                 && method.getReturnType().getName().equals("groovy.lang.MetaClass")) {
+1274c1474,1475
+<             if(kotlin && isKotlinIgnore(clazz, methodName)){
+---
+> 
+>             if (kotlin && isKotlinIgnore(clazz, methodName)) {
+1276a1478
+> 
+1278c1480,1481
+<             if(annotation == null){
+---
+> 
+>             if (annotation == null) {
+1281,1282c1484,1486
+<             if(annotation == null && kotlin){
+<                 if(constructors == null){
+---
+> 
+>             if (annotation == null && kotlin) {
+>                 if (constructors == null) {
+1283a1488
+> 
+1285c1490
+<                     if(creatorConstructor != null){
+---
+>                     if (creatorConstructor != null) {
+1288c1493,1494
+<                         if(paramNames != null){
+---
+> 
+>                         if (paramNames != null) {
+1290c1496
+<                             System.arraycopy(paramNames, 0, paramNames_sorted, 0, paramNames.length);
+---
+>                             System.arraycopy(paramNames, 0,paramNames_sorted, 0, paramNames.length);
+1291a1498
+> 
+1293c1500
+<                             for(short p = 0; p < paramNames.length; p++){
+---
+>                             for (short p = 0; p < paramNames.length; p++) {
+1301c1508
+<                 if(paramNames != null && paramNameMapping != null && methodName.startsWith("get")){
+---
+>                 if (paramNames != null && paramNameMapping != null && methodName.startsWith("get")) {
+1304c1511
+<                     if(p >= 0){
+---
+>                     if (p >= 0) {
+1307,1309c1514,1516
+<                         if(paramAnnotations != null){
+<                             for(Annotation paramAnnotation : paramAnnotations){
+<                                 if(paramAnnotation instanceof JSONField){
+---
+>                         if (paramAnnotations != null) {
+>                             for (Annotation paramAnnotation : paramAnnotations) {
+>                                 if (paramAnnotation instanceof JSONField) {
+1315c1522
+<                         if(annotation == null){
+---
+>                         if (annotation == null) {
+1317c1524
+<                             if(field != null){
+---
+>                             if (field != null) {
+1324,1325c1531,1533
+<             if(annotation != null){
+<                 if(!annotation.serialize()){
+---
+> 
+>             if (annotation != null) {
+>                 if (!annotation.serialize()) {
+1327a1536
+> 
+1331c1540,1541
+<                 if(annotation.name().length() != 0){
+---
+> 
+>                 if (annotation.name().length() != 0) {
+1333c1543,1544
+<                     if(aliasMap != null){
+---
+> 
+>                     if (aliasMap != null) {
+1335c1546
+<                         if(propertyName == null){
+---
+>                         if (propertyName == null) {
+1338a1550
+> 
+1340c1552
+<                             serialzeFeatures, parserFeatures, annotation, null, label);
+---
+>                                                         serialzeFeatures, parserFeatures, annotation, null, label);
+1344c1556,1557
+<                 if(annotation.label().length() != 0){
+---
+> 
+>                 if (annotation.label().length() != 0) {
+1348,1349c1561,1563
+<             if(methodName.startsWith("get")){
+<                 if(methodName.length() < 4){
+---
+> 
+>             if (methodName.startsWith("get")) {
+>                 if (methodName.length() < 4) {
+1352c1566,1567
+<                 if(methodName.equals("getClass")){
+---
+> 
+>                 if (methodName.equals("getClass")) {
+1355c1570,1571
+<                 if(methodName.equals("getDeclaringClass") && clazz.isEnum()){
+---
+> 
+>                 if (methodName.equals("getDeclaringClass") && clazz.isEnum()) {
+1357a1574
+> 
+1358a1576
+> 
+1360,1363c1578,1581
+<                 if(Character.isUpperCase(c3) //
+<                         || c3 > 512 // for unicode method name
+<                         ){
+<                     if(compatibleWithJavaBean){
+---
+>                 if (Character.isUpperCase(c3) //
+>                     || c3 > 512 // for unicode method name
+>                 ) {
+>                    if (compatibleWithJavaBean) {
+1365c1583
+<                     } else{
+---
+>                     } else {
+1368,1369c1586,1587
+<                     propertyName = getPropertyNameByCompatibleFieldName(fieldCacheMap, methodName, propertyName, 3);
+<                 } else if(c3 == '_'){
+---
+>                     propertyName = getPropertyNameByCompatibleFieldName(fieldCacheMap, methodName,  propertyName,3);
+>                 } else if (c3 == '_') {
+1371c1589
+<                 } else if(c3 == 'f'){
+---
+>                 } else if (c3 == 'f') {
+1373c1591
+<                 } else if(methodName.length() >= 5 && Character.isUpperCase(methodName.charAt(4))){
+---
+>                 } else if (methodName.length() >= 5 && Character.isUpperCase(methodName.charAt(4))) {
+1375c1593
+<                 } else{
+---
+>                 } else {
+1377a1596
+> 
+1379c1598,1599
+<                 if(ignore){
+---
+> 
+>                 if (ignore) {
+1384c1604,1605
+<                 if(field == null && propertyName.length() > 1){
+---
+> 
+>                 if (field == null && propertyName.length() > 1) {
+1386c1607
+<                     if(ch >= 'A' && ch <= 'Z'){
+---
+>                     if (ch >= 'A' && ch <= 'Z') {
+1390a1612
+> 
+1392c1614
+<                 if(field != null){
+---
+>                 if (field != null) {
+1394,1395c1616,1618
+<                     if(fieldAnnotation != null){
+<                         if(!fieldAnnotation.serialize()){
+---
+> 
+>                     if (fieldAnnotation != null) {
+>                         if (!fieldAnnotation.serialize()) {
+1397a1621
+> 
+1401c1625,1626
+<                         if(fieldAnnotation.name().length() != 0){
+---
+> 
+>                         if (fieldAnnotation.name().length() != 0) {
+1403c1628,1629
+<                             if(aliasMap != null){
+---
+> 
+>                             if (aliasMap != null) {
+1405c1631
+<                                 if(propertyName == null){
+---
+>                                 if (propertyName == null) {
+1410c1636,1637
+<                         if(fieldAnnotation.label().length() != 0){
+---
+> 
+>                         if (fieldAnnotation.label().length() != 0) {
+1415c1642,1643
+<                 if(aliasMap != null){
+---
+> 
+>                 if (aliasMap != null) {
+1417c1645
+<                     if(propertyName == null){
+---
+>                     if (propertyName == null) {
+1421c1649,1650
+<                 if(propertyNamingStrategy != null){
+---
+> 
+>                 if (propertyNamingStrategy != null) {
+1423a1653
+> 
+1425c1655
+<                         annotation, fieldAnnotation, label);
+---
+>                                                     annotation, fieldAnnotation, label);
+1428,1429c1658,1660
+<             if(methodName.startsWith("is")){
+<                 if(methodName.length() < 3){
+---
+> 
+>             if (methodName.startsWith("is")) {
+>                 if (methodName.length() < 3) {
+1432,1433c1663,1665
+<                 if(method.getReturnType() != Boolean.TYPE
+<                         && method.getReturnType() != Boolean.class){
+---
+> 
+>                 if (method.getReturnType() != Boolean.TYPE
+>                         && method.getReturnType() != Boolean.class) {
+1435a1668
+> 
+1436a1670
+> 
+1438,1439c1672,1673
+<                 if(Character.isUpperCase(c2)){
+<                     if(compatibleWithJavaBean){
+---
+>                 if (Character.isUpperCase(c2)) {
+>                     if (compatibleWithJavaBean) {
+1441c1675
+<                     } else{
+---
+>                     } else {
+1444,1445c1678,1679
+<                     propertyName = getPropertyNameByCompatibleFieldName(fieldCacheMap, methodName, propertyName, 2);
+<                 } else if(c2 == '_'){
+---
+>                     propertyName = getPropertyNameByCompatibleFieldName(fieldCacheMap, methodName,  propertyName,2);
+>                 } else if (c2 == '_') {
+1447c1681
+<                 } else if(c2 == 'f'){
+---
+>                 } else if (c2 == 'f') {
+1449c1683
+<                 } else{
+---
+>                 } else {
+1451a1686
+> 
+1453c1688,1689
+<                 if(ignore){
+---
+> 
+>                 if (ignore) {
+1456,1458c1692,1696
+<                 Field field = ParserConfig.getFieldFromCache(propertyName, fieldCacheMap);
+<                 if(field == null){
+<                     field = ParserConfig.getFieldFromCache(methodName, fieldCacheMap);
+---
+> 
+>                 Field field = ParserConfig.getFieldFromCache(propertyName,fieldCacheMap);
+> 
+>                 if (field == null) {
+>                     field = ParserConfig.getFieldFromCache(methodName,fieldCacheMap);
+1459a1698
+> 
+1461c1700
+<                 if(field != null){
+---
+>                 if (field != null) {
+1463,1464c1702,1704
+<                     if(fieldAnnotation != null){
+<                         if(!fieldAnnotation.serialize()){
+---
+> 
+>                     if (fieldAnnotation != null) {
+>                         if (!fieldAnnotation.serialize()) {
+1466a1707
+> 
+1470c1711,1712
+<                         if(fieldAnnotation.name().length() != 0){
+---
+> 
+>                         if (fieldAnnotation.name().length() != 0) {
+1472c1714,1715
+<                             if(aliasMap != null){
+---
+> 
+>                             if (aliasMap != null) {
+1474c1717
+<                                 if(propertyName == null){
+---
+>                                 if (propertyName == null) {
+1479c1722,1723
+<                         if(fieldAnnotation.label().length() != 0){
+---
+> 
+>                         if (fieldAnnotation.label().length() != 0) {
+1484c1728,1729
+<                 if(aliasMap != null){
+---
+> 
+>                 if (aliasMap != null) {
+1486c1731
+<                     if(propertyName == null){
+---
+>                     if (propertyName == null) {
+1490c1735,1736
+<                 if(propertyNamingStrategy != null){
+---
+> 
+>                 if (propertyNamingStrategy != null) {
+1492a1739
+> 
+1494c1741
+<                 if(fieldInfoMap.containsKey(propertyName)){
+---
+>                 if (fieldInfoMap.containsKey(propertyName)) {
+1496a1744
+> 
+1498c1746
+<                         annotation, fieldAnnotation, label);
+---
+>                                                     annotation, fieldAnnotation, label);
+1501a1750
+> 
+1503a1753
+> 
+1507c1757
+<     private static List<FieldInfo> getFieldInfos(Class<?> clazz, boolean sorted, Map<String,FieldInfo> fieldInfoMap){
+---
+>     private static List<FieldInfo> getFieldInfos(Class<?> clazz, boolean sorted, Map<String, FieldInfo> fieldInfoMap) {
+1508a1759
+> 
+1510,1511c1761,1763
+<         JSONType annotation = TypeUtils.getAnnotation(clazz,JSONType.class);
+<         if(annotation != null){
+---
+> 
+>         JSONType annotation = clazz.getAnnotation(JSONType.class);
+>         if (annotation != null) {
+1514,1516c1766,1769
+<         if(orders != null && orders.length > 0){
+<             LinkedHashMap<String,FieldInfo> map = new LinkedHashMap<String,FieldInfo>(fieldInfoList.size());
+<             for(FieldInfo field : fieldInfoMap.values()){
+---
+> 
+>         if (orders != null && orders.length > 0) {
+>             LinkedHashMap<String, FieldInfo> map = new LinkedHashMap<String, FieldInfo>(fieldInfoList.size());
+>             for (FieldInfo field : fieldInfoMap.values()) {
+1520c1773
+<             for(String item : orders){
+---
+>             for (String item : orders) {
+1522c1775
+<                 if(field != null){
+---
+>                 if (field != null) {
+1527c1780
+<             for(FieldInfo field : map.values()){
+---
+>             for (FieldInfo field : map.values()) {
+1530,1531c1783,1784
+<         } else{
+<             for(FieldInfo fieldInfo : fieldInfoMap.values()){
+---
+>         } else {
+>             for (FieldInfo fieldInfo : fieldInfoMap.values()) {
+1534c1787,1788
+<             if(sorted){
+---
+> 
+>             if (sorted) {
+1537a1792
+> 
+1543c1798
+<             Map<String,String> aliasMap, //
+---
+>             Map<String, String> aliasMap, //
+1545,1548c1800,1804
+<             Map<String,FieldInfo> fieldInfoMap, //
+<             Field[] fields){
+<         for(Field field : fields){
+<             if(Modifier.isStatic(field.getModifiers())){
+---
+>             Map<String, FieldInfo> fieldInfoMap, //
+>             Field[] fields) {
+> 
+>         for (Field field : fields) {
+>             if (Modifier.isStatic(field.getModifiers())) {
+1550a1807
+> 
+1551a1809
+> 
+1555,1556c1813,1814
+<             if(fieldAnnotation != null){
+<                 if(!fieldAnnotation.serialize()){
+---
+>             if (fieldAnnotation != null) {
+>                 if (!fieldAnnotation.serialize()) {
+1558a1817
+> 
+1562c1821,1822
+<                 if(fieldAnnotation.name().length() != 0){
+---
+> 
+>                 if (fieldAnnotation.name().length() != 0) {
+1565c1825,1826
+<                 if(fieldAnnotation.label().length() != 0){
+---
+> 
+>                 if (fieldAnnotation.label().length() != 0) {
+1569c1830,1831
+<             if(aliasMap != null){
+---
+> 
+>             if (aliasMap != null) {
+1571c1833
+<                 if(propertyName == null){
+---
+>                 if (propertyName == null) {
+1575c1837,1838
+<             if(propertyNamingStrategy != null){
+---
+> 
+>             if (propertyNamingStrategy != null) {
+1578c1841,1842
+<             if(!fieldInfoMap.containsKey(propertyName)){
+---
+> 
+>             if (!fieldInfoMap.containsKey(propertyName)) {
+1580c1844
+<                         null, fieldAnnotation, label);
+---
+>                                                     null, fieldAnnotation, label);
+1586,1593c1850,1857
+<     private static String getPropertyNameByCompatibleFieldName(Map<String,Field> fieldCacheMap, String methodName,
+<                                                                String propertyName, int fromIdx){
+<         if(compatibleWithFieldName){
+<             if(!fieldCacheMap.containsKey(propertyName)){
+<                 String tempPropertyName = methodName.substring(fromIdx);
+<                 return fieldCacheMap.containsKey(tempPropertyName) ? tempPropertyName : propertyName;
+<             }
+<         }
+---
+>     private static String getPropertyNameByCompatibleFieldName(Map<String, Field> fieldCacheMap, String methodName,
+>                                                                String propertyName,int fromIdx) {
+>         if (compatibleWithFieldName){
+>                if (!fieldCacheMap.containsKey(propertyName)){
+>                    String tempPropertyName=methodName.substring(fromIdx);
+>                    return  fieldCacheMap.containsKey(tempPropertyName)?tempPropertyName:propertyName;
+>                }
+>            }
+1597c1861
+<     public static JSONField getSuperMethodAnnotation(final Class<?> clazz, final Method method){
+---
+>     public static JSONField getSuperMethodAnnotation(final Class<?> clazz, final Method method) {
+1599c1863
+<         if(interfaces.length > 0){
+---
+>         if (interfaces.length > 0) {
+1601,1602c1865,1866
+<             for(Class<?> interfaceClass : interfaces){
+<                 for(Method interfaceMethod : interfaceClass.getMethods()){
+---
+>             for (Class<?> interfaceClass : interfaces) {
+>                 for (Method interfaceMethod : interfaceClass.getMethods()) {
+1604c1868
+<                     if(interfaceTypes.length != types.length){
+---
+>                     if (interfaceTypes.length != types.length) {
+1607c1871
+<                     if(!interfaceMethod.getName().equals(method.getName())){
+---
+>                     if (!interfaceMethod.getName().equals(method.getName())) {
+1611,1612c1875,1876
+<                     for(int i = 0; i < types.length; ++i){
+<                         if(!interfaceTypes[i].equals(types[i])){
+---
+>                     for (int i = 0; i < types.length; ++i) {
+>                         if (!interfaceTypes[i].equals(types[i])) {
+1617c1881,1882
+<                     if(!match){
+---
+> 
+>                     if (!match) {
+1619a1885
+> 
+1621c1887
+<                     if(annotation != null){
+---
+>                     if (annotation != null) {
+1626a1893
+> 
+1628c1895
+<         if(superClass == null){
+---
+>         if (superClass == null) {
+1631c1898,1899
+<         if(Modifier.isAbstract(superClass.getModifiers())){
+---
+> 
+>         if (Modifier.isAbstract(superClass.getModifiers())) {
+1633c1901,1902
+<             for(Method interfaceMethod : superClass.getMethods()){
+---
+> 
+>             for (Method interfaceMethod : superClass.getMethods()) {
+1635c1904
+<                 if(interfaceTypes.length != types.length){
+---
+>                 if (interfaceTypes.length != types.length) {
+1638c1907
+<                 if(!interfaceMethod.getName().equals(method.getName())){
+---
+>                 if (!interfaceMethod.getName().equals(method.getName())) {
+1642,1643c1911,1912
+<                 for(int i = 0; i < types.length; ++i){
+<                     if(!interfaceTypes[i].equals(types[i])){
+---
+>                 for (int i = 0; i < types.length; ++i) {
+>                     if (!interfaceTypes[i].equals(types[i])) {
+1648c1917,1918
+<                 if(!match){
+---
+> 
+>                 if (!match) {
+1650a1921
+> 
+1652c1923
+<                 if(annotation != null){
+---
+>                 if (annotation != null) {
+1656a1928
+> 
+1660,1662c1932,1935
+<     private static boolean isJSONTypeIgnore(Class<?> clazz, String propertyName){
+<         JSONType jsonType = TypeUtils.getAnnotation(clazz,JSONType.class);
+<         if(jsonType != null){
+---
+>     private static boolean isJSONTypeIgnore(Class<?> clazz, String propertyName) {
+>         JSONType jsonType = clazz.getAnnotation(JSONType.class);
+> 
+>         if (jsonType != null) {
+1667,1669c1940,1942
+<             if(fields.length > 0){
+<                 for(int i = 0; i < fields.length; i++){
+<                     if(propertyName.equals(fields[i])){
+---
+>             if (fields.length > 0) {
+>                 for (int i = 0; i < fields.length; i++) {
+>                     if (propertyName.equals(fields[i])) {
+1674c1947
+<             } else{
+---
+>             } else {
+1676,1677c1949,1950
+<                 for(int i = 0; i < fields.length; i++){
+<                     if(propertyName.equals(fields[i])){
+---
+>                 for (int i = 0; i < fields.length; i++) {
+>                     if (propertyName.equals(fields[i])) {
+1683,1684c1956,1958
+<         if(clazz.getSuperclass() != Object.class && clazz.getSuperclass() != null){
+<             if(isJSONTypeIgnore(clazz.getSuperclass(), propertyName)){
+---
+> 
+>         if (clazz.getSuperclass() != Object.class && clazz.getSuperclass() != null) {
+>             if (isJSONTypeIgnore(clazz.getSuperclass(), propertyName)) {
+1687a1962
+> 
+1691,1692c1966,1967
+<     public static boolean isGenericParamType(Type type){
+<         if(type instanceof ParameterizedType){
+---
+>     public static boolean isGenericParamType(Type type) {
+>         if (type instanceof ParameterizedType) {
+1695c1970,1971
+<         if(type instanceof Class){
+---
+> 
+>         if (type instanceof Class) {
+1697c1973
+<             if(superType == Object.class){
+---
+>             if (superType == Object.class) {
+1701a1978
+> 
+1705,1706c1982,1983
+<     public static Type getGenericParamType(Type type){
+<         if(type instanceof ParameterizedType){
+---
+>     public static Type getGenericParamType(Type type) {
+>         if (type instanceof ParameterizedType) {
+1709c1986,1987
+<         if(type instanceof Class){
+---
+> 
+>         if (type instanceof Class) {
+1711a1990
+> 
+1715,1717c1994,1996
+<     public static Type unwrapOptional(Type type){
+<         if(!optionalClassInited){
+<             try{
+---
+>     public static Type unwrapOptional(Type type) {
+>         if (!optionalClassInited) {
+>             try {
+1719c1998
+<             } catch(Exception e){
+---
+>             } catch (Exception e) {
+1721c2000
+<             } finally{
+---
+>             } finally {
+1725c2004,2005
+<         if(type instanceof ParameterizedType){
+---
+> 
+>         if (type instanceof ParameterizedType) {
+1727c2007
+<             if(parameterizedType.getRawType() == optionalClass){
+---
+>             if (parameterizedType.getRawType() == optionalClass) {
+1734,1735c2014,2015
+<     public static Class<?> getClass(Type type){
+<         if(type.getClass() == Class.class){
+---
+>     public static Class<?> getClass(Type type) {
+>         if (type.getClass() == Class.class) {
+1738c2018,2019
+<         if(type instanceof ParameterizedType){
+---
+> 
+>         if (type instanceof ParameterizedType) {
+1741c2022,2023
+<         if(type instanceof TypeVariable){
+---
+> 
+>         if (type instanceof TypeVariable) {
+1744a2027
+> 
+1748,1750c2031,2033
+<     public static Field getField(Class<?> clazz, String fieldName, Field[] declaredFields){
+<         for(Field field : declaredFields){
+<             if(fieldName.equals(field.getName())){
+---
+>     public static Field getField(Class<?> clazz, String fieldName, Field[] declaredFields) {
+>         for (Field field : declaredFields) {
+>             if (fieldName.equals(field.getName())) {
+1753a2037
+> 
+1755c2039
+<         if(superClass != null && superClass != Object.class){
+---
+>         if (superClass != null && superClass != Object.class) {
+1757a2042
+> 
+1761,1763c2046,2049
+<     public static int getSerializeFeatures(Class<?> clazz){
+<         JSONType annotation = TypeUtils.getAnnotation(clazz,JSONType.class);
+<         if(annotation == null){
+---
+>     public static int getSerializeFeatures(Class<?> clazz) {
+>         JSONType annotation = clazz.getAnnotation(JSONType.class);
+> 
+>         if (annotation == null) {
+1765a2052
+> 
+1769,1771c2056,2059
+<     public static int getParserFeatures(Class<?> clazz){
+<         JSONType annotation = TypeUtils.getAnnotation(clazz,JSONType.class);
+<         if(annotation == null){
+---
+>     public static int getParserFeatures(Class<?> clazz) {
+>         JSONType annotation = clazz.getAnnotation(JSONType.class);
+> 
+>         if (annotation == null) {
+1773a2062
+> 
+1777,1778c2066,2067
+<     public static String decapitalize(String name){
+<         if(name == null || name.length() == 0){
+---
+>     public static String decapitalize(String name) {
+>         if (name == null || name.length() == 0) {
+1781c2070
+<         if(name.length() > 1 && Character.isUpperCase(name.charAt(1)) && Character.isUpperCase(name.charAt(0))){
+---
+>         if (name.length() > 1 && Character.isUpperCase(name.charAt(1)) && Character.isUpperCase(name.charAt(0))) {
+1789,1790c2078,2079
+<     static void setAccessible(AccessibleObject obj){
+<         if(!setAccessibleEnable){
+---
+>     static void setAccessible(AccessibleObject obj) {
+>         if (!setAccessibleEnable) {
+1793c2082,2083
+<         if(obj.isAccessible()){
+---
+> 
+>         if (obj.isAccessible()) {
+1796c2086,2087
+<         try{
+---
+> 
+>         try {
+1798c2089
+<         } catch(AccessControlException error){
+---
+>         } catch (AccessControlException error) {
+1803c2094
+<     public static Type getCollectionItemType(Type fieldType){
+---
+>     public static Type getCollectionItemType(Type fieldType) {
+1806c2097
+<         if(fieldType instanceof ParameterizedType){
+---
+>         if (fieldType instanceof ParameterizedType) {
+1808c2099,2100
+<             if(actualTypeArgument instanceof WildcardType){
+---
+> 
+>             if (actualTypeArgument instanceof WildcardType) {
+1811c2103
+<                 if(upperBounds.length == 1){
+---
+>                 if (upperBounds.length == 1) {
+1814a2107
+> 
+1816,1817c2109,2110
+<         } else if(fieldType instanceof Class<?> //
+<                 && !(clazz = (Class<?>) fieldType).getName().startsWith("java.")){
+---
+>         } else if (fieldType instanceof Class<?> //
+>                 && !(clazz = (Class<?>) fieldType).getName().startsWith("java.")) {
+1821c2114,2115
+<         if(itemType == null){
+---
+> 
+>         if (itemType == null) {
+1823a2118
+> 
+1827,1828c2122,2123
+<     public static Class<?> getCollectionItemClass(Type fieldType){
+<         if(fieldType instanceof ParameterizedType){
+---
+>     public static Class<?> getCollectionItemClass(Type fieldType) {
+>         if (fieldType instanceof ParameterizedType) {
+1831c2126,2127
+<             if(actualTypeArgument instanceof WildcardType){
+---
+> 
+>             if (actualTypeArgument instanceof WildcardType) {
+1834c2130
+<                 if(upperBounds.length == 1){
+---
+>                 if (upperBounds.length == 1) {
+1838c2134,2135
+<             if(actualTypeArgument instanceof Class){
+---
+> 
+>             if (actualTypeArgument instanceof Class) {
+1840c2137
+<                 if(!Modifier.isPublic(itemClass.getModifiers())){
+---
+>                 if (!Modifier.isPublic(itemClass.getModifiers())) {
+1843c2140
+<             } else{
+---
+>             } else {
+1847a2145
+> 
+1851,1852c2149,2190
+<     @SuppressWarnings({"rawtypes", "unchecked"})
+<     public static Collection createCollection(Type type){
+---
+>     public static Type checkPrimitiveArray(GenericArrayType genericArrayType) {
+>         Type clz = genericArrayType;
+>         Type genericComponentType  = genericArrayType.getGenericComponentType();
+> 
+>         String prefix = "[";
+>         while (genericComponentType instanceof GenericArrayType) {
+>             genericComponentType = ((GenericArrayType) genericComponentType)
+>                     .getGenericComponentType();
+>             prefix += prefix;
+>         }
+> 
+>         if (genericComponentType instanceof Class<?>) {
+>             Class<?> ck = (Class<?>) genericComponentType;
+>             if (ck.isPrimitive()) {
+>                 try {
+>                     if (ck == boolean.class) {
+>                         clz = Class.forName(prefix + "Z");
+>                     } else if (ck == char.class) {
+>                         clz = Class.forName(prefix + "C");
+>                     } else if (ck == byte.class) {
+>                         clz = Class.forName(prefix + "B");
+>                     } else if (ck == short.class) {
+>                         clz = Class.forName(prefix + "S");
+>                     } else if (ck == int.class) {
+>                         clz = Class.forName(prefix + "I");
+>                     } else if (ck == long.class) {
+>                         clz = Class.forName(prefix + "J");
+>                     } else if (ck == float.class) {
+>                         clz = Class.forName(prefix + "F");
+>                     } else if (ck == double.class) {
+>                         clz = Class.forName(prefix + "D");
+>                     }
+>                 } catch (ClassNotFoundException e) {
+>                 }
+>             }
+>         }
+> 
+>         return clz;
+>     }
+> 
+>     @SuppressWarnings({ "rawtypes", "unchecked" })
+>     public static Collection createCollection(Type type) {
+1853a2192
+> 
+1855,1856c2194,2195
+<         if(rawClass == AbstractCollection.class //
+<                 || rawClass == Collection.class){
+---
+>         if (rawClass == AbstractCollection.class //
+>             || rawClass == Collection.class) {
+1858c2197
+<         } else if(rawClass.isAssignableFrom(HashSet.class)){
+---
+>         } else if (rawClass.isAssignableFrom(HashSet.class)) {
+1860c2199
+<         } else if(rawClass.isAssignableFrom(LinkedHashSet.class)){
+---
+>         } else if (rawClass.isAssignableFrom(LinkedHashSet.class)) {
+1862c2201
+<         } else if(rawClass.isAssignableFrom(TreeSet.class)){
+---
+>         } else if (rawClass.isAssignableFrom(TreeSet.class)) {
+1864c2203
+<         } else if(rawClass.isAssignableFrom(ArrayList.class)){
+---
+>         } else if (rawClass.isAssignableFrom(ArrayList.class)) {
+1866c2205
+<         } else if(rawClass.isAssignableFrom(EnumSet.class)){
+---
+>         } else if (rawClass.isAssignableFrom(EnumSet.class)) {
+1868c2207
+<             if(type instanceof ParameterizedType){
+---
+>             if (type instanceof ParameterizedType) {
+1870c2209
+<             } else{
+---
+>             } else {
+1874,1875c2213,2214
+<         } else{
+<             try{
+---
+>         } else {
+>             try {
+1877c2216
+<             } catch(Exception e){
+---
+>             } catch (Exception e) {
+1884,1885c2223,2224
+<     public static Class<?> getRawClass(Type type){
+<         if(type instanceof Class<?>){
+---
+>     public static Class<?> getRawClass(Type type) {
+>         if (type instanceof Class<?>) {
+1887c2226
+<         } else if(type instanceof ParameterizedType){
+---
+>         } else if (type instanceof ParameterizedType) {
+1889c2228
+<         } else{
+---
+>         } else {
+1894,1895c2233,2234
+<     public static boolean isProxy(Class<?> clazz){
+<         for(Class<?> item : clazz.getInterfaces()){
+---
+>     public static boolean isProxy(Class<?> clazz) {
+>         for (Class<?> item : clazz.getInterfaces()) {
+1897,1898c2236,2237
+<             if(interfaceName.equals("net.sf.cglib.proxy.Factory") //
+<                     || interfaceName.equals("org.springframework.cglib.proxy.Factory")){
+---
+>             if (interfaceName.equals("net.sf.cglib.proxy.Factory") //
+>                     || interfaceName.equals("org.springframework.cglib.proxy.Factory")) {
+1901c2240,2241
+<             if(interfaceName.equals("javassist.util.proxy.ProxyObject") //
+---
+> 
+>             if (interfaceName.equals("javassist.util.proxy.ProxyObject") //
+1903c2243
+<                     ){
+---
+>                     ) {
+1906a2247
+> 
+1910,1911c2251,2252
+<     public static boolean isTransient(Method method){
+<         if(method == null){
+---
+>     public static boolean isTransient(Method method) {
+>         if (method == null) {
+1914,1915c2255,2257
+<         if(!transientClassInited){
+<             try{
+---
+> 
+>         if (!transientClassInited) {
+>             try {
+1917c2259
+<             } catch(Exception e){
+---
+>             } catch (Exception e) {
+1919c2261
+<             } finally{
+---
+>             } finally {
+1923c2265,2266
+<         if(transientClass != null){
+---
+> 
+>         if (transientClass != null) {
+1926a2270
+> 
+1930,1931c2274,2275
+<     public static boolean isAnnotationPresentOneToMany(Method method){
+<         if(method == null){
+---
+>     public static boolean isAnnotationPresentOneToMany(Method method) {
+>         if (method == null) {
+1934,1935c2278,2280
+<         if(class_OneToMany == null && !class_OneToMany_error){
+<             try{
+---
+> 
+>         if (class_OneToMany == null && !class_OneToMany_error) {
+>             try {
+1937c2282
+<             } catch(Throwable e){
+---
+>             } catch (Throwable e) {
+1942c2287,2288
+<         if(class_OneToMany == null){
+---
+> 
+>         if (class_OneToMany == null) {
+1944a2291
+> 
+1948,1949c2295,2296
+<     public static boolean isHibernateInitialized(Object object){
+<         if(object == null){
+---
+>     public static boolean isHibernateInitialized(Object object) {
+>         if (object == null) {
+1952,1953c2299,2301
+<         if(method_HibernateIsInitialized == null && !method_HibernateIsInitialized_error){
+<             try{
+---
+> 
+>         if (method_HibernateIsInitialized == null && !method_HibernateIsInitialized_error) {
+>             try {
+1956c2304
+<             } catch(Throwable e){
+---
+>             } catch (Throwable e) {
+1961,1962c2309,2311
+<         if(method_HibernateIsInitialized != null){
+<             try{
+---
+> 
+>         if (method_HibernateIsInitialized != null) {
+>             try {
+1965c2314
+<             } catch(Throwable e){
+---
+>             } catch (Throwable e) {
+1968a2318
+> 
+1972c2322
+<     public static long fnv1a_64_lower(String key){
+---
+>     public static long fnv1a_64_lower(String key) {
+1974c2324
+<         for(int i = 0; i < key.length(); ++i){
+---
+>         for (int i = 0; i < key.length(); ++i) {
+1976c2326
+<             if(ch == '_' || ch == '-'){
+---
+>             if (ch == '_' || ch == '-') {
+1979c2329,2330
+<             if(ch >= 'A' && ch <= 'Z'){
+---
+> 
+>             if (ch >= 'A' && ch <= 'Z') {
+1981a2333
+> 
+1984a2337
+> 
+1988c2341
+<     public static long fnv1a_64(String key){
+---
+>     public static long fnv1a_64(String key) {
+1990c2343
+<         for(int i = 0; i < key.length(); ++i){
+---
+>         for (int i = 0; i < key.length(); ++i) {
+1994a2348
+> 
+1998,2000c2352,2354
+<     public static boolean isKotlin(Class clazz){
+<         if(kotlin_metadata == null && !kotlin_metadata_error){
+<             try{
+---
+>     public static boolean isKotlin(Class clazz) {
+>         if (kotlin_metadata == null && !kotlin_metadata_error) {
+>             try {
+2002c2356
+<             } catch(Throwable e){
+---
+>             } catch (Throwable e) {
+2006c2360,2361
+<         if(kotlin_metadata == null){
+---
+> 
+>         if (kotlin_metadata == null) {
+2008a2364
+> 
+2012c2368
+<     public static Constructor getKoltinConstructor(Constructor[] constructors){
+---
+>     public static Constructor getKoltinConstructor(Constructor[] constructors) {
+2014c2370
+<         for(Constructor<?> constructor : constructors){
+---
+>         for (Constructor<?> constructor : constructors) {
+2016c2372
+<             if(parameterTypes.length > 0 && parameterTypes[parameterTypes.length - 1].getName().equals("kotlin.jvm.internal.DefaultConstructorMarker")){
+---
+>             if (parameterTypes.length > 0 && parameterTypes[parameterTypes.length - 1].getName().equals("kotlin.jvm.internal.DefaultConstructorMarker")) {
+2019c2375
+<             if(creatorConstructor != null && creatorConstructor.getParameterTypes().length >= parameterTypes.length){
+---
+>             if (creatorConstructor != null && creatorConstructor.getParameterTypes().length >= parameterTypes.length) {
+2027,2029c2383,2385
+<     public static String[] getKoltinConstructorParameters(Class clazz){
+<         if(kotlin_kclass_constructor == null && !kotlin_class_klass_error){
+<             try{
+---
+>     public static String[] getKoltinConstructorParameters(Class clazz) {
+>         if (kotlin_kclass_constructor == null && !kotlin_class_klass_error) {
+>             try {
+2032a2389
+> 
+2034a2392
+> 
+2037c2395
+<             } catch(Throwable e){
+---
+>             } catch (Throwable e) {
+2041c2399,2400
+<         if(kotlin_kclass_constructor == null){
+---
+> 
+>         if (kotlin_kclass_constructor == null) {
+2044c2403,2404
+<         if(kotlin_error){
+---
+> 
+>         if (kotlin_error) {
+2047c2407,2408
+<         try{
+---
+> 
+>         try {
+2051c2412
+<             for(Iterator iterator = it.iterator(); iterator.hasNext(); iterator.hasNext()){
+---
+>             for (Iterator iterator = it.iterator();iterator.hasNext();iterator.hasNext()) {
+2053a2415
+> 
+2056c2418
+<             for(int i = 0; i < parameters.size(); i++){
+---
+>             for (int i = 0; i < parameters.size(); i++) {
+2061c2423
+<         } catch(Throwable e){
+---
+>         } catch (Throwable e) {
+2063a2426
+> 
+2067,2070c2430,2434
+<     private static boolean isKotlinIgnore(Class clazz, String methodName){
+<         if(kotlinIgnores == null && !kotlinIgnores_error){
+<             try{
+<                 Map<Class,String[]> map = new HashMap<Class,String[]>();
+---
+>     private static boolean isKotlinIgnore(Class clazz, String methodName) {
+>         if (kotlinIgnores == null && !kotlinIgnores_error) {
+>             try {
+>                 Map<Class, String[]> map = new HashMap<Class, String[]>();
+> 
+2072c2436,2437
+<                 map.put(charRangeClass, new String[]{"getEndInclusive", "isEmpty"});
+---
+>                 map.put(charRangeClass, new String[]{"getEndInclusive","isEmpty"});
+> 
+2074c2439,2440
+<                 map.put(intRangeClass, new String[]{"getEndInclusive", "isEmpty"});
+---
+>                 map.put(intRangeClass, new String[]{"getEndInclusive","isEmpty"});
+> 
+2076a2443
+> 
+2078c2445,2446
+<                 map.put(floatRangeClass, new String[]{"getEndInclusive", "isEmpty"});
+---
+>                 map.put(floatRangeClass, new String[]{"getEndInclusive","isEmpty"});
+> 
+2080c2448,2449
+<                 map.put(doubleRangeClass, new String[]{"getEndInclusive", "isEmpty"});
+---
+>                 map.put(doubleRangeClass, new String[]{"getEndInclusive","isEmpty"});
+> 
+2082c2451
+<             } catch(Throwable error){
+---
+>             } catch (Throwable error) {
+2086c2455,2456
+<         if(kotlinIgnores == null){
+---
+> 
+>         if (kotlinIgnores == null) {
+2088a2459
+> 
+2090c2461
+<         if(ignores == null){
+---
+>         if (ignores == null) {
+2093,2094d2463
+<         return Arrays.binarySearch(ignores, methodName) >= 0;
+<     }
+2096,2109c2465
+<     public static <A extends Annotation> A getAnnotation(Class<?> clazz, Class<A> annotationClass){
+<         A a = clazz.getAnnotation(annotationClass);
+<         if(a != null){
+<             return a;
+<         }
+<         if(clazz.getAnnotations().length > 0){
+<             for(Annotation annotation : clazz.getAnnotations()){
+<                 a = annotation.annotationType().getAnnotation(annotationClass);
+<                 if(a != null){
+<                     return a;
+<                 }
+<             }
+<         }
+<         return null;
+---
+>         return Arrays.binarySearch(ignores, methodName) >= 0;
