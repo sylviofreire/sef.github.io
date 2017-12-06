@@ -1,0 +1,20 @@
+20c20
+< import io.vertx.core.MultiMap;
+---
+> import io.vertx.core.Headers;
+35c35
+<   private final MultiMap headers;
+---
+>   private final Headers headers;
+37,39c37,39
+<   public ServerWebSocketImpl(VertxInternal vertx, String uri, String path, String query, MultiMap headers,
+<                              ConnectionBase conn, boolean supportsContinuation, Runnable connectRunnable) {
+<     super(vertx, conn, supportsContinuation);
+---
+>   public ServerWebSocketImpl(VertxInternal vertx, String uri, String path, String query, Headers headers,
+>                              ConnectionBase conn, Runnable connectRunnable) {
+>     super(vertx, conn);
+63c63
+<   public MultiMap headers() {
+---
+>   public Headers headers() {

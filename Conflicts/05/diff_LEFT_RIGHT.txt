@@ -1,0 +1,34 @@
+305c305,306
+<                                 addResolveTask(new ResolveTask(parentContext, ref));
+---
+>                                 MapResolveFieldDeserializer fieldResolver = new MapResolveFieldDeserializer(object, (String) key);
+>                                 addResolveTask(new ResolveTask(parentContext, ref, parentContext, fieldResolver));
+321c322,323
+<                             addResolveTask(new ResolveTask(context, ref));
+---
+>                             MapResolveFieldDeserializer fieldResolver = new MapResolveFieldDeserializer(object, (String) key);
+>                             addResolveTask(new ResolveTask(context, ref, context.getParentContext(), fieldResolver));
+377,378d378
+<                     checkMapResolve(object, key.toString());
+<                     
+796,806d795
+<     public void checkMapResolve(Map object, String fieldName) {
+<         if (resolveStatus == NeedToResolve) {
+<             MapResolveFieldDeserializer fieldResolver = new MapResolveFieldDeserializer(object, fieldName);
+<             ResolveTask task = getLastResolveTask();
+<             task.setFieldDeserializer(fieldResolver);
+<             task.setOwnerContext(context);
+<             setResolveStatus(DefaultJSONParser.NONE);
+<         }
+<     }
+< 
+<     @SuppressWarnings("rawtypes")
+1123a1113,1117
+>             this(context, referenceValue, null, null);
+>         }
+> 
+>         public ResolveTask(ParseContext context, String referenceValue, ParseContext ownerContext,
+>                            FieldDeserializer fieldDeserializer){
+1125a1120,1121
+>             this.ownerContext = ownerContext;
+>             this.fieldDeserializer = fieldDeserializer;
