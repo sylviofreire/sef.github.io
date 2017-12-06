@@ -1,0 +1,2595 @@
+revision;file;methodsignature;leftbody;basebody;rightbody
+/home/paper219/Desktop/analysis/demonstration//projects/Mybatis-3/revisions/rev_bd60088_942c2c7/rev_bd60088-942c2c7;/src/main/java/org/apache/ibatis/executor/resultset/DefaultResultSetHandler;applyNestedResultMappings(ResultSetWrapper,ResultMap,MetaObject,String,CacheKey,boolean);            instantiateCollectionPropertyIfAppropriate(resultMapping, metaObject); // mandatory            ;            final Object collectionProperty = instantiateCollectionPropertyIfAppropriate(resultMapping, metaObject);            ;            final Object collectionProperty = instantiateCollectionPropertyIfAppropriate(resultMapping, metaObject);
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2;/src/main/java/com/alibaba/fastjson/parser/ParserConfig;createJavaBeanDeserializer(Class<?>);;;        } catch (ASMException asmError) {
+        	return new JavaBeanDeserializer(this, clazz);
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2;/src/main/java/com/alibaba/fastjson/asm/ASMException;ASMException(String);;;public ASMException(String message){
+        super(message);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_vikingschow;test_for_vikingschow();;;public void test_for_vikingschow() throws Exception {
+		OfferRankResultVO vo = new OfferRankResultVO();
+		String text = JSON.toJSONString(vo);
+		JSON.parseObject(text, OfferRankResultVO.class);
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2;/src/test/java/com/alibaba/json/bvtVO/OfferRankResultVO;OfferRankResultVO();;;public OfferRankResultVO() {
+		models.add(new SearchCenterOfferModel());
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2;/src/test/java/com/alibaba/json/bvtVO/OfferRankResultVO;getModel();;;public List<SearchCenterOfferModel> getModel() {
+		return models;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2;/src/test/java/com/alibaba/json/bvtVO/OfferRankResultVO;setModel(List<SearchCenterOfferModel>);;;public void setModel(List<SearchCenterOfferModel> models) {
+		this.models = models;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2;/src/test/java/com/alibaba/json/bvtVO/OfferRankResultVO;getId();;;public int getId() {
+		return id;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2;/src/test/java/com/alibaba/json/bvtVO/OfferRankResultVO;setId(int);;;public void setId(int id) {
+		this.id = id;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2;/src/test/java/com/alibaba/json/bvtVO/OfferRankResultVO;getName();;;public String getName() {
+		return name;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2;/src/test/java/com/alibaba/json/bvtVO/OfferRankResultVO;setName(String);;;public void setName(String name) {
+		this.name = name;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/main/java/com/alibaba/fastjson/parser/deserializer/TimeDeserializer;deserialze(DefaultJSONParser,Type,Object);;;            long longVal;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer;deserialze(DefaultJSONParser,Type,Object);        ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer;deserialze(DefaultJSONParser,Type,Object);        ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer;deserialze(DefaultJSONParser,Type,Object);            ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer;deserialze(DefaultJSONParser,Type,Object);            ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer;deserialze(DefaultJSONParser,Type,Object);            ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer;deserialze(DefaultJSONParser,Type,Object);            ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer;deserialze(DefaultJSONParser,Type,Object);            ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer;deserialze(DefaultJSONParser,Type,Object);            ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer;deserialze(DefaultJSONParser,Type,Object);            ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer;deserialze(DefaultJSONParser,Type,Object);        ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer;deserialze(DefaultJSONParser,Type,Object);        ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/test/java/com/alibaba/json/bvt/parser/deser/SqlDateDeserializerTest2;test_sqlDate();;;public void test_sqlDate() throws Exception {
+        java.util.Date date = new java.util.Date();
+        long millis = date.getTime();
+        long millis2 = (millis / 1000)  * 1000;
+        String text = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(millis);
+        text = text.replace(' ', 'T');
+        
+        String text2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(millis2);
+        
+        Assert.assertNull(JSON.parseObject("null", Date.class));
+        Assert.assertNull(JSON.parseObject("\"\"", Date.class));
+        Assert.assertNull(JSON.parseArray("null", Date.class));
+        Assert.assertNull(JSON.parseArray("[null]", Date.class).get(0));
+        Assert.assertNull(JSON.parseObject("{\"value\":null}", VO.class).getValue());
+        
+        Assert.assertEquals(new Date(millis), JSON.parseObject("" + millis, Date.class));
+        Assert.assertEquals(new Date(millis), JSON.parseObject("{\"@type\":\"java.sql.Date\",\"val\":" + millis + "}", Date.class));
+        Assert.assertEquals(new Date(millis), JSON.parseObject("\"" + millis + "\"", Date.class));
+        Assert.assertEquals(new Date(millis2), JSON.parseObject("\"" + text2 + "\"", Date.class));
+        Assert.assertEquals(new Date(millis), JSON.parseObject("\"" + text + "\"", Date.class));
+        
+        //System.out.println(JSON.toJSONString(new Time(millis), SerializerFeature.WriteClassName));
+        
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/test/java/com/alibaba/json/bvt/parser/deser/SqlDateDeserializerTest2;getValue();;;public Date getValue() {
+            return value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/test/java/com/alibaba/json/bvt/parser/deser/SqlDateDeserializerTest2;setValue(Date);;;public void setValue(Date value) {
+            this.value = value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/test/java/com/alibaba/json/bvt/parser/deser/StackTraceElementDeserializerTest;getValue();;;public StackTraceElement getValue() {
+            return value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/test/java/com/alibaba/json/bvt/parser/deser/StackTraceElementDeserializerTest;setValue(StackTraceElement);;;public void setValue(StackTraceElement value) {
+            this.value = value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/test/java/com/alibaba/json/bvt/parser/deser/TimeDeserializerTest;test_time();;;public void test_time() throws Exception {
+        long millis = System.currentTimeMillis();
+        String text = new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date(millis));
+        text += "T";
+        text += new SimpleDateFormat("HH:mm:ss.SSS").format(new java.util.Date(millis));
+        
+        Assert.assertNull(JSON.parseObject("null", Time.class));
+        Assert.assertNull(JSON.parseObject("\"\"", Time.class));
+        Assert.assertNull(JSON.parseArray("null", Time.class));
+        Assert.assertNull(JSON.parseArray("[null]", Time.class).get(0));
+        Assert.assertNull(JSON.parseObject("{\"value\":null}", VO.class).getValue());
+        
+        Assert.assertEquals(new Time(millis), JSON.parseObject("" + millis, Time.class));
+        Assert.assertEquals(new Time(millis), JSON.parseObject("{\"@type\":\"java.sql.Time\",\"val\":" + millis + "}", Time.class));
+        Assert.assertEquals(new Time(millis), JSON.parseObject("\"" + millis + "\"", Time.class));
+        Assert.assertEquals(new Time(millis), JSON.parseObject("\"" + text + "\"", Time.class));
+        
+        //System.out.println(JSON.toJSONString(new Time(millis), SerializerFeature.WriteClassName));
+        
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/test/java/com/alibaba/json/bvt/parser/deser/TimeDeserializerTest;getValue();;;public Time getValue() {
+            return value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05;/src/test/java/com/alibaba/json/bvt/parser/deser/TimeDeserializerTest;setValue(Time);;;public void setValue(Time value) {
+            this.value = value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeKeyWithDoubleQuote(String,boolean);;;public void writeKeyWithDoubleQuote(String text, boolean checkSpecial) {
+        final boolean[] specicalFlags_doubleQuotes = CharTypes.specicalFlags_doubleQuotes;
+
+        int len = text.length();
+        int newcount = count + len + 3;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+
+        int start = count + 1;
+        int end = start + len;
+
+        buf[count] = '\"';
+        text.getChars(0, len, buf, start);
+
+        count = newcount;
+
+        if (checkSpecial) {
+            for (int i = start; i < end; ++i) {
+                char ch = buf[i];
+                if (ch < specicalFlags_doubleQuotes.length
+                    && specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                    newcount++;
+                    if (newcount > buf.length) {
+                        expandCapacity(newcount);
+                    }
+                    count = newcount;
+
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[++i] = replaceChars[(int) ch];
+                    end++;
+                }
+            }
+        }
+
+        buf[count - 2] = '\"';
+        buf[count - 1] = ':';
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeFieldValue(char,String,String);                    writeFieldValueStringWithDoubleQuote(seperator, name, value);                    ;;                    writeFieldValueStringWithDoubleQuote(seperator, name, value);
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeFieldValueStringWithDoubleQuote(char,String,String);                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '"' //;;                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                    || ch == '"' //
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeFieldValueStringWithDoubleQuote(char,String,String);            if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '"' //;;            if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                || ch == '"' //
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeFieldValueStringWithDoubleQuote(char,String,String);                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '"' //;;                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                    || ch == '"' //
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeStringWithSingleQuote(String);            if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '\'' //;;            if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                || ch == '\'' //
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeStringWithSingleQuote(String);                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '\'' //;;                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                    || ch == '\'' //
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeFieldName(String,boolean);;;public void writeFieldName(String key, boolean checkSpecial) {
+        if (key == null) {
+            write("null:");
+            return;
+        }
+
+        if (isEnabled(SerializerFeature.UseSingleQuotes)) {
+            if (isEnabled(SerializerFeature.QuoteFieldNames)) {
+                writeKeyWithSingleQuote(key);
+            } else {
+                writeKeyWithSingleQuoteIfHasSpecial(key);
+            }
+        } else {
+            if (isEnabled(SerializerFeature.QuoteFieldNames)) {
+                writeKeyWithDoubleQuote(key, checkSpecial);
+            } else {
+                writeKeyWithDoubleQuoteIfHasSpecial(key);
+            }
+        }
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeKeyWithSingleQuote(String);            if (ch < specicalFlags_singleQuotes.length && specicalFlags_singleQuotes[ch] //;;            if (ch < specicalFlags_singleQuotes.length
+                && specicalFlags_singleQuotes[ch] //
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_cc0428f_dee22f7/rev_cc0428f-dee22f7;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parseObject(Map,Object);;;                    if (clazz == null) {
+                        continue;
+                    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_cc0428f_dee22f7/rev_cc0428f-dee22f7;/src/test/java/com/alibaba/json/bvt/TestExternal3;test_0();;;public void test_0 () throws Exception {
+        ExtClassLoader classLoader = new ExtClassLoader();
+        Class<?> clazz = classLoader.loadClass("external.VO");
+        Method method = clazz.getMethod("setName", new Class[] {String.class});
+        Object obj = clazz.newInstance();
+        method.invoke(obj, "jobs");
+        
+        String text = JSON.toJSONString(obj, SerializerFeature.WriteClassName);
+        System.out.println(text);
+        JSON.parseObject(text, clazz);
+        JSON.parseObject(text);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_cc0428f_dee22f7/rev_cc0428f-dee22f7;/src/test/java/com/alibaba/json/bvt/TestExternal3;ExtClassLoader();;;public ExtClassLoader() throws IOException{
+            super(Thread.currentThread().getContextClassLoader());
+            
+            byte[] bytes;
+            InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("external/VO.clazz");
+            bytes = IOUtils.toByteArray(is);
+            is.close();
+            
+            super.defineClass("external.VO", bytes, 0, bytes.length);
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parseObject(Map,Object);;;                boolean isObjectKey = false;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parseObject(Map,Object);;;                } else if (ch == '{' || ch == '[') {
+                    lexer.nextToken();
+                    key = parse();
+                    isObjectKey = true;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_4;test_for_arrayKey();;;public void test_for_arrayKey() throws Exception {
+        Map<List<String>, String> map = new HashMap<List<String>, String>();
+        List<String> key = new ArrayList<String>();
+        
+        key.add("subkey");
+        map.put(key, "value");
+        String jsonString = JSON.toJSONString(map, SerializerFeature.WriteClassName);
+        System.out.println(jsonString);
+        Object object = JSON.parse(jsonString);
+        System.out.println(object.toString());
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_NonStringKeyMap;test_1();;;public void test_1() throws Exception {
+        Map<Map<String, String>, String> map = new HashMap<Map<String, String>, String>();
+        Map<String, String> submap = new HashMap<String, String>();
+        submap.put("subkey", "subvalue");
+        map.put(submap, "value");
+        String jsonString = JSON.toJSONString(map, SerializerFeature.WriteClassName);
+        System.out.println(jsonString);
+        Object object = JSON.parse(jsonString);
+        System.out.println(object.toString());
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parseObject(Map,Object);;;                boolean isObjectKey = false;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parseObject(Map,Object);;;                } else if (ch == '{' || ch == '[') {
+                    lexer.nextToken();
+                    key = parse();
+                    isObjectKey = true;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_4;test_for_arrayKey();;;public void test_for_arrayKey() throws Exception {
+        Map<List<String>, String> map = new HashMap<List<String>, String>();
+        List<String> key = new ArrayList<String>();
+        
+        key.add("subkey");
+        map.put(key, "value");
+        String jsonString = JSON.toJSONString(map, SerializerFeature.WriteClassName);
+        System.out.println(jsonString);
+        Object object = JSON.parse(jsonString);
+        System.out.println(object.toString());
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_NonStringKeyMap;test_1();;;public void test_1() throws Exception {
+        Map<Map<String, String>, String> map = new HashMap<Map<String, String>, String>();
+        Map<String, String> submap = new HashMap<String, String>();
+        submap.put("subkey", "subvalue");
+        map.put(submap, "value");
+        String jsonString = JSON.toJSONString(map, SerializerFeature.WriteClassName);
+        System.out.println(jsonString);
+        Object object = JSON.parse(jsonString);
+        System.out.println(object.toString());
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvt/TestExternal4;test_0();;;public void test_0() throws Exception {
+        ExtClassLoader classLoader = new ExtClassLoader();
+        Class<?> clazz = classLoader.loadClass("external.VO2");
+        Method method = clazz.getMethod("setName", new Class[] { String.class });
+        Method methodSetValue = clazz.getMethod("setValue", new Class[] { Serializable.class });
+
+        Object obj = clazz.newInstance();
+        method.invoke(obj, "jobs");
+        methodSetValue.invoke(obj, obj);
+
+        {
+            String text = JSON.toJSONString(obj);
+            System.out.println(text);
+        }
+
+        String text = JSON.toJSONString(obj, SerializerFeature.WriteClassName);
+        System.out.println(text);
+        JSON.parseObject(text, clazz);
+        JSONObject jsonObj = JSON.parseObject(text);
+        Assert.assertEquals(jsonObj.getString("@type"), "external.VO2");
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvt/TestExternal4;ExtClassLoader();;;public ExtClassLoader() throws IOException{
+            super(Thread.currentThread().getContextClassLoader());
+
+            {
+                byte[] bytes;
+                InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("external/VO2.clazz");
+                bytes = IOUtils.toByteArray(is);
+                is.close();
+                
+                super.defineClass("external.VO2", bytes, 0, bytes.length);
+            }
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvt/TestExternal5;ExtClassLoader();;;public ExtClassLoader() throws IOException{
+            super(Thread.currentThread().getContextClassLoader());
+
+            {
+                byte[] bytes;
+                InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("external/MyEsbResultModel2.clazz");
+                bytes = IOUtils.toByteArray(is);
+                is.close();
+                
+                super.defineClass("com.alibaba.dubbo.demo.MyEsbResultModel2", bytes, 0, bytes.length);
+            }
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvt/TestSerializable;test_codec();;;public void test_codec() throws Exception {
+        VO vo = new VO();
+        vo.setValue(new ArrayList());
+        
+        JSON.toJSONString(vo);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvt/TestSerializable;getId();;;public long getId() {
+            return id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvt/TestSerializable;setId(long);;;public void setId(long id) {
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvt/TestSerializable;getValue();;;public Serializable getValue() {
+            return value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvt/TestSerializable;setValue(Serializable);;;public void setValue(Serializable value) {
+            this.value = value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvt/parser/ProductViewTest;test_parse();;;public void test_parse() throws Exception {
+        String text = "{\"code\":0,\"message\":\"Register Successfully!\",\"status\":\"OK\"}";
+        Map map = JSON.parseObject(text, Map.class);
+        System.out.println(map.get("code").getClass());
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvtVO/ProductView;getId();;;public Integer getId() {
+        return id;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvtVO/ProductView;setId(Integer);;;public void setId(Integer id) {
+        this.id = id;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvtVO/ProductView;getKeyword();;;public String getKeyword() {
+        return keyword;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvtVO/ProductView;setKeyword(String);;;public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvtVO/ProductView;isHasProduct();;;public boolean isHasProduct() {
+        return hasProduct;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvtVO/ProductView;setHasProduct(boolean);;;public void setHasProduct(boolean hasProduct) {
+        this.hasProduct = hasProduct;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvtVO/ProductView;isHasCompany();;;public boolean isHasCompany() {
+        return hasCompany;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvtVO/ProductView;setHasCompany(boolean);;;public void setHasCompany(boolean hasCompany) {
+        this.hasCompany = hasCompany;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvtVO/ProductView;isHasBuyLead();;;public boolean isHasBuyLead() {
+        return hasBuyLead;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvtVO/ProductView;setHasBuyLead(boolean);;;public void setHasBuyLead(boolean hasBuyLead) {
+        this.hasBuyLead = hasBuyLead;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvtVO/ProductView;getCountry();;;public String getCountry() {
+        return country;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b;/src/test/java/com/alibaba/json/bvtVO/ProductView;setCountry(String);;;public void setCountry(String country) {
+        this.country = country;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvt/TestExternal4;test_0();;;public void test_0() throws Exception {
+        ExtClassLoader classLoader = new ExtClassLoader();
+        Class<?> clazz = classLoader.loadClass("external.VO2");
+        Method method = clazz.getMethod("setName", new Class[] { String.class });
+        Method methodSetValue = clazz.getMethod("setValue", new Class[] { Serializable.class });
+
+        Object obj = clazz.newInstance();
+        method.invoke(obj, "jobs");
+        methodSetValue.invoke(obj, obj);
+
+        {
+            String text = JSON.toJSONString(obj);
+            System.out.println(text);
+        }
+
+        String text = JSON.toJSONString(obj, SerializerFeature.WriteClassName);
+        System.out.println(text);
+        JSON.parseObject(text, clazz);
+        JSONObject jsonObj = JSON.parseObject(text);
+        Assert.assertEquals(jsonObj.getString("@type"), "external.VO2");
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvt/TestExternal4;ExtClassLoader();;;public ExtClassLoader() throws IOException{
+            super(Thread.currentThread().getContextClassLoader());
+
+            {
+                byte[] bytes;
+                InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("external/VO2.clazz");
+                bytes = IOUtils.toByteArray(is);
+                is.close();
+                
+                super.defineClass("external.VO2", bytes, 0, bytes.length);
+            }
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvt/TestExternal5;ExtClassLoader();;;public ExtClassLoader() throws IOException{
+            super(Thread.currentThread().getContextClassLoader());
+
+            {
+                byte[] bytes;
+                InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("external/MyEsbResultModel2.clazz");
+                bytes = IOUtils.toByteArray(is);
+                is.close();
+                
+                super.defineClass("com.alibaba.dubbo.demo.MyEsbResultModel2", bytes, 0, bytes.length);
+            }
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvt/TestSerializable;test_codec();;;public void test_codec() throws Exception {
+        VO vo = new VO();
+        vo.setValue(new ArrayList());
+        
+        JSON.toJSONString(vo);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvt/TestSerializable;getId();;;public long getId() {
+            return id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvt/TestSerializable;setId(long);;;public void setId(long id) {
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvt/TestSerializable;getValue();;;public Serializable getValue() {
+            return value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvt/TestSerializable;setValue(Serializable);;;public void setValue(Serializable value) {
+            this.value = value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvt/parser/ProductViewTest;test_parse();;;public void test_parse() throws Exception {
+        String text = "{\"code\":0,\"message\":\"Register Successfully!\",\"status\":\"OK\"}";
+        Map map = JSON.parseObject(text, Map.class);
+        System.out.println(map.get("code").getClass());
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvtVO/ProductView;getId();;;public Integer getId() {
+        return id;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvtVO/ProductView;setId(Integer);;;public void setId(Integer id) {
+        this.id = id;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvtVO/ProductView;getKeyword();;;public String getKeyword() {
+        return keyword;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvtVO/ProductView;setKeyword(String);;;public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvtVO/ProductView;isHasProduct();;;public boolean isHasProduct() {
+        return hasProduct;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvtVO/ProductView;setHasProduct(boolean);;;public void setHasProduct(boolean hasProduct) {
+        this.hasProduct = hasProduct;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvtVO/ProductView;isHasCompany();;;public boolean isHasCompany() {
+        return hasCompany;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvtVO/ProductView;setHasCompany(boolean);;;public void setHasCompany(boolean hasCompany) {
+        this.hasCompany = hasCompany;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvtVO/ProductView;isHasBuyLead();;;public boolean isHasBuyLead() {
+        return hasBuyLead;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvtVO/ProductView;setHasBuyLead(boolean);;;public void setHasBuyLead(boolean hasBuyLead) {
+        this.hasBuyLead = hasBuyLead;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvtVO/ProductView;getCountry();;;public String getCountry() {
+        return country;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5;/src/test/java/com/alibaba/json/bvtVO/ProductView;setCountry(String);;;public void setCountry(String country) {
+        this.country = country;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_24d779e_3a5c953/rev_24d779e-3a5c953;/src/main/java/com/alibaba/fastjson/parser/deserializer/DefaultObjectDeserializer;parseMap(DefaultJSONParser,Map<String,Object>,Type,Object);;;                        if (lexer.token() == JSONToken.RBRACE) {
+                            lexer.nextToken(JSONToken.COMMA);
+                            return map;
+                        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_24d779e_3a5c953/rev_24d779e-3a5c953;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_1;test_0();;;public void test_0() throws Exception {
+        Map<String, User> matcherMap = new HashMap<String, User>();
+        String matcherMapString = JSON.toJSONString(matcherMap, SerializerFeature.WriteClassName,
+                                                    SerializerFeature.WriteMapNullValue);
+        
+        System.out.println(matcherMapString);
+        
+        matcherMap = JSONObject.parseObject(matcherMapString, new TypeReference<Map<String, User>>() {
+        });
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;addResolveTask(ResolveTask);;;public void addResolveTask(ResolveTask task) {
+        resolveTaskList.add(task);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;test_0();;;public void test_0() throws Exception {
+        String text;
+        {
+            List<Group> groups = new ArrayList<Group>();
+            
+            Group g0 = new Group(0);
+            Group g1 = new Group(1);
+            Group g2 = new Group(2);
+            
+            groups.add(g0);
+            groups.add(g1);
+            groups.add(g2);
+            groups.add(g0);
+            groups.add(g1);
+            groups.add(g2);
+            
+            text = JSON.toJSONString(groups);
+        }
+        
+        System.out.println(text);
+        
+        List<Group> groups = JSON.parseObject(text, new TypeReference<List<Group>>() {});
+        Assert.assertEquals(6, groups.size());
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;Group();;;public Group(){
+
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;Group(int);;;public Group(int id){
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;getId();;;public int getId() {
+            return id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;setId(int);;;public void setId(int id) {
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;toString();;;public String toString() {
+            return "{id:" + id + "}";
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;test_0();;;public void test_0() throws Exception {
+
+        String text;
+        {
+            List<Group> groups = new ArrayList<Group>();
+
+            Command c0 = new Command(1);
+            Command c1 = new Command(2);
+            Command c2 = new Command(3);
+
+            c1.setPre(c0);
+            c2.setPre(c1);
+
+            {
+                Group group = new Group("g0");
+                group.getBattleCommandList().add(c0);
+                groups.add(group);
+            }
+
+            {
+                Group group = new Group("g1");
+                group.getBattleCommandList().add(c1);
+                groups.add(group);
+            }
+            
+            {
+                Group group = new Group("g2");
+                group.getBattleCommandList().add(c2);
+                groups.add(group);
+            }
+            text = JSON.toJSONString(groups);
+        }
+
+        System.out.println(text);
+
+        List<Group> groups = JSON.parseObject(text, new TypeReference<List<Group>>() {
+        });
+        Group g0 = groups.get(0);
+        Group g1 = groups.get(1);
+
+        System.out.println(JSON.toJSONString(groups));
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;Group();;;public Group(){
+
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;Group(String);;;public Group(String name){
+            this.name = name;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;getBattleCommandList();;;public List<Command> getBattleCommandList() {
+            return battleCommandList;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;setBattleCommandList(List<Command>);;;public void setBattleCommandList(List<Command> battleCommandList) {
+            this.battleCommandList = battleCommandList;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;getName();;;public String getName() {
+            return name;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;setName(String);;;public void setName(String name) {
+            this.name = name;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;Command();;;public Command(){
+
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;Command(int);;;public Command(int id){
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;getId();;;public int getId() {
+            return id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;setId(int);;;public void setId(int id) {
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;getPre();;;public Command getPre() {
+            return pre;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;setPre(Command);;;public void setPre(Command pre) {
+            this.pre = pre;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;toString();;;public String toString() {
+            return "{id:" + id + "}";
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_wuzhengmao;getId();;;public int getId() {
+            return id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_wuzhengmao;setId(int);;;public void setId(int id) {
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_wuzhengmao;getParent();;;public Node getParent() {
+            return parent;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_wuzhengmao;setParent(Node);;;public void setParent(Node parent) {
+            this.parent = parent;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;addResolveTask(ResolveTask);;;public void addResolveTask(ResolveTask task) {
+        resolveTaskList.add(task);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;test_0();;;public void test_0() throws Exception {
+        String text;
+        {
+            List<Group> groups = new ArrayList<Group>();
+            
+            Group g0 = new Group(0);
+            Group g1 = new Group(1);
+            Group g2 = new Group(2);
+            
+            groups.add(g0);
+            groups.add(g1);
+            groups.add(g2);
+            groups.add(g0);
+            groups.add(g1);
+            groups.add(g2);
+            
+            text = JSON.toJSONString(groups);
+        }
+        
+        System.out.println(text);
+        
+        List<Group> groups = JSON.parseObject(text, new TypeReference<List<Group>>() {});
+        Assert.assertEquals(6, groups.size());
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;Group();;;public Group(){
+
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;Group(int);;;public Group(int id){
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;getId();;;public int getId() {
+            return id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;setId(int);;;public void setId(int id) {
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;toString();;;public String toString() {
+            return "{id:" + id + "}";
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;test_0();;;public void test_0() throws Exception {
+
+        String text;
+        {
+            List<Group> groups = new ArrayList<Group>();
+
+            Command c0 = new Command(1);
+            Command c1 = new Command(2);
+            Command c2 = new Command(3);
+
+            c1.setPre(c0);
+            c2.setPre(c1);
+
+            {
+                Group group = new Group("g0");
+                group.getBattleCommandList().add(c0);
+                groups.add(group);
+            }
+
+            {
+                Group group = new Group("g1");
+                group.getBattleCommandList().add(c1);
+                groups.add(group);
+            }
+            
+            {
+                Group group = new Group("g2");
+                group.getBattleCommandList().add(c2);
+                groups.add(group);
+            }
+            text = JSON.toJSONString(groups);
+        }
+
+        System.out.println(text);
+
+        List<Group> groups = JSON.parseObject(text, new TypeReference<List<Group>>() {
+        });
+        Group g0 = groups.get(0);
+        Group g1 = groups.get(1);
+
+        System.out.println(JSON.toJSONString(groups));
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;Group();;;public Group(){
+
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;Group(String);;;public Group(String name){
+            this.name = name;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;getBattleCommandList();;;public List<Command> getBattleCommandList() {
+            return battleCommandList;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;setBattleCommandList(List<Command>);;;public void setBattleCommandList(List<Command> battleCommandList) {
+            this.battleCommandList = battleCommandList;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;getName();;;public String getName() {
+            return name;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;setName(String);;;public void setName(String name) {
+            this.name = name;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;Command();;;public Command(){
+
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;Command(int);;;public Command(int id){
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;getId();;;public int getId() {
+            return id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;setId(int);;;public void setId(int id) {
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;getPre();;;public Command getPre() {
+            return pre;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;setPre(Command);;;public void setPre(Command pre) {
+            this.pre = pre;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_42283905;toString();;;public String toString() {
+            return "{id:" + id + "}";
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_wuzhengmao;getId();;;public int getId() {
+            return id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_wuzhengmao;setId(int);;;public void setId(int id) {
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_wuzhengmao;getParent();;;public Node getParent() {
+            return parent;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_wuzhengmao;setParent(Node);;;public void setParent(Node parent) {
+            this.parent = parent;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/JSON;handleResovleTask(DefaultJSONParser,T);;;        
+        return size;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/JSONArray;getComponentType();;;public Type getComponentType() {
+        return componentType;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/JSONArray;setComponentType(Type);;;public void setComponentType(Type componentType) {
+        this.componentType = componentType;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;DefaultJSONParser(Object,JSONLexer,ParserConfig);;;        this.lexer = lexer;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parseObject(Map,Object);                ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parseObject(Map,Object);;;
+                    this.setContext(object, fieldName);
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parseObject(Map);;;@SuppressWarnings("rawtypes")
+    public Object parseObject(final Map object) {
+        return parseObject(object, null);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parseObject();;;public JSONObject parseObject() {
+        JSONObject object = new JSONObject();
+        parseObject(object);
+        return object;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parseArray(Collection);;;@SuppressWarnings("rawtypes")
+    public final void parseArray(final Collection array) {
+        parseArray(array, null);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parseArray(Collection,Object);;;@SuppressWarnings({ "unchecked", "rawtypes" })
+    public final void parseArray(final Collection array, Object fieldName) {
+        final JSONLexer lexer = getLexer();
+
+        if (lexer.token() == JSONToken.SET || lexer.token() == JSONToken.TREE_SET) {
+            lexer.nextToken();
+        }
+
+        if (lexer.token() != JSONToken.LBRACKET) {
+            throw new JSONException("syntax error, expect [, actual " + JSONToken.name(lexer.token()));
+        }
+
+        lexer.nextToken(JSONToken.LITERAL_STRING);
+
+        this.setContext(array, fieldName);
+        try {
+            for (int i = 0;; ++i) {
+                if (isEnabled(Feature.AllowArbitraryCommas)) {
+                    while (lexer.token() == JSONToken.COMMA) {
+                        lexer.nextToken();
+                        continue;
+                    }
+                }
+
+                Object value;
+                switch (lexer.token()) {
+                    case LITERAL_INT:
+                        value = lexer.integerValue();
+                        lexer.nextToken(JSONToken.COMMA);
+                        break;
+                    case LITERAL_FLOAT:
+                        if (lexer.isEnabled(Feature.UseBigDecimal)) {
+                            value = lexer.decimalValue(true);
+                        } else {
+                            value = lexer.decimalValue(false);
+                        }
+                        lexer.nextToken(JSONToken.COMMA);
+                        break;
+                    case LITERAL_STRING:
+                        String stringLiteral = lexer.stringVal();
+                        lexer.nextToken(JSONToken.COMMA);
+
+                        if (lexer.isEnabled(Feature.AllowISO8601DateFormat)) {
+                            JSONScanner iso8601Lexer = new JSONScanner(stringLiteral);
+                            if (iso8601Lexer.scanISO8601DateIfMatch()) {
+                                value = iso8601Lexer.getCalendar().getTime();
+                            } else {
+                                value = stringLiteral;
+                            }
+                        } else {
+                            value = stringLiteral;
+                        }
+
+                        break;
+                    case TRUE:
+                        value = Boolean.TRUE;
+                        lexer.nextToken(JSONToken.COMMA);
+                        break;
+                    case FALSE:
+                        value = Boolean.FALSE;
+                        lexer.nextToken(JSONToken.COMMA);
+                        break;
+                    case LBRACE:
+                        JSONObject object = new JSONObject();
+                        value = parseObject(object, i);
+                        break;
+                    case LBRACKET:
+                        Collection items = new JSONArray();
+                        parseArray(items, i);
+                        value = items;
+                        break;
+                    case NULL:
+                        value = null;
+                        lexer.nextToken(JSONToken.LITERAL_STRING);
+                        break;
+                    case RBRACKET:
+                        lexer.nextToken(JSONToken.COMMA);
+                        return;
+                    default:
+                        value = parse();
+                        break;
+                }
+
+                array.add(value);
+                checkListResolve(array);
+
+                if (lexer.token() == JSONToken.COMMA) {
+                    lexer.nextToken(JSONToken.LITERAL_STRING);
+                    continue;
+                }
+            }
+        } finally {
+            this.popContext();
+        }
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parse();;;public Object parse() {
+        return parse(null);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;parse(Object);;;public Object parse(Object fieldName) {
+        final JSONLexer lexer = getLexer();
+        switch (lexer.token()) {
+            case SET:
+                lexer.nextToken();
+                HashSet<Object> set = new HashSet<Object>();
+                parseArray(set, fieldName);
+                return set;
+            case TREE_SET:
+                lexer.nextToken();
+                TreeSet<Object> treeSet = new TreeSet<Object>();
+                parseArray(treeSet, fieldName);
+                return treeSet;
+            case LBRACKET:
+                JSONArray array = new JSONArray();
+                parseArray(array, fieldName);
+                return array;
+            case LBRACE:
+                JSONObject object = new JSONObject();
+                return parseObject(object, fieldName);
+            case LITERAL_INT:
+                Number intValue = lexer.integerValue();
+                lexer.nextToken();
+                return intValue;
+            case LITERAL_FLOAT:
+                Object value = lexer.decimalValue(isEnabled(Feature.UseBigDecimal));
+                lexer.nextToken();
+                return value;
+            case LITERAL_STRING:
+                String stringLiteral = lexer.stringVal();
+                lexer.nextToken(JSONToken.COMMA);
+
+                if (lexer.isEnabled(Feature.AllowISO8601DateFormat)) {
+                    JSONScanner iso8601Lexer = new JSONScanner(stringLiteral);
+                    if (iso8601Lexer.scanISO8601DateIfMatch()) {
+                        return iso8601Lexer.getCalendar().getTime();
+                    }
+                }
+
+                return stringLiteral;
+            case NULL:
+                lexer.nextToken();
+                return null;
+            case TRUE:
+                lexer.nextToken();
+                return Boolean.TRUE;
+            case FALSE:
+                lexer.nextToken();
+                return Boolean.FALSE;
+            case NEW:
+                lexer.nextToken(JSONToken.IDENTIFIER);
+
+                if (lexer.token() != JSONToken.IDENTIFIER) {
+                    throw new JSONException("syntax error");
+                }
+                lexer.nextToken(JSONToken.LPAREN);
+
+                accept(JSONToken.LPAREN);
+                long time = ((Number) lexer.integerValue()).longValue();
+                accept(JSONToken.LITERAL_INT);
+
+                accept(JSONToken.RPAREN);
+
+                return new Date(time);
+            case EOF:
+                if (lexer.isBlankInput()) {
+                    return null;
+                }
+            default:
+                throw new JSONException("TODO " + lexer.tokenName() + " " + lexer.stringVal());
+        }
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;config(Feature,boolean);;;public void config(Feature feature, boolean state) {
+        getLexer().config(feature, state);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;accept(int);;;public final void accept(final int token) {
+        final JSONLexer lexer = getLexer();
+        if (lexer.token() == token) {
+            lexer.nextToken();
+        } else {
+            throw new JSONException("syntax error, expect " + JSONToken.name(token) + ", actual "
+                                    + JSONToken.name(lexer.token()));
+        }
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser;close();;;public void close() {
+        final JSONLexer lexer = getLexer();
+
+        if (isEnabled(Feature.AutoCloseSource)) {
+            if (!lexer.isEOF()) {
+                throw new JSONException("not close json text, token : " + JSONToken.name(lexer.token()));
+            }
+        }
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/deserializer/ListResolveFieldDeserializer;ListResolveFieldDeserializer(DefaultJSONParser,List,int);;;public ListResolveFieldDeserializer(DefaultJSONParser parser, List list, int index){
+        super(null, null);
+        this.parser = parser;
+        this.index = index;
+        this.list = list;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/main/java/com/alibaba/fastjson/parser/deserializer/ListResolveFieldDeserializer;getParser();;;public DefaultJSONParser getParser() {
+        return parser;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a;/src/test/java/com/alibaba/json/bvt/ArrayRefTest;test_0();;;        
+        Assert.assertEquals(0, groups.get(0).getId());
+        Assert.assertEquals(1, groups.get(1).getId());
+        Assert.assertEquals(2, groups.get(2).getId());
+        Assert.assertEquals(0, groups.get(3).getId());
+        Assert.assertEquals(1, groups.get(4).getId());
+        Assert.assertEquals(2, groups.get(5).getId());
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_62c589a_2c88690/rev_62c589a-2c88690;/src/main/java/com/alibaba/fastjson/parser/deserializer/TimestampDeserializer;cast(DefaultJSONParser,Type,Object,Object);;;@SuppressWarnings("unchecked")
+    protected <T> T cast(DefaultJSONParser parser, Type clazz, Object fieldName, Object val) {
+
+        if (val == null) {
+            return null;
+        }
+
+        if (val instanceof java.util.Date) {
+            return (T) new java.sql.Timestamp(((Date) val).getTime());
+        }
+
+        if (val instanceof Number) {
+            return (T) new java.sql.Timestamp(((Number) val).longValue());
+        }
+
+        if (val instanceof String) {
+            String strVal = (String) val;
+            if (strVal.length() == 0) {
+                return null;
+            }
+
+            DateFormat dateFormat = parser.getDateFormat();
+            try {
+                Date date = (Date) dateFormat.parse(strVal);
+                return (T) new Timestamp(date.getTime());
+            } catch (ParseException e) {
+                // skip
+            }
+
+            long longVal = Long.parseLong(strVal);
+            return (T) new java.sql.Timestamp(longVal);
+        }
+
+        throw new JSONException("parse error");
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_62c589a_2c88690/rev_62c589a-2c88690;/src/main/java/com/alibaba/fastjson/parser/deserializer/AbstractDateDeserializer;cast(DefaultJSONParser,Type,Object,Object);;;protected abstract <T> T cast(DefaultJSONParser parser, Type clazz, Object fieldName, Object value);
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_62c589a_2c88690/rev_62c589a-2c88690;/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer;cast(DefaultJSONParser,Type,Object,Object);;;@SuppressWarnings("unchecked")
+    protected <T> T cast(DefaultJSONParser parser, Type clazz, Object fieldName, Object val) {
+        if (val == null) {
+            return null;
+        }
+
+        if (val instanceof java.util.Date) {
+            val = new java.sql.Date(((Date) val).getTime());
+        } else if (val instanceof Number) {
+            val = (T) new java.sql.Date(((Number) val).longValue());
+        } else if (val instanceof String) {
+            String strVal = (String) val;
+            if (strVal.length() == 0) {
+                return null;
+            }
+
+            long longVal;
+
+            JSONScanner dateLexer = new JSONScanner(strVal);
+            if (dateLexer.scanISO8601DateIfMatch()) {
+                longVal = dateLexer.getCalendar().getTimeInMillis();
+            } else {
+
+                DateFormat dateFormat = parser.getDateFormat();
+                try {
+                    java.util.Date date = (java.util.Date) dateFormat.parse(strVal);
+                    return (T) new java.sql.Date(date.getTime());
+                } catch (ParseException e) {
+                    // skip
+                }
+
+                longVal = Long.parseLong(strVal);
+            }
+            return (T) new java.sql.Date(longVal);
+        } else {
+            throw new JSONException("parse error : " + val);
+        }
+
+        return (T) val;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_62c589a_2c88690/rev_62c589a-2c88690;/src/main/java/com/alibaba/fastjson/parser/deserializer/DateDeserializer;cast(DefaultJSONParser,Type,Object,Object);;;@SuppressWarnings("unchecked")
+    protected <T> T cast(DefaultJSONParser parser, Type clazz, Object fieldName, Object val) {
+
+        if (val == null) {
+            return null;
+        }
+
+        if (val instanceof java.util.Date) {
+            return (T) val;
+        } else if (val instanceof Number) {
+            return (T) new java.util.Date(((Number) val).longValue());
+        } else if (val instanceof String) {
+            String strVal = (String) val;
+            if (strVal.length() == 0) {
+                return null;
+            }
+
+            JSONScanner dateLexer = new JSONScanner(strVal);
+            if (dateLexer.scanISO8601DateIfMatch()) {
+                return (T) dateLexer.getCalendar().getTime();
+            }
+
+            DateFormat dateFormat = parser.getDateFormat();
+            try {
+                return (T) dateFormat.parse(strVal);
+            } catch (ParseException e) {
+                // skip
+            }
+
+            long longVal = Long.parseLong(strVal);
+            return (T) new java.util.Date(longVal);
+        }
+
+        throw new JSONException("parse error");
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_62c589a_2c88690/rev_62c589a-2c88690;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_6;test_for_objectKey();;;public void test_for_objectKey() throws Exception {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("id", 1);
+        map.put("name", "leno.lix");
+        map.put("birthday", new Date());
+        map.put("gmtCreate", new java.sql.Date(new Date().getTime()));
+        map.put("gmtModified", new java.sql.Timestamp(new Date().getTime()));
+
+        String userJSON = JSON.toJSONString(map, SerializerFeature.WriteClassName,
+                SerializerFeature.WriteMapNullValue);
+        
+        System.out.println(userJSON);
+
+        Object object = JSON.parse(userJSON);
+        
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646;/src/main/java/com/alibaba/fastjson/parser/deserializer/MapResolveFieldDeserializer;MapResolveFieldDeserializer(Map,String);;;public MapResolveFieldDeserializer(Map map, String index){
+        super(null, null);
+        this.key = index;
+        this.map = map;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646;/src/main/java/com/alibaba/fastjson/parser/deserializer/MapResolveFieldDeserializer;setValue(Object,Object);;;@SuppressWarnings("unchecked")
+    public void setValue(Object object, Object value) {
+        map.put(key, value);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646;/src/main/java/com/alibaba/fastjson/parser/deserializer/MapResolveFieldDeserializer;parseField(DefaultJSONParser,Object,Type,Map<String,Object>);;;@Override
+    public void parseField(DefaultJSONParser parser, Object object, Type objectType, Map<String, Object> fieldValues) {
+
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646;/src/main/java/com/alibaba/fastjson/parser/deserializer/MapResolveFieldDeserializer;getFastMatchToken();;;@Override
+    public int getFastMatchToken() {
+        return 0;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_9;getCity();;;public String getCity() {
+            return city;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_9;setCity(String);;;public void setCity(String city) {
+            this.city = city;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_9;getStreet();;;public String getStreet() {
+            return street;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_9;setStreet(String);;;public void setStreet(String street) {
+            this.street = street;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_9;getPostCode();;;public int getPostCode() {
+            return postCode;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_9;setPostCode(int);;;public void setPostCode(int postCode) {
+            this.postCode = postCode;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_f0023bb_e4033fb/rev_f0023bb-e4033fb;/hystrix-core/src/main/java/com/netflix/hystrix/HystrixCommandMetrics;getInstance(HystrixCommandKey);;;public static HystrixCommandMetrics getInstance(HystrixCommandKey key) {
+        return metrics.get(key.name());
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/main/java/com/alibaba/fastjson/serializer/SerializeConfig;createJavaBeanSerializer(Class<?>);        ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/main/java/com/alibaba/fastjson/serializer/SerializeConfig;createJavaBeanSerializer(Class<?>);        ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/main/java/com/alibaba/fastjson/serializer/SerializeConfig;createJavaBeanSerializer(Class<?>);;;        
+        {
+            JSONType annotation = clazz.getAnnotation(JSONType.class);
+            if (annotation != null && annotation.asm() == false) {
+                asm = false;
+            }
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/main/java/com/alibaba/fastjson/serializer/SerializeConfig;SerializeConfig(int);        ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEventDto;getSource();;;public String getSource() {
+        return source;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEventDto;setSource(String);;;public void setSource(String source) {
+        this.source = source;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEventDto;getEventList();;;public ArrayList<IEvent> getEventList() {
+        return eventList;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEventDto;setEventList(ArrayList<IEvent>);;;public void setEventList(ArrayList<IEvent> eventList) {
+        this.eventList = eventList;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEventDto;toString();;;@Override
+    public String toString() {
+        return "IEventDto [source=" + source + ", eventList=" + eventList + "]";
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEvent;getExternalId();;;public String getExternalId() {
+        return externalId;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEvent;setExternalId(String);;;public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEvent;getName();;;public String getName() {
+        return name;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEvent;setName(String);;;public void setName(String name) {
+        this.name = name;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEvent;getSource();;;public String getSource() {
+        return source;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEvent;setSource(String);;;public void setSource(String source) {
+        this.source = source;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEvent;getDetailData();;;public Map<String, Object> getDetailData() {
+        return detailData;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEvent;setDetailData(Map<String,Object>);;;public void setDetailData(Map<String, Object> detailData) {
+        this.detailData = detailData;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEvent;getGenerateTime();;;public Timestamp getGenerateTime() {
+        return generateTime;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEvent;setGenerateTime(Timestamp);;;public void setGenerateTime(Timestamp generateTime) {
+        this.generateTime = generateTime;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7;/src/test/java/com/alibaba/json/bvtVO/IEvent;toString();;;@Override
+    public String toString() {
+        return "IEvent [name=" + name + ", source=" + source + ", externalId=" + externalId
+                + ", generateTime=" + generateTime + ", detailData=" + detailData + "]";
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960;/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory;createJavaBeanSerializer(Class<?>,Map<String,String>);;;            {
+                FieldVisitor fw = cw.visitField(ACC_PUBLIC, fieldInfo.getName() + "_asm_fieldPrefix",
+                                                "Ljava/lang/reflect/Type;");
+                fw.visitEnd();
+            }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960;/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory;createJavaBeanSerializer(Class<?>,Map<String,String>);            ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960;/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory;createJavaBeanSerializer(Class<?>,Map<String,String>);            ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960;/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory;generateWriteMethod(Class<?>,MethodVisitor,List<FieldInfo>,Context);;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960;/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory;_writeObject(MethodVisitor,FieldInfo,Context,Label);                ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960;/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory;_writeObject(MethodVisitor,FieldInfo,Context,Label);                mw.visitFieldInsn(GETFIELD, context.getClassName(), fieldInfo.getName() + "_asm_fieldType", "Ljava/lang/reflect/Type;");;;                mw.visitFieldInsn(GETFIELD, context.getClassName(), fieldInfo.getName() + "_asm_fieldType",
+                                  "Ljava/lang/reflect/Type;");
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;close();        ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeStringWithDoubleQuote(String,char,boolean);;;private void writeStringWithDoubleQuote(String text, final char seperator, boolean checkSpecial) {
+        // final boolean[] specicalFlags_doubleQuotes =
+        // CharTypes.specicalFlags_doubleQuotes;
+        // final int len_flags = specicalFlags_doubleQuotes.length;
+
+        if (text == null) {
+            writeNull();
+            return;
+        }
+
+        int len = text.length();
+        int newcount = count + len + 2;
+        if (seperator != 0) {
+            newcount++;
+        }
+
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+
+        int start = count + 1;
+        int end = start + len;
+
+        buf[count] = '\"';
+        text.getChars(0, len, buf, start);
+
+        count = newcount;
+
+        if (isEnabled(SerializerFeature.BrowserCompatible)) {
+            int lastSpecialIndex = -1;
+
+            for (int i = start; i < end; ++i) {
+                char ch = buf[i];
+
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+
+                if (ch < 32) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+
+                if (CharTypes.isEmoji(ch)) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+            }
+
+            if (newcount > buf.length) {
+                expandCapacity(newcount);
+            }
+            count = newcount;
+
+            for (int i = lastSpecialIndex; i >= start; --i) {
+                char ch = buf[i];
+
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end += 1;
+                    continue;
+                }
+
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = ch;
+                    end += 1;
+                    continue;
+                }
+
+                if (ch < 32) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = '0';
+                    buf[i + 3] = '0';
+                    buf[i + 4] = CharTypes.ASCII_CHARS[ch * 2];
+                    buf[i + 5] = CharTypes.ASCII_CHARS[ch * 2 + 1];
+                    end += 5;
+                    continue;
+                }
+
+                if (CharTypes.isEmoji(ch)) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = CharTypes.digits[(ch >>> 12) & 15];
+                    buf[i + 3] = CharTypes.digits[(ch >>> 8) & 15];
+                    buf[i + 4] = CharTypes.digits[(ch >>> 4) & 15];
+                    buf[i + 5] = CharTypes.digits[ch & 15];
+                    end += 5;
+                }
+            }
+
+            if (seperator != 0) {
+                buf[count - 2] = '\"';
+                buf[count - 1] = seperator;
+            } else {
+                buf[count - 1] = '\"';
+            }
+
+            return;
+        }
+
+        int specialCount = 0;
+        int lastSpecialIndex = -1;
+        char lastSpecial = '\0';
+        if (checkSpecial) {
+            for (int i = start; i < end; ++i) {
+                char ch = buf[i];
+
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                    && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                    specialCount++;
+                    lastSpecialIndex = i;
+                    lastSpecial = ch;
+                }
+            }
+        }
+
+        newcount += specialCount;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+        count = newcount;
+
+        if (specialCount == 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+        } else if (specialCount > 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+            end++;
+            for (int i = lastSpecialIndex - 2; i >= start; --i) {
+                char ch = buf[i];
+
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                    && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end++;
+                }
+            }
+        }
+
+        if (seperator != 0) {
+            buf[count - 2] = '\"';
+            buf[count - 1] = seperator;
+        } else {
+            buf[count - 1] = '\"';
+        }
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeFieldValue(char,String,boolean);        ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeFieldValueStringWithDoubleQuote(char,String,String);;;            if (ch >= 'a') {
+                continue;
+            }
+            
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeFieldValue(char,String,Enum<?>);        ;;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3d572a0_90ae5a9/rev_3d572a0-90ae5a9;/src/main/java/com/alibaba/fastjson/util/TypeUtils;computeGetters(Class<?>,Map<String,String>,boolean);;;                } else if (methodName.length()>=5 && Character.isUpperCase(methodName.charAt(4))){
+                    propertyName = Introspector.decapitalize(methodName.substring(3));
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/main/java/com/alibaba/fastjson/parser/SymbolTable;subString(String,int,int);;;private static String subString(String src, int offset, int len) {
+        char[] chars = new char[len];
+        for (int i = offset; i < offset + len; ++i) {
+            chars[i - offset] = src.charAt(i);
+        }
+        return new String(chars);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/main/java/com/alibaba/fastjson/parser/deserializer/FieldDeserializer;setValue(Object,Object);;;                    if (value == null && fieldInfo.getFieldClass().isPrimitive()) {
+                        return;
+                    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer;deserialze(DefaultJSONParser,Type,Object,Object);;;        if (type == JSON.class || type == JSONObject.class) {
+            return (T) parser.parse();
+        }
+        
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_int;test_emptyStr();;;public void test_emptyStr() throws Exception {
+        JSON.parseObject("{\"value\":\"\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_int;test_null();;;public void test_null() throws Exception {
+        JSON.parseObject("{\"value\":null}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_int;test_strNull();;;public void test_strNull() throws Exception {
+        JSON.parseObject("{\"value\":\"null\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_int;getValue();;;public int getValue() {
+            return value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_int;setValue(int);;;public void setValue(int value) {
+            throw new UnsupportedOperationException();
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_short;test_emptyStr();;;public void test_emptyStr() throws Exception {
+        JSON.parseObject("{\"value\":\"\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_short;test_null();;;public void test_null() throws Exception {
+        JSON.parseObject("{\"value\":null}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_short;test_strNull();;;public void test_strNull() throws Exception {
+        JSON.parseObject("{\"value\":\"null\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_short;getValue();;;public short getValue() {
+            return value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_short;setValue(short);;;public void setValue(short value) {
+            throw new UnsupportedOperationException();
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_float;test_emptyStr();;;public void test_emptyStr() throws Exception {
+        JSON.parseObject("{\"value\":\"\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_float;test_null();;;public void test_null() throws Exception {
+        JSON.parseObject("{\"value\":null}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_float;test_strNull();;;public void test_strNull() throws Exception {
+        JSON.parseObject("{\"value\":\"null\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_float;getValue();;;public float getValue() {
+            return value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_float;setValue(float);;;public void setValue(float value) {
+            throw new UnsupportedOperationException();
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_long;test_emptyStr();;;public void test_emptyStr() throws Exception {
+        JSON.parseObject("{\"value\":\"\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_long;test_null();;;public void test_null() throws Exception {
+        JSON.parseObject("{\"value\":null}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_long;test_strNull();;;public void test_strNull() throws Exception {
+        JSON.parseObject("{\"value\":\"null\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_long;getValue();;;public long getValue() {
+            return value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_long;setValue(long);;;public void setValue(long value) {
+            throw new UnsupportedOperationException();
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_byte;test_emptyStr();;;public void test_emptyStr() throws Exception {
+        JSON.parseObject("{\"value\":\"\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_byte;test_null();;;public void test_null() throws Exception {
+        JSON.parseObject("{\"value\":null}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_byte;test_strNull();;;public void test_strNull() throws Exception {
+        JSON.parseObject("{\"value\":\"null\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_byte;getValue();;;public byte getValue() {
+            return value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_byte;setValue(byte);;;public void setValue(byte value) {
+            throw new UnsupportedOperationException();
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_json_array;test_bug();;;public void test_bug() throws Exception {
+        String jsonStr = "{\"state\":0,\"data\":[{\"items\":[{\"tip\":\"\u5218\u82e5\u82f1\",\"url\":\"xiami:\\/\\/artist\\/1930\"},{\"tip\":\"\u5218\u5fb7\u534e\",\"url\":\"xiami:\\/\\/artist\\/648\"}],\"type\":\"artist\"},{\"items\":[{\"tip\":\"\u6f02\u6d0b\u8fc7\u6d77\u6765\u770b\u4f60 (Live) - \u5218\u660e\u6e58\",\"url\":\"xiami:\\/\\/song\\/1773431302\"},{\"tip\":\"\\u6211\\u4eec\\u6ca1\\u6709\\u5728\\u4e00\\u8d77 - \\u5218\\u82e5\\u82f1\",\"url\":\"xiami:\\/\\/song\\/1769471863\"},{\"tip\":\"\\u54ed\u7802 (Live)(\\u5218\\u660e\\u6e58\\u80dc\\u51fa) - \\u5218\u660e\u6e58\",\"url\":\"xiami:\\/\\/ song\\/1773484887\"}],\"type\":\"song\"},{\"items\":[{\"tip\":\"\\u4eb2\\u7231\\u7684\\u8def\\u4eba - \\u5218\\u82e5\\u82f1\",\"url\":\"xiami:\\/\\/album\\/55230\"},{\"tip\":\"\\u5728\\u4e00\\u8d77 - \\u5218\\u82e5\\u82f1\",\"url\":\"xiami:\\/\\/album\\/377241\"}],\"type\":\"album\"}],\"status\":\"ok\",\"err\":null} ";
+
+        Parser parser = JSON.parseObject(jsonStr, Parser.class);
+
+        System.out.println(JSON.toJSONString(parser));
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_json_array;getState();;;public int getState() {
+            return state;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_json_array;setState(int);;;public void setState(int state) {
+            this.state = state;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_json_array;getData();;;public JSON getData() {
+            return data;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_json_array;setData(JSON);;;public void setData(JSON data) {
+            this.data = data;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_json_array;getStatus();;;public String getStatus() {
+            return status;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_json_array;setStatus(String);;;public void setStatus(String status) {
+            this.status = status;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_json_array;getErr();;;public String getErr() {
+            return err;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_json_array;setErr(String);;;public void setErr(String err) {
+            this.err = err;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_boolean;test_emptyStr();;;public void test_emptyStr() throws Exception {
+        JSON.parseObject("{\"value\":\"\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_boolean;test_null();;;public void test_null() throws Exception {
+        JSON.parseObject("{\"value\":null}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_boolean;test_strNull();;;public void test_strNull() throws Exception {
+        JSON.parseObject("{\"value\":\"null\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_boolean;getValue();;;public boolean getValue() {
+            return value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_boolean;setValue(boolean);;;public void setValue(boolean value) {
+            throw new UnsupportedOperationException();
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_double;test_emptyStr();;;public void test_emptyStr() throws Exception {
+        JSON.parseObject("{\"value\":\"\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_double;test_null();;;public void test_null() throws Exception {
+        JSON.parseObject("{\"value\":null}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_double;test_strNull();;;public void test_strNull() throws Exception {
+        JSON.parseObject("{\"value\":\"null\"}", VO.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_double;getValue();;;public double getValue() {
+            return value;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_primitive_double;setValue(double);;;public void setValue(double value) {
+            throw new UnsupportedOperationException();
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c07047_40cd238/rev_3c07047-40cd238;/src/main/java/com/alibaba/fastjson/support/jaxrs/FastJsonProvider;FastJsonProvider(String);;;public FastJsonProvider(String charset) {
+    	this.charset = charset;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c07047_40cd238/rev_3c07047-40cd238;/src/main/java/com/alibaba/fastjson/support/jaxrs/FastJsonProvider;writeTo(Object,Class<?>,Type,Annotation[],MediaType,MultivaluedMap<String,Object>,OutputStream);;;        
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c07047_40cd238/rev_3c07047-40cd238;/src/main/java/com/alibaba/fastjson/support/jaxrs/FastJsonProvider;inputStreamReadString(InputStream);;;private String inputStreamReadString(InputStream in) {
+		
+		StringBuffer buffer = new StringBuffer();
+
+		BufferedReader br;
+		
+		try {
+			br = new BufferedReader(new InputStreamReader(in, charset));
+			
+			String line;
+			
+			while ((line = br.readLine()) != null) {
+			
+				buffer.append(line);
+			}
+			
+		} catch (Exception ex) {
+			 throw new JSONException("read string from reader error", ex);
+		}
+		
+		return buffer.toString();
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c07047_40cd238/rev_3c07047-40cd238;/src/main/java/com/alibaba/fastjson/support/jaxrs/FastJsonProvider;outputStreamWriteString(OutputStream,String);;;private void outputStreamWriteString(OutputStream out, String str) {
+    	
+    	BufferedWriter bw;
+    	
+		try {
+			bw = new BufferedWriter(new OutputStreamWriter(out, charset));
+			
+			bw.write(str);
+			
+			bw.flush();
+			
+		} catch (Exception ex) {
+			 throw new JSONException("write string to writer error", ex);
+		}
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c07047_40cd238/rev_3c07047-40cd238;/src/main/java/com/alibaba/fastjson/support/spring/FastJsonHttpMessageConverter;canRead(Type,Class<?>,MediaType);;;@Override
+	public boolean canRead(Type type, Class<?> contextClass, MediaType mediaType) {
+
+		return super.canRead(type.getClass(), mediaType);
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_3c07047_40cd238/rev_3c07047-40cd238;/src/main/java/com/alibaba/fastjson/support/spring/FastJsonHttpMessageConverter;read(Type,Class<?>,HttpInputMessage);;;@Override
+	public Object read(Type type, Class<?> contextClass,
+            HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+        InputStream in = inputMessage.getBody();
+
+        byte[] buf = new byte[1024];
+        for (;;) {
+            int len = in.read(buf);
+            if (len == -1) {
+                break;
+            }
+
+            if (len > 0) {
+                baos.write(buf, 0, len);
+            }
+        }
+
+        byte[] bytes = baos.toByteArray();
+        
+        return JSON.parseObject(bytes, 0, bytes.length, charset.newDecoder(), type);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225;/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory;_list(Class<?>,MethodVisitor,FieldInfo,Context);;;            
+           
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225;/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory;_list(Class<?>,MethodVisitor,FieldInfo,Context);;;                
+                mw.visitVarInsn(ILOAD, context.var("i"));
+                mw.visitMethodInsn(INVOKEVIRTUAL, SerializeWriter, "writeStringWithDoubleQuoteDirect",
+                        "(Ljava/lang/String;I)V");
+            } else {
+                Label _first = new Label();
+                mw.visitVarInsn(ILOAD, context.var("i"));
+                mw.visitJumpInsn(IFEQ, _first); // i < list.size - 1
+                
+                mw.visitVarInsn(ALOAD, context.var("out"));
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225;/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory;_list(Class<?>,MethodVisitor,FieldInfo,Context);;;                mw.visitMethodInsn(INVOKEVIRTUAL, SerializeWriter, "write", "(I)V");
+                
+                mw.visitLabel(_first);
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225;/src/test/java/com/alibaba/json/bvt/serializer/ListFieldTest;test_for_list();;;public void test_for_list() throws Exception {
+        Model model = new Model();
+        model.id = 1000;
+        Assert.assertEquals("{\"id\":1000,\"values\":[]}", JSON.toJSONString(model));
+        
+        model.values.add("1001");
+        Assert.assertEquals("{\"id\":1000,\"values\":[\"1001\"]}", JSON.toJSONString(model));
+        
+        model.values.add("1002");
+        Assert.assertEquals("{\"id\":1000,\"values\":[\"1001\",\"1002\"]}", JSON.toJSONString(model));
+        
+        model.values.add("1003");
+        Assert.assertEquals("{\"id\":1000,\"values\":[\"1001\",\"1002\",\"1003\"]}", JSON.toJSONString(model));
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225;/src/test/java/com/alibaba/json/bvt/serializer/ListFieldTest;getId();;;public int getId() {
+            return id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225;/src/test/java/com/alibaba/json/bvt/serializer/ListFieldTest;setId(int);;;public void setId(int id) {
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225;/src/test/java/com/alibaba/json/bvt/serializer/ListFieldTest;getValues();;;public List<String> getValues() {
+            return values;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_2292e51_354d504/rev_2292e51-354d504;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1254;get_parentId();;;public String get_parentId() {
+            return _parentId;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_2292e51_354d504/rev_2292e51-354d504;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1254;set_parentId(String);;;public void set_parentId(String _parentId) {
+            this._parentId = _parentId;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/main/java/com/alibaba/fastjson/parser/deserializer/ThrowableDeserializer;deserialze(DefaultJSONParser,Type,Object);;;        for (Map.Entry<String, Object> entry : otherValues.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            FieldDeserializer fieldDeserializer = this.getFieldDeserializer(key);
+            if (fieldDeserializer != null) {
+                fieldDeserializer.setValue(ex, value);
+            }
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory;_writeObject(MethodVisitor,FieldInfo,Context,Label);;;            boolean disableCircularReferenceDetect = (fieldInfo.serialzeFeatures & SerializerFeature.DisableCircularReferenceDetect.mask) != 0;
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_luogongwu;test_for_issue();;;public void test_for_issue() throws Exception {
+        List<IflowItemImage> imageList = new ArrayList<IflowItemImage>();
+        IflowItemImage image = new IflowItemImage();
+        image.id = "72c7275c6b";
+        imageList.add(image);
+
+        imageList = new ArrayList();
+        image = new IflowItemImage();
+        image.id = "72c7275c6c";
+        imageList.add(image);
+
+        // force ASM
+        boolean asm = SerializeConfig.globalInstance.isAsmEnable();
+        SerializeConfig.globalInstance.setAsmEnable(true);
+
+        // Test ASM
+        Foo foo = new Foo();
+        foo.thumbnails = imageList;
+
+        String jsonString = JSON.toJSONString(foo);
+        System.out.println(jsonString);
+
+        Foo foo1 = JSON.parseObject(jsonString, Foo.class);
+
+        assertEquals(1, foo1.thumbnails.size());
+        assertNotNull(foo1.thumbnails.get(0));
+        assertSame(foo1.getThumbnail(), foo1.thumbnails.get(0));
+
+
+        // test Not ASM
+        SerializeConfig.globalInstance.setAsmEnable(false);
+        FooNotAsm fooNotAsm = new FooNotAsm();
+        fooNotAsm.thumbnails = imageList;
+
+        jsonString = JSON.toJSONString(foo);
+        System.out.println(jsonString);
+
+        FooNotAsm fooNotAsm1 = JSON.parseObject(jsonString, FooNotAsm.class);
+
+        assertEquals(1, fooNotAsm1.thumbnails.size());
+        assertNotNull(fooNotAsm1.thumbnails.get(0));
+        assertSame(fooNotAsm1.getThumbnail(), fooNotAsm1.thumbnails.get(0));
+
+        // restore
+        SerializeConfig.globalInstance.setAsmEnable(asm);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_luogongwu;getThumbnail();;;public IflowItemImage getThumbnail() {
+            return thumbnails != null && thumbnails.size() > 0 ? thumbnails.get(0) : null;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/bug/Bug_for_luogongwu;getThumbnail();;;public IflowItemImage getThumbnail() {
+            return thumbnails != null && thumbnails.size() > 0 ? thumbnails.get(0) : null;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1262;test_for_issue();;;public void test_for_issue() throws Exception {
+        Model model = JSON.parseObject("{\"chatterMap\":{}}", Model.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1276;test_for_issue();;;public void test_for_issue() throws Exception {
+        MyException myException = new MyException(100,"error msg");
+        String str = JSON.toJSONString(myException);
+        System.out.println(str);
+
+        MyException myException1 = JSON.parseObject(str, MyException.class);
+        assertEquals(myException.getCode(), myException1.getCode());
+
+        String str1 = JSON.toJSONString(myException1);
+        assertEquals(str, str1);
+
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1276;MyException();;;public MyException() {
+            super();
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1276;MyException(String,Throwable);;;public MyException(String message, Throwable cause) {
+            super(message, cause);
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1276;MyException(String);;;public MyException(String message) {
+            super(message);
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1276;MyException(Throwable);;;public MyException(Throwable cause) {
+            super(cause);
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1276;MyException(long);;;public MyException(long code) {
+            super();
+            this.code = code;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1276;MyException(long,String,Throwable);;;public MyException(long code, String message, Throwable cause) {
+            super(message, cause);
+            this.code = code;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1276;MyException(long,String);;;public MyException(long code, String message) {
+            super(message);
+            this.code = code;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1276;MyException(long,Throwable);;;public MyException(long code, Throwable cause) {
+            super(cause);
+            this.code = code;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1276;setCode(long);;;public void setCode(long code) {
+            this.code = code;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1276;getCode();;;public long getCode() {
+            return code;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a;/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1276;toString();;;@Override
+        public String toString() {
+            return "MyException{" +
+                    "code=" + code +
+                    '}';
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest;setUp();@Setup(Level.Iteration)
+        public void setUp() {
+            counter = new HystrixRollingNumber(
+                    HystrixProperty.Factory.asProperty(100),
+                    HystrixProperty.Factory.asProperty(10));
+        };;@Setup(Level.Iteration)
+		public void setUp() {
+			counter = new HystrixRollingNumber(
+					HystrixProperty.Factory.asProperty(100),
+					HystrixProperty.Factory.asProperty(10));
+		}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest;setUp();@Setup(Level.Invocation)
+        public void setUp() {
+            value = r.nextInt(100);
+        };;@Setup(Level.Invocation)
+		public void setUp() {
+			value = r.nextInt(100);
+		}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest;writeOnly(CounterState,ValueState);@Benchmark
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber writeOnly(CounterState counterState, ValueState valueState) {
+        counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+        return counterState.counter;
+    };;@Benchmark
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber writeOnly(CounterState counterState, ValueState valueState) {
+		counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+		return counterState.counter;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest;readOnly(CounterState);@Benchmark
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long readOnly(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+    };;@Benchmark
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long readOnly(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest;writeHeavyUpdateMax(CounterState,ValueState);@Benchmark
+    @Group("writeHeavy")
+    @GroupThreads(7)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber writeHeavyUpdateMax(CounterState counterState, ValueState valueState) {
+        counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+        return counterState.counter;
+    };;@Benchmark
+	@Group("writeHeavy")
+	@GroupThreads(7)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber writeHeavyUpdateMax(CounterState counterState, ValueState valueState) {
+		counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+		return counterState.counter;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest;writeHeavyReadMetrics(CounterState);@Benchmark
+    @Group("writeHeavy")
+    @GroupThreads(1)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long writeHeavyReadMetrics(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+    };;@Benchmark
+	@Group("writeHeavy")
+	@GroupThreads(1)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long writeHeavyReadMetrics(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest;evenSplitUpdateMax(CounterState,ValueState);@Benchmark
+    @Group("evenSplit")
+    @GroupThreads(4)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber evenSplitUpdateMax(CounterState counterState, ValueState valueState) {
+        counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+        return counterState.counter;
+    };;@Benchmark
+	@Group("evenSplit")
+	@GroupThreads(4)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber evenSplitUpdateMax(CounterState counterState, ValueState valueState) {
+		counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+		return counterState.counter;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest;evenSplitReadMetrics(CounterState);@Benchmark
+    @Group("evenSplit")
+    @GroupThreads(4)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long evenSplitReadMetrics(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+    };;@Benchmark
+	@Group("evenSplit")
+	@GroupThreads(4)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long evenSplitReadMetrics(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest;readHeavyUpdateMax(CounterState,ValueState);@Benchmark
+    @Group("readHeavy")
+    @GroupThreads(1)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber readHeavyUpdateMax(CounterState counterState, ValueState valueState) {
+        counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+        return counterState.counter;
+    };;@Benchmark
+	@Group("readHeavy")
+	@GroupThreads(1)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber readHeavyUpdateMax(CounterState counterState, ValueState valueState) {
+		counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+		return counterState.counter;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest;readHeavyReadMetrics(CounterState);@Benchmark
+    @Group("readHeavy")
+    @GroupThreads(7)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long readHeavyReadMetrics(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+    };;@Benchmark
+	@Group("readHeavy")
+	@GroupThreads(7)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long readHeavyReadMetrics(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest;setUp();@Setup(Level.Iteration)
+        public void setUp() {
+            counter = new HystrixRollingNumber(
+                    HystrixProperty.Factory.asProperty(100),
+                    HystrixProperty.Factory.asProperty(10));
+        };;@Setup(Level.Iteration)
+		public void setUp() {
+			counter = new HystrixRollingNumber(
+					HystrixProperty.Factory.asProperty(100),
+					HystrixProperty.Factory.asProperty(10));
+		}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest;setUp();@Setup(Level.Invocation)
+        public void setUp() {
+            value = r.nextInt(100);
+            int typeInt = r.nextInt(3);
+            switch(typeInt) {
+                case 0:
+                    type = HystrixRollingNumberEvent.SUCCESS;
+                    break;
+                case 1:
+                    type = HystrixRollingNumberEvent.FAILURE;
+                    break;
+                case 2:
+                    type = HystrixRollingNumberEvent.TIMEOUT;
+                    break;
+                default: throw new RuntimeException("Unexpected : " + typeInt);
+            }
+        };;@Setup(Level.Invocation)
+		public void setUp() {
+			value = r.nextInt(100);
+			int typeInt = r.nextInt(3);
+			switch(typeInt) {
+				case 0:
+					type = HystrixRollingNumberEvent.SUCCESS;
+					break;
+				case 1:
+					type = HystrixRollingNumberEvent.FAILURE;
+					break;
+				case 2:
+					type = HystrixRollingNumberEvent.TIMEOUT;
+					break;
+				default: throw new RuntimeException("Unexpected : " + typeInt);
+			}
+		}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest;writeOnly(CounterState,ValueState);@Benchmark
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber writeOnly(CounterState counterState, ValueState valueState) {
+        counterState.counter.add(valueState.type, valueState.value);
+        return counterState.counter;
+    };;@Benchmark
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber writeOnly(CounterState counterState, ValueState valueState) {
+		counterState.counter.add(valueState.type, valueState.value);
+		return counterState.counter;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest;readOnly(CounterState);@Benchmark
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long readOnly(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+                counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+    };;@Benchmark
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long readOnly(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+				counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest;writeHeavyCounterAdd(CounterState,ValueState);@Benchmark
+    @Group("writeHeavy")
+    @GroupThreads(7)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber writeHeavyCounterAdd(CounterState counterState, ValueState valueState) {
+        counterState.counter.add(valueState.type, valueState.value);
+        return counterState.counter;
+    };;@Benchmark
+	@Group("writeHeavy")
+	@GroupThreads(7)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber writeHeavyCounterAdd(CounterState counterState, ValueState valueState) {
+		counterState.counter.add(valueState.type, valueState.value);
+		return counterState.counter;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest;writeHeavyReadMetrics(CounterState);@Benchmark
+    @Group("writeHeavy")
+    @GroupThreads(1)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long writeHeavyReadMetrics(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+                counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+    };;@Benchmark
+	@Group("writeHeavy")
+	@GroupThreads(1)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long writeHeavyReadMetrics(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+				counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest;evenSplitCounterAdd(CounterState,ValueState);@Benchmark
+    @Group("evenSplit")
+    @GroupThreads(4)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber evenSplitCounterAdd(CounterState counterState, ValueState valueState) {
+        counterState.counter.add(valueState.type, valueState.value);
+        return counterState.counter;
+    };;@Benchmark
+	@Group("evenSplit")
+	@GroupThreads(4)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber evenSplitCounterAdd(CounterState counterState, ValueState valueState) {
+		counterState.counter.add(valueState.type, valueState.value);
+		return counterState.counter;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest;evenSplitReadMetrics(CounterState);@Benchmark
+    @Group("evenSplit")
+    @GroupThreads(4)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long evenSplitReadMetrics(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+                counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+    };;@Benchmark
+	@Group("evenSplit")
+	@GroupThreads(4)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long evenSplitReadMetrics(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+				counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest;readHeavyCounterAdd(CounterState,ValueState);@Benchmark
+    @Group("readHeavy")
+    @GroupThreads(1)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber readHeavyCounterAdd(CounterState counterState, ValueState valueState) {
+        counterState.counter.add(valueState.type, valueState.value);
+        return counterState.counter;
+    };;@Benchmark
+	@Group("readHeavy")
+	@GroupThreads(1)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber readHeavyCounterAdd(CounterState counterState, ValueState valueState) {
+		counterState.counter.add(valueState.type, valueState.value);
+		return counterState.counter;
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd;/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest;readHeavyReadMetrics(CounterState);@Benchmark
+    @Group("readHeavy")
+    @GroupThreads(7)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long readHeavyReadMetrics(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+                counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+    };;@Benchmark
+	@Group("readHeavy")
+	@GroupThreads(7)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long readHeavyReadMetrics(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+				counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+	}
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/main/java/com/alibaba/fastjson/support/spring/FastJsonHttpMessageConverter;getType(Type,Class<?>);;;protected Type getType(Type type, Class<?> contextClass) {
+        if(contextClass != null) {
+            ResolvableType resolvedType = ResolvableType.forType(type);
+            if(type instanceof TypeVariable) {
+                ResolvableType resolvedTypeVariable = this.resolveVariable((TypeVariable)type, ResolvableType.forClass(contextClass));
+                if(resolvedTypeVariable != ResolvableType.NONE) {
+                    return resolvedTypeVariable.resolve();
+                }
+            } else if(type instanceof ParameterizedType && resolvedType.hasUnresolvableGenerics()) {
+                ParameterizedType parameterizedType = (ParameterizedType)type;
+                Class<?>[] generics = new Class[parameterizedType.getActualTypeArguments().length];
+                Type[] typeArguments = parameterizedType.getActualTypeArguments();
+
+                for(int i = 0; i < typeArguments.length; ++i) {
+                    Type typeArgument = typeArguments[i];
+                    if(typeArgument instanceof TypeVariable) {
+                        ResolvableType resolvedTypeArgument = this.resolveVariable((TypeVariable)typeArgument, ResolvableType.forClass(contextClass));
+                        if(resolvedTypeArgument != ResolvableType.NONE) {
+                            generics[i] = resolvedTypeArgument.resolve();
+                        } else {
+                            generics[i] = ResolvableType.forType(typeArgument).resolve();
+                        }
+                    } else {
+                        generics[i] = ResolvableType.forType(typeArgument).resolve();
+                    }
+                }
+
+                return ResolvableType.forClassWithGenerics(resolvedType.getRawClass(), generics).getType();
+            }
+        }
+
+        return type;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/main/java/com/alibaba/fastjson/support/spring/FastJsonHttpMessageConverter;resolveVariable(TypeVariable<?>,ResolvableType);;;private ResolvableType resolveVariable(TypeVariable<?> typeVariable, ResolvableType contextType) {
+        ResolvableType resolvedType;
+        if (contextType.hasGenerics()) {
+            resolvedType = ResolvableType.forType(typeVariable, contextType);
+            if (resolvedType.resolve() != null) {
+                return resolvedType;
+            }
+        }
+
+        ResolvableType superType = contextType.getSuperType();
+        if (superType != ResolvableType.NONE) {
+            resolvedType = resolveVariable(typeVariable, superType);
+            if (resolvedType.resolve() != null) {
+                return resolvedType;
+            }
+        }
+        for (ResolvableType ifc : contextType.getInterfaces()) {
+            resolvedType = resolveVariable(typeVariable, ifc);
+            if (resolvedType.resolve() != null) {
+                return resolvedType;
+            }
+        }
+        return ResolvableType.NONE;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;getBookId();;;public int getBookId() {
+            return bookId;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;setBookId(int);;;public void setBookId(int bookId) {
+            this.bookId = bookId;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;getBookName();;;public String getBookName() {
+            return bookName;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;setBookName(String);;;public void setBookName(String bookName) {
+            this.bookName = bookName;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;getPublisher();;;public String getPublisher() {
+            return publisher;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;setPublisher(String);;;public void setPublisher(String publisher) {
+            this.publisher = publisher;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;getIsbn();;;public String getIsbn() {
+            return isbn;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;setIsbn(String);;;public void setIsbn(String isbn) {
+            this.isbn = isbn;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;getPublishTime();;;public Date getPublishTime() {
+            return publishTime;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;setPublishTime(Date);;;public void setPublishTime(Date publishTime) {
+            this.publishTime = publishTime;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;getHello();;;public Object getHello() {
+            return hello;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;setHello(Object);;;public void setHello(Object hello) {
+            this.hello = hello;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;configure(FeatureContext);;;public boolean configure(final FeatureContext context) {
+            final Configuration config = context.getConfiguration();
+            final String jsonFeature = CommonProperties.getValue(config.getProperties(), config.getRuntimeType(), InternalProperties.JSON_FEATURE, JSON_FEATURE,
+                    String.class);
+            // Other JSON providers registered.
+            if (!JSON_FEATURE.equalsIgnoreCase(jsonFeature)) {
+                return false;
+            }
+            // Disable other JSON providers.
+            context.property(PropertiesHelper.getPropertyNameForRuntime(InternalProperties.JSON_FEATURE, config.getRuntimeType()), JSON_FEATURE);
+            // Register FastJson.
+            if (!config.isRegistered(FastJsonProvider.class)) {
+                //DisableCircularReferenceDetect
+                FastJsonProvider fastJsonProvider = new FastJsonProvider();
+                FastJsonConfig fastJsonConfig = new FastJsonConfig();
+                //fastJsonConfig.setSerializerFeatures(SerializerFeature.DisableCircularReferenceDetect,SerializerFeature.BrowserSecure);
+
+                fastJsonConfig.setSerializerFeatures(SerializerFeature.DisableCircularReferenceDetect);
+
+                fastJsonProvider.setFastJsonConfig(fastJsonConfig);
+
+                context.register(fastJsonProvider, MessageBodyReader.class, MessageBodyWriter.class);
+            }
+            return true;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;getBookById(Long);;;@GET
+        @Path("{id}")
+        @Produces({"application/javascript", "application/json"})
+        @JSONP(queryParam = "callback")
+        public Book getBookById(@PathParam("id") Long id) {
+
+            Book book = new Book();
+            book.setBookId(2);
+            book.setBookName("Python源码剖析");
+            book.setPublisher("电子工业出版社");
+            book.setPublishTime(new Date());
+            book.setIsbn("911122");
+
+            return book;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;configureClient(ClientConfig);;;@Override
+    protected void configureClient(ClientConfig config) {
+        config.register(new FastJsonFeature()).register(FastJsonProvider.class);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;configure();;;@Override
+    protected Application configure() {
+        enable(TestProperties.LOG_TRAFFIC);
+        enable(TestProperties.DUMP_ENTITY);
+
+        ResourceConfig config = new ResourceConfig();
+
+        config.register(new FastJsonFeature()).register(FastJsonProvider.class);
+        config.packages("com.alibaba.json");
+        return config;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1341;test();;;@Test
+    public void test() {
+
+        final String reponse = target("book").path("123").request().accept("application/javascript").get(String.class);
+
+        Assert.assertTrue(reponse.indexOf("Python源码剖析") > 0);
+        Assert.assertTrue(reponse.indexOf("电子工业出版社") > 0);
+        Assert.assertTrue(reponse.indexOf("\"hello\":null") > 0);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1367;setup();;;@Before
+    public void setup() {
+        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac) //
+                .addFilter(new CharacterEncodingFilter("UTF-8", true)) // 设置服务器端返回的字符集为：UTF-8
+                .build();
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1367;save(PO);;;@PostMapping(path = "/typeVariableBean",consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+        public PO save(@RequestBody PO dto) {
+            //do something
+            return dto;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1367;parameterizedTypeBean(ParameterizedTypeBean<String>);;;@PostMapping(path = "/parameterizedTypeBean",consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+        public String parameterizedTypeBean(@RequestBody ParameterizedTypeBean<String> parameterizedTypeBean){
+            return parameterizedTypeBean.t;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1367;configureMessageConverters(List<HttpMessageConverter<?>>);;;@Override
+        public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+            FastJsonpHttpMessageConverter4 converter = new FastJsonpHttpMessageConverter4();
+            converters.add(converter);
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1367;testParameterizedTypeBean();;;@Test
+    public void testParameterizedTypeBean() throws Exception {
+        mockMvc.perform(
+                (post("/parameterizedTypeBean").characterEncoding("UTF-8")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)
+                        .content("{\"t\": \"neil dong\"}")
+                        )).andExpect(status().isOk()).andDo(print());
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1367;testTypeVariableBean();;;@Test
+    public void testTypeVariableBean() throws Exception {
+        mockMvc.perform(
+                (post("/typeVariableBean").characterEncoding("UTF-8")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)
+                        .content("{\"id\": 1}")
+                        )).andExpect(status().isOk()).andDo(print());
+
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1367;getId();;;public abstract ID getId();
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1367;getId();;;@Override
+        public Long getId() {
+            return id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1367;setId(Long);;;public void setId(Long id) {
+            this.id = id;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1367;getT();;;public T getT() {
+            return t;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1367;setT(T);;;public void setT(T t) {
+            this.t = t;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_75cc1dc_f28a067/rev_75cc1dc-f28a067;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1369;test_for_issue();;;public void test_for_issue() throws Exception {
+        Foo foo = new Foo();
+        foo.a = 1;
+        foo.b = "b";
+        foo.bars = new Bar();
+        foo.bars.c = 3;
+        String json = JSON.toJSONString(foo);
+        System.out.println(json);
+        Assert.assertTrue(json.indexOf("\\")<0);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_75cc1dc_f28a067/rev_75cc1dc-f28a067;/src/test/java/com/alibaba/json/bvt/issue_1300/Issue1368;test_for_issue();;;public void test_for_issue() throws Exception {
+        ExtendedServletRequestDataBinder binder = new ExtendedServletRequestDataBinder(new Object());
+        String json = JSON.toJSONString(binder);
+        System.out.println(json);
+        Assert.assertTrue(json.indexOf("$ref")>=0);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_61ddeae_18fab29/rev_61ddeae-18fab29;/hystrix-core/src/test/java/com/netflix/hystrix/HystrixCommandTest;testBadRequestExceptionViaQueueInThread();                // success    ;;                // success
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_61ddeae_18fab29/rev_61ddeae-18fab29;/hystrix-core/src/test/java/com/netflix/hystrix/HystrixCommandTest;testBadRequestExceptionViaQueueInThreadOnResponseFromCache();                // success    ;;                // success
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_3dfa3e7_4b38429/rev_3dfa3e7-4b38429;/src/jvm/backtype/storm/coordination/CoordinatedBolt;execute(Tuple);            boolean failed = checkFinishId(tuple);
+            if(failed) {
+                _collector.fail(tuple);
+            } else {
+                _collector.ack(tuple);
+            }
+        } else if(!_sourceArgs.isEmpty()
+                && tuple.getSourceStreamId().equals(Constants.COORDINATED_STREAM_ID)) {;            boolean failed = checkFinishId(tuple);
+            if(failed) {
+                _collector.fail(tuple);
+            } else {
+                _collector.ack(tuple);
+            }
+            
+        } else if(!_sourceArgs.isEmpty()
+                && tuple.getSourceStreamId().equals(Constants.COORDINATED_STREAM_ID)) {;            checkFinishId(tuple, type);            
+        } else if(type==TupleType.COORD) {
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_4026463_f2b212e/rev_4026463-f2b212e;/src/jvm/backtype/storm/metric/api/IMetricsConsumer;TaskInfo();;;public TaskInfo() {}
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_4026463_f2b212e/rev_4026463-f2b212e;/src/jvm/backtype/storm/metric/api/IMetricsConsumer;DataPoint();;;public DataPoint() {}
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_4026463_f2b212e/rev_4026463-f2b212e;/src/jvm/backtype/storm/serialization/SerializationFactory;getKryo(Map);;;        k.register(backtype.storm.metric.api.IMetricsConsumer.DataPoint.class);
+        k.register(backtype.storm.metric.api.IMetricsConsumer.TaskInfo.class);
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/storm/trident/testing/MemoryBackingMap;multiGet(List<List<Object>>);;;@Override
+    public List<Object> multiGet(List<List<Object>> keys) {
+        List ret = new ArrayList();
+        for(List key: keys) {
+            ret.add(_vals.get(key));
+        }
+        return ret;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/storm/trident/testing/MemoryBackingMap;multiPut(List<List<Object>>,List<Object>);;;@Override
+    public void multiPut(List<List<Object>> keys, List<Object> vals) {
+        for(int i=0; i<keys.size(); i++) {
+            List key = keys.get(i);
+            Object val = vals.get(i);
+            _vals.put(key, val);
+        }
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/storm/trident/state/map/TransactionalMap;multiUpdate(List<List<Object>>,List<ValueUpdater>);;;        List<List<Object>> newKeys = new ArrayList();
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/storm/trident/state/map/TransactionalMap;multiUpdate(List<List<Object>>,List<ValueUpdater>);;;            boolean changed = false;
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/storm/trident/state/map/TransactionalMap;multiUpdate(List<List<Object>>,List<ValueUpdater>);;;                changed = true;
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/storm/trident/state/map/TransactionalMap;beginCommit(Long);;;        _backing.reset();
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/storm/trident/state/map/TransactionalMap;commit(Long);;;        _backing.reset();
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/storm/trident/state/map/CachedBatchReadsMap;RetVal(T,boolean);;;public RetVal(T v, boolean c) {
+            val = v;
+            cached = c;
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/storm/trident/state/map/CachedBatchReadsMap;CachedBatchReadsMap(IBackingMap<T>);;;public CachedBatchReadsMap(IBackingMap<T> delegate) {
+        _delegate = delegate;
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/storm/trident/state/map/CachedBatchReadsMap;reset();;;public void reset() {
+        _cached.clear();
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/storm/trident/state/map/OpaqueMap;beginCommit(Long);;;        _backing.reset();
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/storm/trident/state/map/OpaqueMap;commit(Long);;;        _backing.reset();
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/backtype/storm/security/serialization/BlowfishTupleSerializer;write(Kryo,Output,ListDelegate);    	_serializer.write(kryo, output, object);;	_serializer.write(kryo, output, object);;        _serializer.write(kryo, output, object);
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/backtype/storm/security/serialization/BlowfishTupleSerializer;read(Kryo,Input,Class<ListDelegate>);    	return (ListDelegate)_serializer.read(kryo, input, type);;	return (ListDelegate)_serializer.read(kryo, input, type);;        return (ListDelegate)_serializer.read(kryo, input, type);
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee;/src/jvm/backtype/storm/security/serialization/BlowfishTupleSerializer;main(String[]);	try{
+	    KeyGenerator kgen = KeyGenerator.getInstance("Blowfish");
+	    SecretKey skey = kgen.generateKey();
+	    byte[] raw = skey.getEncoded();
+	    String keyString = new String(Hex.encodeHex(raw));
+	    System.out.println("storm -c "+SECRET_KEY+"="+keyString+" -c "+Config.TOPOLOGY_TUPLE_SERIALIZER+"="+BlowfishTupleSerializer.class.getName() + " ..." );
+	} catch (Exception ex) {
+	    LOG.error(ex.getMessage());
+	    ex.printStackTrace();
+	};;        try{
+            KeyGenerator kgen = KeyGenerator.getInstance("Blowfish");
+            SecretKey skey = kgen.generateKey();
+            byte[] raw = skey.getEncoded();
+            String keyString = new String(Hex.encodeHex(raw));
+            System.out.println("storm -c "+SECRET_KEY+"="+keyString+" -c "+Config.TOPOLOGY_TUPLE_SERIALIZER+"="+BlowfishTupleSerializer.class.getName() + " ..." );
+        } catch (Exception ex) {
+            LOG.error(ex.getMessage());
+            ex.printStackTrace();
+        }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/vertx-core/src/main/java/org/vertx/java/core/json/JsonElement;setNeedsCopy();;;protected void setNeedsCopy() {
+    // We actually do the copy lazily if the object is subsequently mutated
+    needsCopy = true;
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/vertx-testsuite/src/test/java/org/vertx/java/tests/core/filesystem/JavaFileSystemTest;testTruncateExtendsFile();;;@Test
+  public void testTruncateExtendsFile() throws Exception {
+    startTest(getMethodName());
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/vertx-core/src/main/java/io/vertx/core/logging/impl/VertxLoggerFormatter;fromMillis(long);;;private static OffsetDateTime fromMillis(long epochMillis) {
+    return OffsetDateTime.ofInstant(Instant.ofEpochMilli(epochMillis), ZoneId.systemDefault());
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/vertx-core/src/main/java/io/vertx/core/eventbus/Message;isForward();;;boolean isForward();
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/main/java/io/vertx/core/VertxOptions;VertxOptions(VertxOptions);;;    this.warningExceptionTime = other.warningExceptionTime;
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/main/java/io/vertx/core/VertxOptions;VertxOptions(JsonObject);;;    this.warningExceptionTime = json.getLong("warningExceptionTime", DEFAULT_WARNING_EXECPTION_TIME);
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/main/java/io/vertx/core/VertxOptions;getWarningExceptionTime();;;public long getWarningExceptionTime() {
+    return warningExceptionTime;
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/main/java/io/vertx/core/VertxOptions;setWarningExceptionTime(long);;;public VertxOptions setWarningExceptionTime(long warningExceptionTime) {
+    if (warningExceptionTime < 1) {
+      throw new IllegalArgumentException("warningExceptionTime must be > 0");
+    }
+    this.warningExceptionTime = warningExceptionTime;
+    return this;
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/main/java/io/vertx/core/VertxOptions;equals(Object);;;    if (warningExceptionTime != that.warningExceptionTime) return false;
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/main/java/io/vertx/core/VertxOptions;hashCode();;;    result = 31 * result + (int) (warningExceptionTime ^ (warningExceptionTime >>> 32));
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/test/java/io/vertx/test/core/BlockedThreadCheckerTest;testBlockCheckDefault();;;@Test
+  public void testBlockCheckDefault() throws Exception {
+    Verticle verticle = new AbstractVerticle() {
+      @Override
+      public void start() throws InterruptedException {
+        Thread.sleep(6000);
+        testComplete();
+      }
+    };
+    vertx.deployVerticle(verticle);
+    await();
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/test/java/io/vertx/test/core/BlockedThreadCheckerTest;testBlockCheckExceptionTimeLimit();;;@Test
+  public void testBlockCheckExceptionTimeLimit() throws Exception {
+    Verticle verticle = new AbstractVerticle() {
+      @Override
+      public void start() throws InterruptedException {
+        Thread.sleep(2000);
+        testComplete();
+      }
+    };
+    // set warning threshold to 1s and the exception threshold as well
+    VertxOptions vertxOptions = new VertxOptions();
+    vertxOptions.setMaxEventLoopExecuteTime(1000000000);
+    vertxOptions.setWarningExceptionTime(1000000000);
+    Vertx newVertx = Vertx.vertx(vertxOptions);
+    newVertx.deployVerticle(verticle);
+    await();
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/test/java/io/vertx/test/core/BlockedThreadCheckerTest;testBlockCheckWorker();;;@Test
+  public void testBlockCheckWorker() throws Exception {
+    Verticle verticle = new AbstractVerticle() {
+      @Override
+      public void start() throws InterruptedException {
+        Thread.sleep(2000);
+        testComplete();
+      }
+    };
+    // set warning threshold to 1s and the exception threshold as well
+    VertxOptions vertxOptions = new VertxOptions();
+    vertxOptions.setMaxWorkerExecuteTime(1000000000);
+    vertxOptions.setWarningExceptionTime(1000000000);
+    Vertx newVertx = Vertx.vertx(vertxOptions);
+    DeploymentOptions depolymentOptions = new DeploymentOptions();
+    depolymentOptions.setWorker(true);
+    newVertx.deployVerticle(verticle, depolymentOptions);
+    await();
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/test/java/io/vertx/test/core/VertxOptionsTest;testOptions();;;
+    try {
+      options.setWarningExceptionTime(-1);
+      fail("Should throw exception");
+    } catch (IllegalArgumentException e) {
+      // OK
+    }
+    assertEquals(options, options.setWarningExceptionTime(1000000000l));
+    assertEquals(1000000000l, options.getWarningExceptionTime());
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/test/java/io/vertx/test/core/VertxOptionsTest;testCopyOptions();;;    long warningExceptionTime = TestUtils.randomPositiveLong();
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/test/java/io/vertx/test/core/VertxOptionsTest;testCopyOptions();;;    options.setWarningExceptionTime(warningExceptionTime);
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/test/java/io/vertx/test/core/VertxOptionsTest;testCopyOptions();;;    assertEquals(warningExceptionTime, options.getWarningExceptionTime());
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/test/java/io/vertx/test/core/VertxOptionsTest;testDefaultJsonOptions();;;    assertEquals(def.getWarningExceptionTime(), json.getWarningExceptionTime());
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/test/java/io/vertx/test/core/VertxOptionsTest;testJsonOptions();;;    assertEquals(5000000000l, options.getWarningExceptionTime());
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/test/java/io/vertx/test/core/VertxOptionsTest;testJsonOptions();;;    long warningExceptionTime = TestUtils.randomPositiveLong();
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/test/java/io/vertx/test/core/VertxOptionsTest;testJsonOptions();;;        put("warningExceptionTime", warningExceptionTime).
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/test/java/io/vertx/test/core/VertxOptionsTest;testJsonOptions();;;    assertEquals(warningExceptionTime, options.getWarningExceptionTime());
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/main/java/io/vertx/core/impl/launcher/commands/StartCommandFactory;StartCommandFactory();;;public StartCommandFactory() {
+    super(StartCommand.class);
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/main/java/io/vertx/core/impl/launcher/commands/StopCommandFactory;StopCommandFactory();;;public StopCommandFactory() {
+    super(StopCommand.class);
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/main/java/io/vertx/core/impl/launcher/commands/ExecUtils;addArgument(List<String>,String);;;public static void addArgument(List<String> args, String argument) {
+    args.add(quoteArgument(argument));
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/main/java/io/vertx/core/impl/launcher/commands/ExecUtils;isWindows();;;public static boolean isWindows() {
+    return osName.contains("windows");
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/src/main/java/io/vertx/core/impl/launcher/commands/ListCommandFactory;ListCommandFactory();;;public ListCommandFactory() {
+    super(ListCommand.class);
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Javaee7-samples/revisions/rev_b77bf39_ed4cb65/rev_b77bf39-ed4cb65;/cdi/decorators/src/test/java/org/javaee7/cdi/decorators/DecoratorTest;deploy();;;@Deployment
+    public static Archive<?> deploy() throws URISyntaxException {
+        return ShrinkWrap.create(JavaArchive.class)
+                .addAsManifestResource(new File("src/main/webapp/WEB-INF/beans.xml"), "beans.xml")
+                .addPackage(SimpleGreeting.class.getPackage());
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Javaee7-samples/revisions/rev_b77bf39_ed4cb65/rev_b77bf39-ed4cb65;/cdi/decorators/src/test/java/org/javaee7/cdi/decorators/DecoratorTest;test();;;@Test
+    public void test() {
+        assertThat(greeting.greet("Duke"), is("Hello Duke very much!"));
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Javaee7-samples/revisions/rev_bd9e098_a4b91fd/rev_bd9e098-a4b91fd;/jaspic/async-authentication/src/main/java/org/javaee7/jaspic/asyncauthentication/sam/SamAutoRegistrationListener;contextInitialized(ServletContextEvent);;;@Override
+    public void contextInitialized(ServletContextEvent sce) {
+        JaspicUtils.registerSAM(sce.getServletContext(), new TestServerAuthModule());
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Javaee7-samples/revisions/rev_bd9e098_a4b91fd/rev_bd9e098-a4b91fd;/jaspic/async-authentication/src/main/java/org/javaee7/jaspic/asyncauthentication/servlet/AsyncServlet;doGet(HttpServletRequest,HttpServletResponse);;;@Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+        AsyncContext asyncContext = request.startAsync();
+        asyncContext.setTimeout(5000);
+        
+        asyncBean.doAsync(asyncContext);
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Javaee7-samples/revisions/rev_bd9e098_a4b91fd/rev_bd9e098-a4b91fd;/jaspic/async-authentication/src/main/java/org/javaee7/jaspic/asyncauthentication/bean/AsyncBean;doAsync(AsyncContext);;;@Asynchronous
+    public void doAsync(AsyncContext asyncContext) {
+        
+        try {
+            sleep(1000);
+        } catch (InterruptedException e) {
+            interrupted();
+        }
+        
+        try {
+            asyncContext.getResponse().getWriter().write("async response");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        asyncContext.complete();
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Javaee7-samples/revisions/rev_bd9e098_a4b91fd/rev_bd9e098-a4b91fd;/jaspic/async-authentication/src/test/java/org/javaee7/jaspic/asyncauthentication/AsyncAuthenticationPublicTest;createDeployment();;;@Deployment(testable = false)
+    public static WebArchive createDeployment() {
+        return defaultArchive();
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Javaee7-samples/revisions/rev_bd9e098_a4b91fd/rev_bd9e098-a4b91fd;/jaspic/async-authentication/src/test/java/org/javaee7/jaspic/asyncauthentication/AsyncAuthenticationPublicTest;testBasicAsync();;;@Test
+    public void testBasicAsync() throws IOException, SAXException {
+
+        String response = getFromServerPath("public/asyncServlet");
+        assertTrue(response.contains("async response"));
+    }

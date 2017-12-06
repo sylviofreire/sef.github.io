@@ -1,0 +1,1581 @@
+/home/paper219/Desktop/analysis/demonstration/projects/Mybatis-3/revisions/rev_22fcbef_cd9a221/rev_22fcbef-cd9a221/src/main/java/org/apache/ibatis/type/JdbcType.java;<<<<<<< MINE
+/**
+ *    Copyright 2009-2015 the original author or authors.
+=======
+/*
+ *    Copyright 2009-2015 the original author or authors.
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Mybatis-3/revisions/rev_413f62d_09f86b6/rev_413f62d-09f86b6/src/main/java/org/apache/ibatis/io/ExternalResources.java;<<<<<<< MINE
+ *    Copyright 2009-2015 the original author or authors.
+=======
+ *    Copyright 2009-2016 the original author or authors.
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Mybatis-3/revisions/rev_da6dca2_151e90e/rev_da6dca2-151e90e/src/test/java/org/apache/ibatis/type/usesjava8/Jsr310TypeHandlerRegistryTest.java;<<<<<<< MINE
+  public void shouldRegisterJsr310TypeHandlers() throws ClassNotFoundException {
+    assertThat(typeHandlerRegistry.getTypeHandler(Instant.class), instanceOf(InstantTypeHandler.class));
+    assertThat(typeHandlerRegistry.getTypeHandler(LocalDateTime.class), instanceOf(LocalDateTimeTypeHandler.class));
+    assertThat(typeHandlerRegistry.getTypeHandler(LocalDate.class), instanceOf(LocalDateTypeHandler.class));
+    assertThat(typeHandlerRegistry.getTypeHandler(LocalTime.class), instanceOf(LocalTimeTypeHandler.class));
+    assertThat(typeHandlerRegistry.getTypeHandler(OffsetDateTime.class), instanceOf(OffsetDateTimeTypeHandler.class));
+    assertThat(typeHandlerRegistry.getTypeHandler(OffsetTime.class), instanceOf(OffsetTimeTypeHandler.class));
+    assertThat(typeHandlerRegistry.getTypeHandler(ZonedDateTime.class), instanceOf(ZonedDateTimeTypeHandler.class));
+    assertThat(typeHandlerRegistry.getTypeHandler(Month.class), instanceOf(MonthTypeHandler.class));
+    assertThat(typeHandlerRegistry.getTypeHandler(Year.class), instanceOf(YearTypeHandler.class));
+    assertThat(typeHandlerRegistry.getTypeHandler(YearMonth.class), instanceOf(YearMonthTypeHandler.class));
+    assertThat(typeHandlerRegistry.getTypeHandler(JapaneseDate.class), instanceOf(JapaneseDateTypeHandler.class));
+=======
+  public void testFor_v1_0_0() throws ClassNotFoundException {
+    assertThat(getTypeHandler("java.time.Instant")).isInstanceOf(InstantTypeHandler.class);
+    assertThat(getTypeHandler("java.time.LocalDateTime")).isInstanceOf(LocalDateTimeTypeHandler.class);
+    assertThat(getTypeHandler("java.time.LocalDate")).isInstanceOf(LocalDateTypeHandler.class);
+    assertThat(getTypeHandler("java.time.LocalTime")).isInstanceOf(LocalTimeTypeHandler.class);
+    assertThat(getTypeHandler("java.time.OffsetDateTime")).isInstanceOf(OffsetDateTimeTypeHandler.class);
+    assertThat(getTypeHandler("java.time.OffsetTime")).isInstanceOf(OffsetTimeTypeHandler.class);
+    assertThat(getTypeHandler("java.time.ZonedDateTime")).isInstanceOf(ZonedDateTimeTypeHandler.class);
+  }
+
+  @Test
+  public void testFor_v1_0_1() throws ClassNotFoundException {
+    assertThat(getTypeHandler("java.time.Month")).isInstanceOf(MonthTypeHandler.class);
+    assertThat(getTypeHandler("java.time.Year")).isInstanceOf(YearTypeHandler.class);
+  }
+
+  @Test
+  public void testFor_v1_0_2() throws ClassNotFoundException {
+    assertThat(getTypeHandler("java.time.YearMonth")).isInstanceOf(YearMonthTypeHandler.class);
+    assertThat(getTypeHandler("java.time.chrono.JapaneseDate")).isInstanceOf(JapaneseDateTypeHandler.class);
+  }
+
+  private TypeHandler<?> getTypeHandler(String fqcn) throws ClassNotFoundException {
+    return typeHandlerRegistry.getTypeHandler(Resources.classForName(fqcn));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+                if (elementType instanceof Class<?>) {
+=======
+                if (elementClass != null && Modifier.isPublic(elementClass.getModifiers())) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+                if (elementType instanceof Class<?>) {
+=======
+                if (elementClass != null && Modifier.isPublic(elementClass.getModifiers())) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05/src/main/java/com/alibaba/fastjson/parser/JSONScanner.java;<<<<<<< MINE
+        calendar = Calendar.getInstance();
+=======
+        Locale local = Locale.getDefault();
+        calendar = Calendar.getInstance(TimeZone.getDefault(), local);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05/src/main/java/com/alibaba/fastjson/parser/deserializer/TimeDeserializer.java;<<<<<<< MINE
+                return (T) dateLexer.getCalendar().getTime();
+=======
+                longVal = dateLexer.getCalendar().getTimeInMillis();
+            } else {
+                longVal = Long.parseLong(strVal);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer.java;<<<<<<< MINE
+            
+            SimpleDateFormat dateFormat = new SimpleDateFormat(JSON.DEFFAULT_DATE_FORMAT);
+            try {
+                java.util.Date date = (java.util.Date) dateFormat.parse(strVal);
+                return (T) new java.sql.Date(date.getTime());
+            } catch (ParseException e) {
+                // skip
+=======
+
+            long longVal;
+
+            JSONScanner dateLexer = new JSONScanner(strVal);
+            if (dateLexer.scanISO8601DateIfMatch()) {
+                longVal = dateLexer.getCalendar().getTimeInMillis();
+            } else {
+
+                SimpleDateFormat dateFormat = new SimpleDateFormat(JSON.DEFFAULT_DATE_FORMAT);
+                try {
+                    java.util.Date date = (java.util.Date) dateFormat.parse(strVal);
+                    return (T) new java.sql.Date(date.getTime());
+                } catch (ParseException e) {
+                    // skip
+                }
+
+                longVal = Long.parseLong(strVal);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+
+            if (seperator != 0) {
+                buf[count - 2] = '\"';
+                buf[count - 1] = seperator;
+            } else {
+                buf[count - 1] = '\"';
+            }
+=======
+
+            buf[count - 1] = '\"';
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+            
+            if (ch < CharTypes.specicalFlags_doubleQuotes.length && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+=======
+
+            if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                && CharTypes.specicalFlags_doubleQuotes[ch] //
+                || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length && CharTypes.specicalFlags_doubleQuotes[ch] //
+                        || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                        || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+=======
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                    && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+        for (int i = start; i < end; ++i) {
+            char ch = buf[i];
+            if (ch < specicalFlags_doubleQuotes.length && specicalFlags_doubleQuotes[ch] //
+                || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                newcount++;
+                if (newcount > buf.length) {
+                    expandCapacity(newcount);
+=======
+        if (checkSpecial) {
+            for (int i = start; i < end; ++i) {
+                char ch = buf[i];
+                if (ch < specicalFlags_doubleQuotes.length
+                    && specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                    newcount++;
+                    if (newcount > buf.length) {
+                        expandCapacity(newcount);
+                    }
+                    count = newcount;
+
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[++i] = replaceChars[(int) ch];
+                    end++;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+                    writeFieldValueStringWithDoubleQuote(seperator, name, value);                    
+=======
+                    writeFieldValueStringWithDoubleQuote(seperator, name, value);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '"' //
+=======
+                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                    || ch == '"' //
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+            if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '"' //
+=======
+            if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                || ch == '"' //
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '"' //
+=======
+                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                    || ch == '"' //
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+            if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '\'' //
+=======
+            if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                || ch == '\'' //
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '\'' //
+=======
+                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                    || ch == '\'' //
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+    public void writeFieldName(String key) {
+=======
+    public void writeFieldName(String key, boolean checkSpecial) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+                writeKeyWithDoubleQuote(key);
+=======
+                writeKeyWithDoubleQuote(key, checkSpecial);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+            if (ch < specicalFlags_singleQuotes.length && specicalFlags_singleQuotes[ch] //
+=======
+            if (ch < specicalFlags_singleQuotes.length
+                && specicalFlags_singleQuotes[ch] //
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/MapSerializer.java;<<<<<<< MINE
+                    out.writeFieldName(key);
+=======
+                    out.writeFieldName(key, true);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/test/java/com/alibaba/json/test/benchmark/BenchmarkTest.java;<<<<<<< MINE
+        executor.setExecuteCount(5);
+=======
+        executor.setExecuteCount(4);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/test/java/com/alibaba/json/test/benchmark/BenchmarkTest.java;<<<<<<< MINE
+        executor.getCodecList().add(new JacksonCodec());
+=======
+//        executor.getCodecList().add(new JacksonCodec());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/test/java/com/alibaba/json/test/benchmark/BenchmarkTest.java;<<<<<<< MINE
+        executor.getCaseList().add(new EishayDecodeBytes());
+=======
+//        executor.getCaseList().add(new EishayDecodeBytes());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/test/java/com/alibaba/json/test/benchmark/BenchmarkTest.java;<<<<<<< MINE
+         executor.getCaseList().add(new EishayDecode());
+=======
+//         executor.getCaseList().add(new EishayDecode());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/test/java/com/alibaba/json/test/benchmark/BenchmarkTest.java;<<<<<<< MINE
+//         executor.getCaseList().add(new EishayEncode());
+=======
+         executor.getCaseList().add(new EishayEncode());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/test/java/com/alibaba/json/bvt/serializer/StringSerializerTest.java;<<<<<<< MINE
+		out.writeFieldName("123\na\nb\nc\nd\"'e");
+=======
+		out.writeFieldName("123\na\nb\nc\nd\"'e", true);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+
+            buf[count - 1] = '\"';
+=======
+
+            if (seperator != 0) {
+                buf[count - 2] = '\"';
+                buf[count - 1] = seperator;
+            } else {
+                buf[count - 1] = '\"';
+            }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+            
+            if (ch < CharTypes.specicalFlags_doubleQuotes.length && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+=======
+
+            if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                && CharTypes.specicalFlags_doubleQuotes[ch] //
+                || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length && CharTypes.specicalFlags_doubleQuotes[ch] //
+                        || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                        || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+=======
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                    && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+        for (int i = start; i < end; ++i) {
+            char ch = buf[i];
+            if (ch < specicalFlags_doubleQuotes.length && specicalFlags_doubleQuotes[ch] //
+                || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                newcount++;
+                if (newcount > buf.length) {
+                    expandCapacity(newcount);
+=======
+        if (checkSpecial) {
+            for (int i = start; i < end; ++i) {
+                char ch = buf[i];
+                if (ch < specicalFlags_doubleQuotes.length
+                    && specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                    newcount++;
+                    if (newcount > buf.length) {
+                        expandCapacity(newcount);
+                    }
+                    count = newcount;
+
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[++i] = replaceChars[(int) ch];
+                    end++;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+                    writeFieldValueStringWithDoubleQuote(seperator, name, value);                    
+=======
+                    writeFieldValueStringWithDoubleQuote(seperator, name, value);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '"' //
+=======
+                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                    || ch == '"' //
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+            if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '"' //
+=======
+            if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                || ch == '"' //
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '"' //
+=======
+                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                    || ch == '"' //
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+            if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '\'' //
+=======
+            if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                || ch == '\'' //
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\' || ch == '\'' //
+=======
+                if (ch == '\b' || ch == '\n' || ch == '\r' || ch == '\f' || ch == '\\'
+                    || ch == '\'' //
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+    public void writeFieldName(String key) {
+=======
+    public void writeFieldName(String key, boolean checkSpecial) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+                writeKeyWithDoubleQuote(key);
+=======
+                writeKeyWithDoubleQuote(key, checkSpecial);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+            if (ch < specicalFlags_singleQuotes.length && specicalFlags_singleQuotes[ch] //
+=======
+            if (ch < specicalFlags_singleQuotes.length
+                && specicalFlags_singleQuotes[ch] //
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/MapSerializer.java;<<<<<<< MINE
+                    out.writeFieldName(key);
+=======
+                    out.writeFieldName(key, true);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/test/java/com/alibaba/json/test/benchmark/BenchmarkTest.java;<<<<<<< MINE
+        executor.setExecuteCount(5);
+=======
+        executor.setExecuteCount(4);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/test/java/com/alibaba/json/test/benchmark/BenchmarkTest.java;<<<<<<< MINE
+        executor.getCodecList().add(new JacksonCodec());
+=======
+//        executor.getCodecList().add(new JacksonCodec());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/test/java/com/alibaba/json/test/benchmark/BenchmarkTest.java;<<<<<<< MINE
+        executor.getCaseList().add(new EishayDecodeBytes());
+=======
+//        executor.getCaseList().add(new EishayDecodeBytes());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/test/java/com/alibaba/json/test/benchmark/BenchmarkTest.java;<<<<<<< MINE
+         executor.getCaseList().add(new EishayDecode());
+=======
+//         executor.getCaseList().add(new EishayDecode());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/test/java/com/alibaba/json/test/benchmark/BenchmarkTest.java;<<<<<<< MINE
+//         executor.getCaseList().add(new EishayEncode());
+=======
+         executor.getCaseList().add(new EishayEncode());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/test/java/com/alibaba/json/bvt/serializer/StringSerializerTest.java;<<<<<<< MINE
+		out.writeFieldName("123\na\nb\nc\nd\"'e");
+=======
+		out.writeFieldName("123\na\nb\nc\nd\"'e", true);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_cc0428f_dee22f7/rev_cc0428f-dee22f7/src/test/java/com/alibaba/json/bvt/writeClassName/WriteClassNameTest_Set2.java;<<<<<<< MINE
+        Assert.assertTrue(new ArrayList<B>(a1.getList()).get(0) instanceof B);
+        Assert.assertTrue(new ArrayList<B>(a1.getList()).get(1) instanceof B1);
+=======
+        Assert.assertTrue("B", new ArrayList<B>(a1.getList()).get(0) instanceof B);
+        Assert.assertTrue("B1", new ArrayList<B>(a1.getList()).get(1) instanceof B1);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+                lexer.incrementBufferPosition();
+                lexer.skipWhitespace();
+=======
+                if (!isObjectKey) {
+                    lexer.incrementBufferPosition();
+                    lexer.skipWhitespace();
+                }
+                
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05/src/test/java/com/alibaba/json/bvt/writeClassName/WriteClassNameTest_Set2.java;<<<<<<< MINE
+        Assert.assertTrue("B", new ArrayList<B>(a1.getList()).get(0) instanceof B);
+        Assert.assertTrue("B1", new ArrayList<B>(a1.getList()).get(1) instanceof B1);
+=======
+        Assert.assertTrue("B", new ArrayList<B>(a1.getList()).get(0) instanceof B || new ArrayList<B>(a1.getList()).get(0) instanceof B1);
+        Assert.assertTrue("B1", new ArrayList<B>(a1.getList()).get(1) instanceof B || new ArrayList<B>(a1.getList()).get(1) instanceof B1);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+                lexer.incrementBufferPosition();
+                lexer.skipWhitespace();
+=======
+                if (!isObjectKey) {
+                    lexer.incrementBufferPosition();
+                    lexer.skipWhitespace();
+                }
+                
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05/src/test/java/com/alibaba/json/bvt/writeClassName/WriteClassNameTest_Set2.java;<<<<<<< MINE
+        Assert.assertTrue("B", new ArrayList<B>(a1.getList()).get(0) instanceof B);
+        Assert.assertTrue("B1", new ArrayList<B>(a1.getList()).get(1) instanceof B1);
+=======
+        Assert.assertTrue("B", new ArrayList<B>(a1.getList()).get(0) instanceof B || new ArrayList<B>(a1.getList()).get(0) instanceof B1);
+        Assert.assertTrue("B1", new ArrayList<B>(a1.getList()).get(1) instanceof B || new ArrayList<B>(a1.getList()).get(1) instanceof B1);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+                            refValue = this.getContext().getObject();
+=======
+                            if (this.getContext() != null) {
+                                refValue = this.getContext().getObject();
+                            }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+                            refValue = this.getContext().getObject();
+=======
+                            if (this.getContext() != null) {
+                                refValue = this.getContext().getObject();
+                            }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+                                getResolveTaskList().add(new ResolveTask(parentContext, ref));
+=======
+                                addResolveTask(new ResolveTask(parentContext, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+                                getResolveTaskList().add(new ResolveTask(rootContext, ref));
+=======
+                                addResolveTask(new ResolveTask(rootContext, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+                            getResolveTaskList().add(new ResolveTask(context, ref));
+=======
+                            addResolveTask(new ResolveTask(context, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701/src/main/java/com/alibaba/fastjson/parser/deserializer/DefaultObjectDeserializer.java;<<<<<<< MINE
+                                parser.getResolveTaskList().add(new ResolveTask(parentContext, ref));
+=======
+                                parser.addResolveTask(new ResolveTask(parentContext, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701/src/main/java/com/alibaba/fastjson/parser/deserializer/DefaultObjectDeserializer.java;<<<<<<< MINE
+                                parser.getResolveTaskList().add(new ResolveTask(rootContext, ref));
+=======
+                                parser.addResolveTask(new ResolveTask(rootContext, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701/src/main/java/com/alibaba/fastjson/parser/deserializer/DefaultObjectDeserializer.java;<<<<<<< MINE
+                            parser.getResolveTaskList().add(new ResolveTask(context, ref));
+=======
+                            parser.addResolveTask(new ResolveTask(context, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java;<<<<<<< MINE
+                                parser.getResolveTaskList().add(new ResolveTask(parentContext, ref));
+=======
+                                parser.addResolveTask(new ResolveTask(parentContext, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java;<<<<<<< MINE
+                                parser.getResolveTaskList().add(new ResolveTask(rootContext, ref));
+=======
+                                parser.addResolveTask(new ResolveTask(rootContext, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java;<<<<<<< MINE
+                            parser.getResolveTaskList().add(new ResolveTask(context, ref));
+=======
+                            parser.addResolveTask(new ResolveTask(context, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701/src/main/java/com/alibaba/fastjson/serializer/ListSerializer.java;<<<<<<< MINE
+                            itemSerializer.write(serializer, item, end, elementType);
+=======
+                            itemSerializer.write(serializer, item, i, elementType);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+                                getResolveTaskList().add(new ResolveTask(parentContext, ref));
+=======
+                                addResolveTask(new ResolveTask(parentContext, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+                                getResolveTaskList().add(new ResolveTask(rootContext, ref));
+=======
+                                addResolveTask(new ResolveTask(rootContext, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+                            getResolveTaskList().add(new ResolveTask(context, ref));
+=======
+                            addResolveTask(new ResolveTask(context, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7/src/main/java/com/alibaba/fastjson/parser/deserializer/DefaultObjectDeserializer.java;<<<<<<< MINE
+                                parser.getResolveTaskList().add(new ResolveTask(parentContext, ref));
+=======
+                                parser.addResolveTask(new ResolveTask(parentContext, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7/src/main/java/com/alibaba/fastjson/parser/deserializer/DefaultObjectDeserializer.java;<<<<<<< MINE
+                                parser.getResolveTaskList().add(new ResolveTask(rootContext, ref));
+=======
+                                parser.addResolveTask(new ResolveTask(rootContext, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7/src/main/java/com/alibaba/fastjson/parser/deserializer/DefaultObjectDeserializer.java;<<<<<<< MINE
+                            parser.getResolveTaskList().add(new ResolveTask(context, ref));
+=======
+                            parser.addResolveTask(new ResolveTask(context, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java;<<<<<<< MINE
+                                parser.getResolveTaskList().add(new ResolveTask(parentContext, ref));
+=======
+                                parser.addResolveTask(new ResolveTask(parentContext, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java;<<<<<<< MINE
+                                parser.getResolveTaskList().add(new ResolveTask(rootContext, ref));
+=======
+                                parser.addResolveTask(new ResolveTask(rootContext, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java;<<<<<<< MINE
+                            parser.getResolveTaskList().add(new ResolveTask(context, ref));
+=======
+                            parser.addResolveTask(new ResolveTask(context, ref));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7/src/main/java/com/alibaba/fastjson/serializer/ListSerializer.java;<<<<<<< MINE
+                            itemSerializer.write(serializer, item, end, elementType);
+=======
+                            itemSerializer.write(serializer, item, i, elementType);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+                    
+                    this.resolveStatus = TypeNameRedirect;
+=======
+
+                    this.setResolveStatus(TypeNameRedirect);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a/src/main/java/com/alibaba/fastjson/parser/deserializer/ListResolveFieldDeserializer.java;<<<<<<< MINE
+    public ListResolveFieldDeserializer(List list, int index){
+=======
+    public ListResolveFieldDeserializer(DefaultJSONParser parser, List list, int index){
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a/src/main/java/com/alibaba/fastjson/parser/deserializer/ListResolveFieldDeserializer.java;<<<<<<< MINE
+
+        if (list instanceof JSONArray) {
+            JSONArray jsonArray = (JSONArray) list;
+            Object array = jsonArray.getRelatedArray();
+            int arrayLength = Array.getLength(array);
+            
+            if (array != null && arrayLength > index) {
+                Object item;
+                if (jsonArray.getComponentType() != null) {
+                    item = TypeUtils.cast(value, jsonArray.getComponentType(), parser.getConfig());
+                } else {
+                    item = value;
+                }
+                Array.set(array, index, item);
+            }
+        }
+    }
+
+    public DefaultJSONParser getParser() {
+        return parser;
+=======
+
+        if (list instanceof JSONArray) {
+            JSONArray jsonArray = (JSONArray) list;
+            Object[] array = jsonArray.getRelatedArray();
+            if (array != null && array.length > index) {
+                if (jsonArray.getComponentType() != null) {
+                    array[index] = TypeUtils.cast(value, jsonArray.getComponentType(), parser.getConfig());
+                } else {
+                    array[index] = value;
+                }
+            }
+        }
+    }
+
+    public DefaultJSONParser getParser() {
+        return parser;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a/src/main/java/com/alibaba/fastjson/JSON.java;<<<<<<< MINE
+    public static <T> void handleResovleTask(DefaultJSONParser parser, T value) {
+=======
+    public static <T> int handleResovleTask(DefaultJSONParser parser, T value) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a/src/main/java/com/alibaba/fastjson/JSON.java;<<<<<<< MINE
+            return;
+=======
+            return 0;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_62c589a_2c88690/rev_62c589a-2c88690/src/main/java/com/alibaba/fastjson/parser/deserializer/TimestampDeserializer.java;<<<<<<< MINE
+    public <T> T deserialze(DefaultJSONParser parser, Type clazz, Object fieldName) {
+        Object val = parser.parse();
+        
+=======
+    protected <T> T cast(DefaultJSONParser parser, Type clazz, Object fieldName, Object val) {
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_62c589a_2c88690/rev_62c589a-2c88690/src/main/java/com/alibaba/fastjson/parser/deserializer/SqlDateDeserializer.java;<<<<<<< MINE
+    public <T> T deserialze(DefaultJSONParser parser, Type clazz, Object fieldName) {
+        final JSONScanner lexer = (JSONScanner) parser.getLexer();
+
+        if (lexer.token() == JSONToken.NULL) {
+            lexer.nextToken(JSONToken.COMMA);
+            return null;
+        }
+
+        if (lexer.token() == JSONToken.COMMA) {
+            String key = lexer.scanSymbol(parser.getSymbolTable());
+
+            if ("val" != key) {
+                throw new JSONException("syntax error");
+            }
+
+            lexer.nextTokenWithColon(JSONToken.LITERAL_INT);
+
+            if (lexer.token() != JSONToken.LITERAL_INT) {
+                throw new JSONException("syntax error");
+            }
+
+            long val = lexer.longValue();
+
+            lexer.nextToken(JSONToken.RBRACE);
+
+            if (lexer.token() != JSONToken.RBRACE) {
+                throw new JSONException("syntax error");
+            }
+            lexer.nextToken(JSONToken.COMMA);
+
+            return (T) new java.sql.Date(val);
+        }
+
+        Object val = parser.parse();
+=======
+    protected <T> T cast(DefaultJSONParser parser, Type clazz, Object fieldName, Object val) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_62c589a_2c88690/rev_62c589a-2c88690/src/main/java/com/alibaba/fastjson/parser/deserializer/DateDeserializer.java;<<<<<<< MINE
+    public <T> T deserialze(DefaultJSONParser parser, Type clazz, Object fieldName) {
+        Object val = parser.parse();
+=======
+    protected <T> T cast(DefaultJSONParser parser, Type clazz, Object fieldName, Object val) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_f0023bb_e4033fb/rev_f0023bb-e4033fb/hystrix-core/src/main/java/com/netflix/hystrix/HystrixCommandMetrics.java;<<<<<<< MINE
+     * Get the {@link HystrixCommandMetrics} instance for a given {@link HystrixCommandKey}.
+=======
+     * Get or create the {@link HystrixCommandMetrics} instance for a given {@link HystrixCommandKey}.
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_f0023bb_e4033fb/rev_f0023bb-e4033fb/hystrix-core/src/main/java/com/netflix/hystrix/strategy/concurrency/HystrixConcurrencyStrategy.java;<<<<<<< MINE
+    public ThreadPoolExecutor getThreadPool(HystrixThreadPoolKey threadPoolKey, HystrixProperty<Integer> corePoolSize, HystrixProperty<Integer> maximumPoolSize, HystrixProperty<Integer> keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue) {
+        return new ThreadPoolExecutor(corePoolSize.get(), maximumPoolSize.get(), keepAliveTime.get(), unit, workQueue);
+=======
+    public ThreadPoolExecutor getThreadPool(final HystrixThreadPoolKey threadPoolKey, HystrixProperty<Integer> corePoolSize, HystrixProperty<Integer> maximumPoolSize, HystrixProperty<Integer> keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue) {
+        return new ThreadPoolExecutor(corePoolSize.get(), maximumPoolSize.get(), keepAliveTime.get(), unit, workQueue, new ThreadFactory() {
+
+            protected final AtomicInteger threadNumber = new AtomicInteger(0);
+
+            @Override
+            public Thread newThread(Runnable r) {
+                return new Thread(r, "hystrix-" + threadPoolKey.name() + "-" + threadNumber.incrementAndGet());
+            }
+        });
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+        } else if (propertyClass == List.class) {
+=======
+        } else if (propertyClass == List.class || propertyClass == ArrayList.class) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+        } else if (propertyClass == List.class) {
+=======
+        } else if (propertyClass == List.class || propertyClass == ArrayList.class) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+        } else if (propertyClass == List.class) {
+=======
+        } else if (propertyClass == List.class || propertyClass == ArrayList.class) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7/src/main/java/com/alibaba/fastjson/serializer/SerializeConfig.java;<<<<<<< MINE
+                throw new JSONException("create asm serilizer error, class " + clazz, e);
+=======
+                throw new JSONException("create asm serializer error, class " + clazz, e);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_2e86b72_08eba4b/rev_2e86b72-08eba4b/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+        mw.visitTypeInsn(CHECKCAST, getType(property.getFieldClass())); // cast
+=======
+        mw.visitTypeInsn(CHECKCAST, getType(List.class)); // cast
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_2e86b72_08eba4b/rev_2e86b72-08eba4b/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+        mw.visitMethodInsn(INVOKEINTERFACE, getType(property.getFieldClass()), "size", "()I");
+=======
+        mw.visitMethodInsn(INVOKEINTERFACE, getType(List.class), "size", "()I");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_2e86b72_08eba4b/rev_2e86b72-08eba4b/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+                mw.visitMethodInsn(INVOKEINTERFACE, getType(property.getFieldClass()), "get", "(I)Ljava/lang/Object;");
+=======
+                mw.visitMethodInsn(INVOKEINTERFACE, getType(List.class), "get", "(I)Ljava/lang/Object;");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_2e86b72_08eba4b/rev_2e86b72-08eba4b/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+                mw.visitMethodInsn(INVOKEINTERFACE, getType(property.getFieldClass()), "get", "(I)Ljava/lang/Object;");
+=======
+                mw.visitMethodInsn(INVOKEINTERFACE, getType(List.class), "get", "(I)Ljava/lang/Object;");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_2e86b72_08eba4b/rev_2e86b72-08eba4b/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+                mw.visitMethodInsn(INVOKEINTERFACE, getType(property.getFieldClass()), "get", "(I)Ljava/lang/Object;");
+=======
+                mw.visitMethodInsn(INVOKEINTERFACE, getType(List.class), "get", "(I)Ljava/lang/Object;");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_2e86b72_08eba4b/rev_2e86b72-08eba4b/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+                mw.visitMethodInsn(INVOKEINTERFACE, getType(property.getFieldClass()), "get", "(I)Ljava/lang/Object;");
+=======
+                mw.visitMethodInsn(INVOKEINTERFACE, getType(List.class), "get", "(I)Ljava/lang/Object;");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_2e86b72_08eba4b/rev_2e86b72-08eba4b/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+        } else if (propertyClass == List.class || propertyClass == ArrayList.class) {
+=======
+        } else if (List.class.isAssignableFrom(propertyClass)) {
+        	
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+            mw.visitVarInsn(ALOAD, context.serializer());
+            mw.visitVarInsn(ALOAD, context.paramFieldType());
+            mw.visitVarInsn(ALOAD, context.obj());
+            mw.visitMethodInsn(INVOKEVIRTUAL, getType(JSONSerializer.class), "isWriteClassName",
+                               "(Ljava/lang/reflect/Type;Ljava/lang/Object;)Z");
+=======
+            mw.visitVarInsn(ALOAD, context.var("out"));
+            mw.visitFieldInsn(GETSTATIC, getType(SerializerFeature.class), "WriteClassName",
+                              "L" + getType(SerializerFeature.class) + ";");
+            mw.visitMethodInsn(INVOKEVIRTUAL, getType(SerializeWriter.class), "isEnabled",
+                               "(" + "L" + getType(SerializerFeature.class) + ";" + ")Z");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+                mw.visitFieldInsn(GETFIELD, context.getClassName(), fieldInfo.getName() + "_asm_fieldType", "Ljava/lang/reflect/Type;");
+=======
+                mw.visitFieldInsn(GETFIELD, context.getClassName(), fieldInfo.getName() + "_asm_fieldType",
+                                  "Ljava/lang/reflect/Type;");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+        for (int i = start; i < end; ++i) {
+            char ch = buf[i];
+=======
+        if (checkSpecial) {
+            for (int i = start; i < end; ++i) {
+                char ch = buf[i];
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+            if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                && CharTypes.specicalFlags_doubleQuotes[ch] //
+                || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                specialCount++;
+                lastSpecialIndex = i;
+                lastSpecial = ch;
+=======
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                    && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                    specialCount++;
+                    lastSpecialIndex = i;
+                    lastSpecial = ch;
+                }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+            writeFieldValue(seperator, name, value.name());
+=======
+            if (isEnabled(SerializerFeature.UseSingleQuotes)) {
+                writeFieldValue(seperator, name, value.name());    
+            } else {
+                write(seperator);
+                writeFieldName(name);
+                writeStringWithDoubleQuote(value.name(), (char) 0, false);
+                return;    
+            }
+            
+            //writeStringWithDoubleQuote
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_55afa54_bd49960/rev_55afa54-bd49960/src/test/java/com/alibaba/json/test/benchmark/BenchmarkTest.java;<<<<<<< MINE
+//        executor.getCodecList().add(new JacksonCodec());
+=======
+        executor.getCodecList().add(new JacksonCodec());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ec0a424_5a2f7c9/rev_ec0a424-5a2f7c9/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+            mw.visitVarInsn(ALOAD, context.var("out"));
+            mw.visitFieldInsn(GETSTATIC, getType(SerializerFeature.class), "WriteClassName",
+                              "L" + getType(SerializerFeature.class) + ";");
+            mw.visitMethodInsn(INVOKEVIRTUAL, getType(SerializeWriter.class), "isEnabled",
+                               "(" + "L" + getType(SerializerFeature.class) + ";" + ")Z");
+=======
+//            mw.visitVarInsn(ALOAD, context.var("out"));
+//            mw.visitFieldInsn(GETSTATIC, getType(SerializerFeature.class), "WriteClassName",
+//                              "L" + getType(SerializerFeature.class) + ";");
+//            mw.visitMethodInsn(INVOKEVIRTUAL, getType(SerializeWriter.class), "isEnabled",
+//                               "(" + "L" + getType(SerializerFeature.class) + ";" + ")Z");
+//            mw.visitJumpInsn(IFEQ, else_);
+            
+            mw.visitVarInsn(ALOAD, context.serializer());
+            mw.visitVarInsn(ALOAD, context.paramFieldType());
+            mw.visitVarInsn(ALOAD, context.obj());
+            mw.visitMethodInsn(INVOKEVIRTUAL, getType(JSONSerializer.class), "isWriteClassName",
+                               "(Ljava/lang/reflect/Type;Ljava/lang/Object;)Z");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ec0a424_5a2f7c9/rev_ec0a424-5a2f7c9/src/main/java/com/alibaba/fastjson/serializer/JavaBeanSerializer.java;<<<<<<< MINE
+            getters = this.getters;
+=======
+            getters = this.sortedGetters;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ec0a424_5a2f7c9/rev_ec0a424-5a2f7c9/src/main/java/com/alibaba/fastjson/serializer/JavaBeanSerializer.java;<<<<<<< MINE
+            getters = this.sortedGetters;    
+=======
+            getters = this.getters;    
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ec0a424_5a2f7c9/rev_ec0a424-5a2f7c9/src/test/java/com/alibaba/json/bvt/serializer/SerializeWriterTest_4.java;<<<<<<< MINE
+        out.writeFieldValue(',', "\tname", "\t");
+        Assert.assertEquals(",\"\\tname\":\"\\t\"", out.toString());
+=======
+        out.writeFieldValue(',', "name", "\t");
+        Assert.assertEquals(",\"name\":\"\\t\"", out.toString());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ec0a424_5a2f7c9/rev_ec0a424-5a2f7c9/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+            mw.visitVarInsn(ALOAD, context.var("out"));
+            mw.visitFieldInsn(GETSTATIC, getType(SerializerFeature.class), "WriteClassName",
+                              "L" + getType(SerializerFeature.class) + ";");
+            mw.visitMethodInsn(INVOKEVIRTUAL, getType(SerializeWriter.class), "isEnabled",
+                               "(" + "L" + getType(SerializerFeature.class) + ";" + ")Z");
+=======
+//            mw.visitVarInsn(ALOAD, context.var("out"));
+//            mw.visitFieldInsn(GETSTATIC, getType(SerializerFeature.class), "WriteClassName",
+//                              "L" + getType(SerializerFeature.class) + ";");
+//            mw.visitMethodInsn(INVOKEVIRTUAL, getType(SerializeWriter.class), "isEnabled",
+//                               "(" + "L" + getType(SerializerFeature.class) + ";" + ")Z");
+//            mw.visitJumpInsn(IFEQ, else_);
+            
+            mw.visitVarInsn(ALOAD, context.serializer());
+            mw.visitVarInsn(ALOAD, context.paramFieldType());
+            mw.visitVarInsn(ALOAD, context.obj());
+            mw.visitMethodInsn(INVOKEVIRTUAL, getType(JSONSerializer.class), "isWriteClassName",
+                               "(Ljava/lang/reflect/Type;Ljava/lang/Object;)Z");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ec0a424_5a2f7c9/rev_ec0a424-5a2f7c9/src/main/java/com/alibaba/fastjson/serializer/JavaBeanSerializer.java;<<<<<<< MINE
+            getters = this.getters;
+=======
+            getters = this.sortedGetters;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ec0a424_5a2f7c9/rev_ec0a424-5a2f7c9/src/main/java/com/alibaba/fastjson/serializer/JavaBeanSerializer.java;<<<<<<< MINE
+            getters = this.sortedGetters;    
+=======
+            getters = this.getters;    
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ec0a424_5a2f7c9/rev_ec0a424-5a2f7c9/src/test/java/com/alibaba/json/bvt/serializer/SerializeWriterTest_4.java;<<<<<<< MINE
+        out.writeFieldValue(',', "\tname", "\t");
+        Assert.assertEquals(",\"\\tname\":\"\\t\"", out.toString());
+=======
+        out.writeFieldValue(',', "name", "\t");
+        Assert.assertEquals(",\"name\":\"\\t\"", out.toString());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/parser/JSONScanner.java;<<<<<<< MINE
+        return text.substring(offset, offset + count);
+=======
+        if (ASMUtils.isAndroid()) {
+            char[] chars = new char[count];
+            for (int i = offset; i < offset + count; ++i) {
+                chars[i - offset] = text.charAt(i);
+            }
+            return new String(chars);
+        } else {
+            return text.substring(offset, offset + count);
+        }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/parser/JSONScanner.java;<<<<<<< MINE
+        return text.substring(np, np + sp);
+        // return new String(buf, np, sp);
+=======
+        // return text.substring(np, np + sp);
+        return this.subString(np, sp);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/parser/SymbolTable.java;<<<<<<< MINE
+                return buffer.substring(offset, offset + len);
+                // return new String(buffer, offset, len);
+=======
+                // return buffer.substring(offset, offset + len);
+                return subString(buffer, offset, len);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/parser/SymbolTable.java;<<<<<<< MINE
+            // return new String(buffer, offset, len);
+            return buffer.substring(offset, offset + len);
+=======
+            // return buffer.substring(offset, offset + len);
+            return subString(buffer, offset, len);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/parser/SymbolTable.java;<<<<<<< MINE
+            symbol = text.substring(offset, offset + length).intern();
+=======
+            // symbol = text.substring(offset, offset + length).intern();
+            symbol = subString(text, offset, length).intern();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/util/TypeUtils.java;<<<<<<< MINE
+            if ("true".equals(str)) {
+=======
+            if ("true".equalsIgnoreCase(strVal)) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/util/TypeUtils.java;<<<<<<< MINE
+            if ("false".equals(str)) {
+=======
+            if ("false".equalsIgnoreCase(strVal)) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/util/TypeUtils.java;<<<<<<< MINE
+            if ("1".equals(str)) {
+=======
+            if ("1".equals(strVal)) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/util/TypeUtils.java;<<<<<<< MINE
+            if ("0".equals(str)) {
+=======
+            if ("0".equals(strVal)) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_a3e83d9_441164d/rev_a3e83d9-441164d/src/main/java/com/alibaba/fastjson/parser/JSONScanner.java;<<<<<<< MINE
+
+    public final char doNext() {
+=======
+    public final char doNext() {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_a3e83d9_441164d/rev_a3e83d9-441164d/src/main/java/com/alibaba/fastjson/parser/JSONReaderScanner.java;<<<<<<< MINE
+
+
+    public final char doNext() {
+=======
+    public final char next() {
+        ch = doNext();
+        if (ch == '/' && isEnabled(Feature.AllowComment)) {
+            skipComment();
+        }
+        return ch;
+    }
+
+    public final char doNext() {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_3c07047_40cd238/rev_3c07047-40cd238/src/main/java/com/alibaba/fastjson/support/jaxrs/FastJsonProvider.java;<<<<<<< MINE
+            entityStream.write(jsonStr.getBytes());
+=======
+        	
+        	this.outputStreamWriteString(entityStream, jsonStr);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_3c07047_40cd238/rev_3c07047-40cd238/src/main/java/com/alibaba/fastjson/support/jaxrs/FastJsonProvider.java;<<<<<<< MINE
+            input = IOUtils.toString(entityStream);
+=======
+            input = this.inputStreamReadString(entityStream);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/collapser/RequestCollapser.java;<<<<<<< MINE
+            callableWithContextOfParent = concurrencyStrategy.wrapCallable(new HystrixContextCallable<Void>(new Callable<Void>() {
+=======
+            callableWithContextOfParent = new HystrixContextCallable<Void>(concurrencyStrategy, new Callable<Void>() {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/collapser/RequestCollapser.java;<<<<<<< MINE
+            }));
+=======
+            });
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/strategy/concurrency/HystrixContextRunnable.java;<<<<<<< MINE
+    public HystrixContextRunnable(Runnable actual) {
+        this(HystrixPlugins.getInstance().getConcurrencyStrategy(), actual);
+    }
+    
+    public HystrixContextRunnable(HystrixConcurrencyStrategy concurrencyStrategy, final Runnable actual) {
+        this.actual = concurrencyStrategy.wrapCallable(new Callable<Void>() {
+
+            @Override
+            public Void call() throws Exception {
+                actual.run();
+                return null;
+            }
+
+        });
+=======
+    public HystrixContextRunnable(HystrixConcurrencyStrategy concurrencyStrategy, final Runnable actual) {
+        this.actual = concurrencyStrategy.wrapCallable(new Callable<Void>() {
+
+            @Override
+            public Void call() throws Exception {
+                actual.run();
+                return null;
+            }
+
+        });
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/strategy/concurrency/HystrixContextRunnable.java;<<<<<<< MINE
+            actual.run();
+=======
+            try {
+                actual.call();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/strategy/concurrency/HystrixContextCallable.java;<<<<<<< MINE
+    public HystrixContextCallable(Callable<K> actual) {
+        this(HystrixPlugins.getInstance().getConcurrencyStrategy(), actual);
+    }
+    
+    public HystrixContextCallable(HystrixConcurrencyStrategy concurrencyStrategy, Callable<K> actual) {
+        this.actual = concurrencyStrategy.wrapCallable(actual);
+=======
+    public HystrixContextCallable(HystrixConcurrencyStrategy concurrencyStrategy, Callable<K> actual) {
+        this.actual = concurrencyStrategy.wrapCallable(actual);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/HystrixCommand.java;<<<<<<< MINE
+    private Subscription subscribeWithThreadIsolation(final Observer<? super R> observer) {
+        // mark that we are executing in a thread (even if we end up being rejected we still were a THREAD execution and not SEMAPHORE)
+        isExecutedInThread.set(true);
+
+        // final reference to the current calling thread so the child thread can access it if needed
+        final Thread callingThread = Thread.currentThread();
+
+        final HystrixCommand<R> _this = this;
+
+        try {
+            if (!threadPool.isQueueSpaceAvailable()) {
+                // we are at the property defined max so want to throw a RejectedExecutionException to simulate reaching the real max 
+                throw new RejectedExecutionException("Rejected command because thread-pool queueSize is at rejection threshold.");
+            }
+
+            // wrap the synchronous execute() method in a Callable and execute in the threadpool
+            final Future<R> f = threadPool.getExecutor().submit(new HystrixContextCallable<R>(concurrencyStrategy, new Callable<R>() {
+
+                @Override
+                public R call() throws Exception {
+                	boolean recordDuration = true;
+                    try {
+                        // assign 'callingThread' to our NFExceptionThreadingUtility ThreadLocal variable so that if we blow up
+                        // anywhere along the way the exception knows who the calling thread is and can include it in the stacktrace
+                        ExceptionThreadingUtility.assignCallingThread(callingThread);
+
+                        // execution hook
+                        executionHook.onThreadStart(_this);
+
+                        // count the active thread
+                        threadPool.markThreadExecution();
+
+                        try {
+                            // store the command that is being run
+                            Hystrix.startCurrentThreadExecutingCommand(getCommandKey());
+                            // execute the command
+                            R r = executeCommand();
+                            // if we can go from NOT_EXECUTED to COMPLETED then we did not timeout
+                            if (isCommandTimedOut.compareAndSet(TimedOutStatus.NOT_EXECUTED, TimedOutStatus.COMPLETED)) {
+                                // give the hook an opportunity to modify it
+                                r = executionHook.onComplete(_this, r);
+                                // pass to the observer
+                                observer.onNext(r);
+                                // state changes before termination
+                                preTerminationWork(recordDuration);
+                                /* now complete which releases the consumer */
+                                observer.onCompleted();
+                                return r;
+                            } else {
+                                // this means we lost the race and the timeout logic has or is being executed
+                                // state changes before termination
+                            	// do not recordDuration as this is a timeout and the tick would have set the duration already.
+                            	recordDuration = false;
+                                preTerminationWork(recordDuration);
+                                return null;
+                            }
+                        } finally {
+                            // pop this off the thread now that it's done
+                            Hystrix.endCurrentThreadExecutingCommand();
+                        }
+                    } catch (Exception e) {
+                        // state changes before termination
+                        preTerminationWork(recordDuration);
+                        // if we can go from NOT_EXECUTED to COMPLETED then we did not timeout
+                        if (isCommandTimedOut.compareAndSet(TimedOutStatus.NOT_EXECUTED, TimedOutStatus.COMPLETED)) {
+                            observer.onError(e);
+                        }
+                        throw e;
+                    }
+                }
+
+                private void preTerminationWork(boolean recordDuration) {
+                	if(recordDuration) {
+                		/* execution time (must occur before terminal state otherwise a race condition can occur if requested by client) */
+                		recordTotalExecutionTime(invocationStartTime);
+                	}
+                    threadPool.markThreadCompletion();
+
+                    try {
+                        executionHook.onThreadComplete(_this);
+                    } catch (Exception e) {
+                        logger.warn("ExecutionHook.onThreadComplete threw an exception that will be ignored.", e);
+                    }
+                }
+
+            }));
+
+            return new Subscription() {
+
+                @Override
+                public void unsubscribe() {
+                    f.cancel(properties.executionIsolationThreadInterruptOnTimeout().get());
+                }
+
+            };
+
+        } catch (RejectedExecutionException e) {
+            // mark on counter
+            metrics.markThreadPoolRejection();
+            // use a fallback instead (or throw exception if not implemented)
+            observer.onNext(getFallbackOrThrowException(HystrixEventType.THREAD_POOL_REJECTED, FailureType.REJECTED_THREAD_EXECUTION, "could not be queued for execution", e));
+            observer.onCompleted();
+            return Subscriptions.empty();
+        } catch (Exception e) {
+            // unknown exception
+            logger.error(getLogMessagePrefix() + ": Unexpected exception while submitting to queue.", e);
+            observer.onNext(getFallbackOrThrowException(HystrixEventType.THREAD_POOL_REJECTED, FailureType.REJECTED_THREAD_EXECUTION, "had unexpected exception while attempting to queue for execution.", e));
+            observer.onCompleted();
+            return Subscriptions.empty();
+        }
+=======
+    @Override
+    public HystrixCommandGroupKey getCommandGroup() {
+        return observableCommand.getCommandGroup();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+        mw.visitVarInsn(ISTORE, context.var("int"));
+=======
+        mw.visitVarInsn(ISTORE, context.var("size"));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+        mw.visitVarInsn(ILOAD, context.var("int"));
+=======
+        mw.visitVarInsn(ILOAD, context.var("size"));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+        {
+=======
+        if (elementType == String.class && context.writeDirect) {
+            mw.visitVarInsn(ALOAD, context.var("out"));
+            mw.visitVarInsn(ALOAD, context.var("list"));
+            mw.visitMethodInsn(INVOKEVIRTUAL, SerializeWriter, "write", "(Ljava/util/List;)V");
+        } else {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+
+            mw.visitVarInsn(ILOAD, context.var("int"));
+            mw.visitInsn(ICONST_1);
+            mw.visitInsn(ISUB);
+
+=======
+            mw.visitVarInsn(ILOAD, context.var("size"));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+            if (elementType == String.class) {
+=======
+            if (elementType == String.class && context.writeDirect) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+
+            if (elementType == String.class) {
+                // out.write((String)list.get(size - 1));
+                mw.visitVarInsn(ALOAD, context.var("out"));
+                mw.visitVarInsn(ALOAD, context.var("list"));
+                mw.visitVarInsn(ILOAD, context.var("int"));
+                mw.visitInsn(ICONST_1);
+                mw.visitInsn(ISUB);
+                mw.visitMethodInsn(INVOKEINTERFACE, "java/util/List", "get", "(I)Ljava/lang/Object;");
+                mw.visitTypeInsn(CHECKCAST, "java/lang/String"); // cast to string
+                mw.visitVarInsn(BIPUSH, ']');
+                if (context.writeDirect) {
+                    mw.visitMethodInsn(INVOKEVIRTUAL, SerializeWriter, "writeStringWithDoubleQuoteDirect",
+                            "(Ljava/lang/String;C)V");
+                } else {
+                    mw.visitMethodInsn(INVOKEVIRTUAL, SerializeWriter, "writeString",
+                                       "(Ljava/lang/String;C)V");
+                }
+            } else {
+                mw.visitVarInsn(ALOAD, Context.serializer);
+                mw.visitVarInsn(ALOAD, context.var("list"));
+                mw.visitVarInsn(ILOAD, context.var("i"));
+                mw.visitMethodInsn(INVOKEINTERFACE, "java/util/List", "get", "(I)Ljava/lang/Object;");
+                mw.visitVarInsn(ILOAD, context.var("i"));
+                mw.visitMethodInsn(INVOKESTATIC, "java/lang/Integer", "valueOf", "(I)Ljava/lang/Integer;");
+
+                if (elementClass != null && Modifier.isPublic(elementClass.getModifiers())) {
+                    mw.visitLdcInsn(com.alibaba.fastjson.asm.Type.getType(desc((Class<?>) elementType)));
+                    mw.visitLdcInsn(property.serialzeFeatures);
+                    mw.visitMethodInsn(INVOKEVIRTUAL, JSONSerializer, "writeWithFieldName",
+                                       "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/reflect/Type;I)V");
+                } else {
+                    mw.visitMethodInsn(INVOKEVIRTUAL, JSONSerializer, "writeWithFieldName",
+                                       "(Ljava/lang/Object;Ljava/lang/Object;)V");
+                }
+
+                mw.visitVarInsn(ALOAD, context.var("out"));
+                mw.visitVarInsn(BIPUSH, ']');
+                mw.visitMethodInsn(INVOKEVIRTUAL, SerializeWriter, "write", "(I)V");
+            }
+=======
+            
+            mw.visitVarInsn(ALOAD, context.var("out"));
+            mw.visitVarInsn(BIPUSH, ']');
+            mw.visitMethodInsn(INVOKEVIRTUAL, SerializeWriter, "write", "(I)V");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225/src/main/java/com/alibaba/fastjson/serializer/JSONSerializer.java;<<<<<<< MINE
+        return out.writeDirect // 
+                && this.writeDirect
+                && javaBeanDeser.writeDirect
+                ;
+=======
+        return out.writeDirect //
+               && this.writeDirect //
+               && javaBeanDeser.writeDirect;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_969d52e_9f78225/rev_969d52e-9f78225/src/test/java/com/alibaba/json/test/codec/FastjsonManualCodec.java;<<<<<<< MINE
+            for (int i = 0, size = persons.size(); i < size; ++i) {
+                out.write('[');
+                if (i != 0) {
+                    out.write(',');
+                }
+                out.writeStringWithDoubleQuoteDirect(persons.get(i), (char) 0);
+                out.write(']');
+            }
+=======
+            out.writeFieldName("persons");
+            out.write(persons);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_c76d44b_a12ff69/rev_c76d44b-a12ff69/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java;<<<<<<< MINE
+                            if (deserizer == null) {
+=======
+                            if (deserializer == null) {
+                                userType = TypeUtils.loadClass(typeName, config.getDefaultClassLoader());
+                                
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_c76d44b_a12ff69/rev_c76d44b-a12ff69/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java;<<<<<<< MINE
+                                userType = config.checkAutoType(typeName, expectClass);
+                                deserizer = parser.getConfig().getDeserializer(userType);
+=======
+                                if (expectClass == null || 
+                                    (userType != null && expectClass.isAssignableFrom(userType))) {
+                                    deserializer = parser.getConfig().getDeserializer(userType);
+                                } else {
+                                    throw new JSONException("type not match");
+                                }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_9b6d748_e82a56a/rev_9b6d748-e82a56a/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+            if (context.nonContext && context.writeDirect) {
+=======
+            if (disableCircularReferenceDetect || (context.nonContext && context.writeDirect)) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_3b873c9_2f0524b/rev_3b873c9-2f0524b/hystrix-core/src/main/java/com/netflix/hystrix/util/HystrixTimer.java;<<<<<<< MINE
+                    return new Thread(r, "HystrixTimer-" + counter.incrementAndGet());
+=======
+                    Thread thread = new Thread(r, "HystrixTimer-" + counter.incrementAndGet());
+                    thread.setDaemon(true);
+                    return thread;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_3b873c9_2f0524b/rev_3b873c9-2f0524b/hystrix-core/src/main/java/com/netflix/hystrix/strategy/concurrency/HystrixConcurrencyStrategy.java;<<<<<<< MINE
+                return new Thread(r, "hystrix-" + threadPoolKey.name() + "-" + threadNumber.incrementAndGet());
+=======
+                Thread thread = new Thread(r, "hystrix-" + threadPoolKey.name() + "-" + threadNumber.incrementAndGet());
+                thread.setDaemon(true);
+                return thread; 
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635/src/main/java/com/alibaba/fastjson/support/spring/FastJsonHttpMessageConverter.java;<<<<<<< MINE
+        return readType(type, inputMessage);
+=======
+        return readType(getType(type, contextClass), inputMessage);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635/src/main/java/com/alibaba/fastjson/support/spring/FastJsonHttpMessageConverter.java;<<<<<<< MINE
+
+        return readType(clazz, inputMessage);
+=======
+        return readType(getType(clazz, null), inputMessage);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_d93b71f_1c81635/rev_d93b71f-1c81635/src/test/java/com/alibaba/json/bvt/support/spring/FastJsonJsonViewTest.java;<<<<<<< MINE
+        Assert.assertEquals(contentLength, contentAsString.getBytes().length);
+=======
+        Assert.assertEquals(contentLength, contentAsString.getBytes(view.getFastJsonConfig().getCharset().name()).length);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_9d0290a_29ed34b/rev_9d0290a-29ed34b/src/main/java/com/alibaba/fastjson/util/TypeUtils.java;<<<<<<< MINE
+    public static Type checkPrimitiveArray(GenericArrayType genericArrayType) {
+        Type clz = genericArrayType;
+        Type genericComponentType  = genericArrayType.getGenericComponentType();
+
+        String prefix = "[";
+        while (genericComponentType instanceof GenericArrayType) {
+            genericComponentType = ((GenericArrayType) genericComponentType)
+                    .getGenericComponentType();
+            prefix += prefix;
+        }
+
+        if (genericComponentType instanceof Class<?>) {
+            Class<?> ck = (Class<?>) genericComponentType;
+            if (ck.isPrimitive()) {
+                try {
+                    if (ck == boolean.class) {
+                        clz = Class.forName(prefix + "Z");
+                    } else if (ck == char.class) {
+                        clz = Class.forName(prefix + "C");
+                    } else if (ck == byte.class) {
+                        clz = Class.forName(prefix + "B");
+                    } else if (ck == short.class) {
+                        clz = Class.forName(prefix + "S");
+                    } else if (ck == int.class) {
+                        clz = Class.forName(prefix + "I");
+                    } else if (ck == long.class) {
+                        clz = Class.forName(prefix + "J");
+                    } else if (ck == float.class) {
+                        clz = Class.forName(prefix + "F");
+                    } else if (ck == double.class) {
+                        clz = Class.forName(prefix + "D");
+                    }
+                } catch (ClassNotFoundException e) {
+                }
+            }
+        }
+
+        return clz;
+    }
+
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static Collection createCollection(Type type) {
+=======
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public static Collection createCollection(Type type){
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_61ddeae_18fab29/rev_61ddeae-18fab29/hystrix-core/src/test/java/com/netflix/hystrix/HystrixCommandTest.java;<<<<<<< MINE
+                // success    
+=======
+                // success
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_61ddeae_18fab29/rev_61ddeae-18fab29/hystrix-core/src/test/java/com/netflix/hystrix/HystrixCommandTest.java;<<<<<<< MINE
+                // success    
+=======
+                // success
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_61ddeae_18fab29/rev_61ddeae-18fab29/hystrix-core/src/test/java/com/netflix/hystrix/HystrixCommandTest.java;<<<<<<< MINE
+     * 
+=======
+     *
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_61ddeae_18fab29/rev_61ddeae-18fab29/hystrix-core/src/test/java/com/netflix/hystrix/HystrixCommandTest.java;<<<<<<< MINE
+         * 
+=======
+         *
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_f597bb1_c1b8943/rev_f597bb1-c1b8943/src/jvm/backtype/storm/tuple/Tuple.java;<<<<<<< MINE
+        // should change this to get by field name, and push metadata stuff like this
+        // into metadata
+        if(o.equals(STREAM_KEYWORD)) {
+            return getSourceStreamId();
+        } else if(o.equals(COMPONENT_KEYWORD)) {
+            return getSourceComponent();
+        } else if(o.equals(TASK_KEYWORD)) {
+            return getSourceTask();
+=======
+        try {
+            if(o instanceof Keyword) {
+                return getValueByField(((Keyword) o).getName());
+            } else if(o instanceof String) {
+                return getValueByField((String) o);
+            }
+        } catch(IllegalArgumentException e) {
+        }
+        return null;
+    }
+
+    /* Seqable */
+    public ISeq seq() {
+        if(values.size() > 0) {
+            return new Seq(getFields().toList(), values, 0);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_446037a_3e29f13/rev_446037a-3e29f13/src/jvm/backtype/storm/spout/SchemeAsMultiScheme.java;<<<<<<< MINE
+    return Arrays.asList(scheme.deserialize(ser));
+=======
+    List<Object> o = scheme.deserialize(ser);
+    if(o == null) return null;
+    else return Arrays.asList(o);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/TransactionalMap.java;<<<<<<< MINE
+        return new CachedBatchReadsMap<T>(new TransactionalMap<T>(backing));
+=======
+        return new TransactionalMap<T>(backing);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/TransactionalMap.java;<<<<<<< MINE
+        _backing = backing;
+=======
+        _backing = new CachedBatchReadsMap(backing);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/TransactionalMap.java;<<<<<<< MINE
+        for(TransactionalValue v: vals) {
+=======
+        for(CachedBatchReadsMap.RetVal<TransactionalValue> retval: vals) {
+            TransactionalValue v = retval.val;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/TransactionalMap.java;<<<<<<< MINE
+                if(_currTx!=null && _currTx.equals(val.getTxid())) {
+=======
+                if(_currTx!=null && _currTx.equals(val.getTxid()) && !retval.cached) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/TransactionalMap.java;<<<<<<< MINE
+                }    
+=======
+                    changed = true;
+                }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/TransactionalMap.java;<<<<<<< MINE
+            newVals.add(newVal);
+=======
+            if(changed) {
+                newVals.add(newVal);
+                newKeys.add(keys.get(i));
+            }
+        }
+        if(!newKeys.isEmpty()) {
+            _backing.multiPut(newKeys, newVals);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/TransactionalMap.java;<<<<<<< MINE
+    }  
+=======
+        _backing.reset();
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/CachedBatchReadsMap.java;<<<<<<< MINE
+    public CachedBatchReadsMap(MapState<T> delegate) {
+=======
+    public CachedBatchReadsMap(IBackingMap<T> delegate) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/CachedBatchReadsMap.java;<<<<<<< MINE
+    @Override
+    public List<T> multiGet(List<List<Object>> keys) {
+        List<T> ret = _delegate.multiGet(keys);
+        if(!_cached.isEmpty()) {
+            ret = new ArrayList<T>(ret);
+            for(int i=0; i<keys.size(); i++) {
+                List<Object> key = keys.get(i);
+                if(_cached.containsKey(key)) {
+                    ret.set(i, _cached.get(key));
+                }
+=======
+    public List<RetVal<T>> multiGet(List<List<Object>> keys) {
+        // TODO: can optimize further by only querying backing map for keys not in the cache
+        List<T> vals = _delegate.multiGet(keys);
+        List<RetVal<T>> ret = new ArrayList(vals.size());
+        for(int i=0; i<keys.size(); i++) {
+            List<Object> key = keys.get(i);
+            if(_cached.containsKey(key)) {
+                ret.add(new RetVal(_cached.get(key), true));
+            } else {
+                ret.add(new RetVal(vals.get(i), false));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/OpaqueMap.java;<<<<<<< MINE
+        return new CachedBatchReadsMap<T>(new OpaqueMap<T>(backing));
+=======
+        return new OpaqueMap<T>(backing);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/OpaqueMap.java;<<<<<<< MINE
+        _backing = backing;
+=======
+        _backing = new CachedBatchReadsMap(backing);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/OpaqueMap.java;<<<<<<< MINE
+        for(OpaqueValue val: curr) {
+=======
+        for(CachedBatchReadsMap.RetVal<OpaqueValue> retval: curr) {
+            OpaqueValue val = retval.val;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/storm/trident/state/map/OpaqueMap.java;<<<<<<< MINE
+                prev = val.get(_currTx);
+=======
+                if(retval.cached) {
+                    prev = val.getCurr();
+                } else {
+                    prev = val.get(_currTx);
+                }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/backtype/storm/utils/Utils.java;<<<<<<< MINE
+                throw new RuntimeException("Found multiple " + name + " resources. You're probably bundling the Storm jars with your topology jar.");
+=======
+                throw new RuntimeException("Found multiple " + name + " resources. You're probably bundling the Storm jars with your topology jar. "
+                  + resources);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/backtype/storm/security/serialization/BlowfishTupleSerializer.java;<<<<<<< MINE
+	try{
+	    KeyGenerator kgen = KeyGenerator.getInstance("Blowfish");
+	    SecretKey skey = kgen.generateKey();
+	    byte[] raw = skey.getEncoded();
+	    String keyString = new String(Hex.encodeHex(raw));
+	    System.out.println("storm -c "+SECRET_KEY+"="+keyString+" -c "+Config.TOPOLOGY_TUPLE_SERIALIZER+"="+BlowfishTupleSerializer.class.getName() + " ..." );
+	} catch (Exception ex) {
+	    LOG.error(ex.getMessage());
+	    ex.printStackTrace();
+	}
+=======
+        try{
+            KeyGenerator kgen = KeyGenerator.getInstance("Blowfish");
+            SecretKey skey = kgen.generateKey();
+            byte[] raw = skey.getEncoded();
+            String keyString = new String(Hex.encodeHex(raw));
+            System.out.println("storm -c "+SECRET_KEY+"="+keyString+" -c "+Config.TOPOLOGY_TUPLE_SERIALIZER+"="+BlowfishTupleSerializer.class.getName() + " ..." );
+        } catch (Exception ex) {
+            LOG.error(ex.getMessage());
+            ex.printStackTrace();
+        }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Vert.x-Core/revisions/rev_20e5475_00eceab/rev_20e5475-00eceab/vertx-testsuite/src/test/java/vertx/tests/core/net/TestClient.java;<<<<<<< MINE
+    client.connect(1234, "somehost", new AsyncResultHandler<NetSocket>() {
+=======
+    client.connect(1234, "127.0.0.2", new AsyncResultHandler<NetSocket>() {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Vert.x-Core/revisions/rev_f1396aa_b015967/rev_f1396aa-b015967/vertx-core/src/main/java/org/vertx/java/core/file/impl/DefaultFileSystem.java;<<<<<<< MINE
+            raf.getChannel().truncate(len);
+=======
+            raf.setLength(len);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Vert.x-Core/revisions/rev_cf96769_d9b83ec/rev_cf96769-d9b83ec/vertx-core/src/main/java/io/vertx/core/http/impl/ServerWebSocketImpl.java;<<<<<<< MINE
+  public ServerWebSocketImpl(VertxInternal vertx, String uri, String path, String query, MultiMap headers,
+                             ConnectionBase conn, boolean supportsContinuation, Runnable connectRunnable) {
+    super(vertx, conn, supportsContinuation);
+=======
+  public ServerWebSocketImpl(VertxInternal vertx, String uri, String path, String query, Headers headers,
+                             ConnectionBase conn, Runnable connectRunnable) {
+    super(vertx, conn);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Vert.x-Core/revisions/rev_8b210bf_22f077e/rev_8b210bf-22f077e/vertx-core/src/main/java/io/vertx/core/logging/impl/VertxLoggerFormatter.java;<<<<<<< MINE
+    sb.append(dateFormat.format(date)).append(" ");
+=======
+    sb.append(date.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)).append(" ");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Vert.x-Core/revisions/rev_3d6677c_7ef9592/rev_3d6677c-7ef9592/src/main/java/io/vertx/core/spi/launcher/DefaultCommand.java;<<<<<<< MINE
+    this.props = props;
+=======
+    this.systemProperties = props;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Vert.x-Core/revisions/rev_3d6677c_7ef9592/rev_3d6677c-7ef9592/src/main/java/io/vertx/core/spi/launcher/DefaultCommand.java;<<<<<<< MINE
+    if (props != null) {
+      for (String prop : props) {
+=======
+    if (systemProperties != null) {
+      for (String prop : systemProperties) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Vert.x-Core/revisions/rev_3d6677c_7ef9592/rev_3d6677c-7ef9592/src/main/java/io/vertx/core/spi/launcher/DefaultCommand.java;<<<<<<< MINE
+    if (props != null) {
+      for (String prop : props) {
+=======
+    if (systemProperties != null) {
+      for (String prop : systemProperties) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Javaee7-samples/revisions/rev_b77bf39_ed4cb65/rev_b77bf39-ed4cb65/cdi/decorators/src/main/java/org/javaee7/cdi/decorators/MyDecorator.java;<<<<<<< MINE
+        return greeting.greet(name + " <b>very much!</b>");
+=======
+        return greeting.greet(name + " very much!");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Javaee7-samples/revisions/rev_76589b5_a4b91fd/rev_76589b5-a4b91fd/jms/jms-xa/src/main/java/org/javaee7/jms/xa/JMSMailman.java;<<<<<<< MINE
+            TextMessage tm = (TextMessage) message;
+            logger.info("Message received (async): " + tm.getText());
+=======
+            String text = message.getBody(String.class);
+            logger.info("Message received (async): " + text);
+>>>>>>> YOURS

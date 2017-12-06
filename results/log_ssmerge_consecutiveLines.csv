@@ -1,0 +1,86 @@
+revision;file;methodsignature;leftbody;basebody;rightbody
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_f597bb1_c1b8943/rev_f597bb1-c1b8943;/src/jvm/backtype/storm/tuple/Tuple;valAt(Object);        // should change this to get by field name, and push metadata stuff like this
+        // into metadata
+        if(o.equals(STREAM_KEYWORD)) {
+            return getSourceStreamId();
+        } else if(o.equals(COMPONENT_KEYWORD)) {
+            return getSourceComponent();
+        } else if(o.equals(TASK_KEYWORD)) {
+            return getSourceTask();;        if(o.equals(STREAM_KEYWORD)) {
+            return getSourceStreamId();
+        } else if(o.equals(COMPONENT_KEYWORD)) {
+            return getSourceComponent();
+        } else if(o.equals(TASK_KEYWORD)) {
+            return getSourceTask();;        try {
+            if(o instanceof Keyword) {
+                return getValueByField(((Keyword) o).getName());
+            } else if(o instanceof String) {
+                return getValueByField((String) o);
+            }
+        } catch(IllegalArgumentException e) {
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_3dfa3e7_4b38429/rev_3dfa3e7-4b38429;/src/jvm/backtype/storm/coordination/CoordinatedBolt;execute(Tuple);            boolean failed = checkFinishId(tuple);
+            if(failed) {
+                _collector.fail(tuple);
+            } else {
+                _collector.ack(tuple);
+            }
+        } else if(!_sourceArgs.isEmpty()
+                && tuple.getSourceStreamId().equals(Constants.COORDINATED_STREAM_ID)) {;            boolean failed = checkFinishId(tuple);
+            if(failed) {
+                _collector.fail(tuple);
+            } else {
+                _collector.ack(tuple);
+            }
+            
+        } else if(!_sourceArgs.isEmpty()
+                && tuple.getSourceStreamId().equals(Constants.COORDINATED_STREAM_ID)) {;            checkFinishId(tuple, type);            
+        } else if(type==TupleType.COORD) {
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/vertx-core/src/main/java/io/vertx/core/Vertx;sharedData();@GenIgnore
+  @CacheReturn
+  SharedData sharedData();;@GenIgnore
+  SharedData sharedData();;SharedData sharedData();
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/vertx-core/src/test/java/io/vertx/test/core/VertxOptionsTest;testJsonOptions();        put("clusterPort", clusterPort).
+        put("eventLoopPoolSize", eventLoopPoolSize).
+        put("internalBlockingPoolSize", internalBlockingPoolSize).
+        put("workerPoolSize", workerPoolSize).
+        put("blockedThreadCheckPeriod", blockedThreadCheckPeriod).
+        put("clusterHost", clusterHost).
+        put("maxEventLoopExecuteTime", maxEventLoopExecuteTime).
+        put("maxWorkerExecuteTime", maxWorkerExecuteTime).
+        put("proxyOperationTimeout", proxyOperationTimeout).
+        put("haEnabled", haEnabled).
+        put("quorumSize", quorumSize).
+        put("haGroup", haGroup).
+        put("metricsEnabled", metricsEnabled).
+        put("jmxEnabled", jmxEnabled).
+        put("jmxDomain", jmxDomain);        putNumber("clusterPort", clusterPort).
+        putNumber("eventLoopPoolSize", eventLoopPoolSize).
+        putNumber("internalBlockingPoolSize", internalBlockingPoolSize).
+        putNumber("workerPoolSize", workerPoolSize).
+        putNumber("blockedThreadCheckPeriod", blockedThreadCheckPeriod).
+        putString("clusterHost", clusterHost).
+        putNumber("maxEventLoopExecuteTime", maxEventLoopExecuteTime).
+        putNumber("maxWorkerExecuteTime", maxWorkerExecuteTime).
+        putNumber("proxyOperationTimeout", proxyOperationTimeout).
+        putBoolean("haEnabled", haEnabled).
+        putNumber("quorumSize", quorumSize).
+        putString("haGroup", haGroup).
+        putBoolean("metricsEnabled", metricsEnabled).
+        putBoolean("jmxEnabled", jmxEnabled).
+        putString("jmxDomain", jmxDomain);        putNumber("clusterPort", clusterPort).
+        putNumber("eventLoopPoolSize", eventLoopPoolSize).
+        putNumber("internalBlockingPoolSize", internalBlockingPoolSize).
+        putNumber("workerPoolSize", workerPoolSize).
+        putNumber("blockedThreadCheckPeriod", blockedThreadCheckPeriod).
+        putString("clusterHost", clusterHost).
+        putNumber("clusterPingInterval", clusterPingInterval).
+        putNumber("clusterPingReplyInterval", clusterPingReplyInterval).
+        putNumber("maxEventLoopExecuteTime", maxEventLoopExecuteTime).
+        putNumber("maxWorkerExecuteTime", maxWorkerExecuteTime).
+        putNumber("proxyOperationTimeout", proxyOperationTimeout).
+        putBoolean("haEnabled", haEnabled).
+        putNumber("quorumSize", quorumSize).
+        putString("haGroup", haGroup).
+        putBoolean("metricsEnabled", metricsEnabled).
+        putBoolean("jmxEnabled", jmxEnabled).
+        putString("jmxDomain", jmxDomain)

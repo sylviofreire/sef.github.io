@@ -1,0 +1,840 @@
+file;ssmergeConf;linedbasedConf
+/home/paper219/Desktop/analysis/demonstration/projects/Mybatis-3/revisions/rev_bd60088_942c2c7/rev_bd60088-942c2c7/src/main/java/org/apache/ibatis/executor/resultset/DefaultResultSetHandler.java;<<<<<<< MINE
+            instantiateCollectionPropertyIfAppropriate(resultMapping, metaObject); // mandatory            
+=======
+            final Object collectionProperty = instantiateCollectionPropertyIfAppropriate(resultMapping, metaObject);
+>>>>>>> YOURS;<<<<<<< MINE
+            instantiateCollectionPropertyIfAppropriate(resultMapping, metaObject); // mandatory            
+=======
+            final Object collectionProperty = instantiateCollectionPropertyIfAppropriate(resultMapping, metaObject);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2/src/main/java/com/alibaba/fastjson/parser/deserializer/ASMDeserializerFactory.java;<<<<<<< MINE
+                Type actualTypeArgument = ((ParameterizedType) fieldType).getActualTypeArguments()[0];
+
+                if (actualTypeArgument instanceof Class) {
+                    Class<?> itemClass = (Class<?>) actualTypeArgument;
+
+                    if (!Modifier.isPublic(itemClass.getModifiers())) {
+                        throw new ASMException("can not create ASMParser");
+                    }
+
+                    if (itemClass == String.class) {
+                        mw.visitMethodInsn(INVOKEVIRTUAL, getType(JSONScanner.class), "scanFieldStringArray",
+                                           "([C)" + getDesc(ArrayList.class));
+                        mw.visitVarInsn(ASTORE, context.var(fieldInfo.getName() + "_asm"));
+                    } else {
+                        _deserialze_list_obj(context, mw, reset_, fieldInfo, fieldClass, itemClass);
+
+                        if (i == size - 1) {
+                            _deserialize_endCheck(context, mw, reset_);
+                        }
+                        continue;
+                    }
+                } else {
+                    throw new ASMException("can not create ASMParser");
+                }
+=======
+            	Type actualTypeArgument = ((ParameterizedType) fieldType).getActualTypeArguments()[0];
+            	
+            	if (actualTypeArgument instanceof Class) {
+	                Class<?> itemClass = (Class<?>) actualTypeArgument;
+	                
+	                if (!Modifier.isPublic(itemClass.getModifiers())) {
+	                	throw new ASMException("can not create ASMParser");
+	                }
+	                
+	                if (itemClass == String.class) {
+	                    mw.visitMethodInsn(INVOKEVIRTUAL, getType(JSONScanner.class), "scanFieldStringArray",
+	                                       "([C)" + getDesc(ArrayList.class));
+	                    mw.visitVarInsn(ASTORE, context.var(fieldInfo.getName() + "_asm"));
+	                } else {
+	                    _deserialze_list_obj(context, mw, reset_, fieldInfo, fieldClass, itemClass);
+	
+	                    if (i == size - 1) {
+	                        _deserialize_endCheck(context, mw, reset_);
+	                    }
+	                    continue;
+	                }
+            	} else {
+            		throw new ASMException("can not create ASMParser");
+            	}
+>>>>>>> YOURS;<<<<<<< MINE
+                Type actualTypeArgument = ((ParameterizedType) fieldType).getActualTypeArguments()[0];
+
+                if (actualTypeArgument instanceof Class) {
+                    Class<?> itemClass = (Class<?>) actualTypeArgument;
+
+                    if (!Modifier.isPublic(itemClass.getModifiers())) {
+                        throw new ASMException("can not create ASMParser");
+                    }
+
+                    if (itemClass == String.class) {
+                        mw.visitMethodInsn(INVOKEVIRTUAL, getType(JSONScanner.class), "scanFieldStringArray",
+                                           "([C)" + getDesc(ArrayList.class));
+                        mw.visitVarInsn(ASTORE, context.var(fieldInfo.getName() + "_asm"));
+                    } else {
+                        _deserialze_list_obj(context, mw, reset_, fieldInfo, fieldClass, itemClass);
+
+                        if (i == size - 1) {
+                            _deserialize_endCheck(context, mw, reset_);
+                        }
+                        continue;
+                    }
+                } else {
+                    throw new ASMException("can not create ASMParser");
+                }
+=======
+            	Type actualTypeArgument = ((ParameterizedType) fieldType).getActualTypeArguments()[0];
+            	
+            	if (actualTypeArgument instanceof Class) {
+	                Class<?> itemClass = (Class<?>) actualTypeArgument;
+	                
+	                if (!Modifier.isPublic(itemClass.getModifiers())) {
+	                	throw new ASMException("can not create ASMParser");
+	                }
+	                
+	                if (itemClass == String.class) {
+	                    mw.visitMethodInsn(INVOKEVIRTUAL, getType(JSONScanner.class), "scanFieldStringArray",
+	                                       "([C)" + getDesc(ArrayList.class));
+	                    mw.visitVarInsn(ASTORE, context.var(fieldInfo.getName() + "_asm"));
+	                } else {
+	                    _deserialze_list_obj(context, mw, reset_, fieldInfo, fieldClass, itemClass);
+	
+	                    if (i == size - 1) {
+	                        _deserialize_endCheck(context, mw, reset_);
+	                    }
+	                    continue;
+	                }
+            	} else {
+            		throw new ASMException("can not create ASMParser");
+            	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_f65ddcf_0b063a2/rev_f65ddcf-0b063a2/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java;<<<<<<< MINE
+        
+        Class<?> elementClass = null;
+        if (elementType instanceof Class<?>) {
+        	elementClass = (Class<?>) elementType;
+        }
+        
+=======
+        
+        Class<?> elementClass = null;
+        if (elementClass instanceof Class<?>) {
+        	elementClass = (Class<?>) elementType;
+        }
+        
+>>>>>>> YOURS;<<<<<<< MINE
+        
+        Class<?> elementClass = null;
+        if (elementType instanceof Class<?>) {
+        	elementClass = (Class<?>) elementType;
+        }
+        
+=======
+        
+        Class<?> elementClass = null;
+        if (elementClass instanceof Class<?>) {
+        	elementClass = (Class<?>) elementType;
+        }
+        
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_cc0428f_dee22f7/rev_cc0428f-dee22f7/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java;<<<<<<< MINE
+                        
+                        if (type instanceof Class && typeName.equals(((Class<?>)type).getName())) {
+                            if (lexer.token() == JSONToken.RBRACE) {
+                                lexer.nextToken();
+                                break;
+                            }
+                            continue;
+                        }
+                        
+=======
+                        
+                        if (type instanceof Class && typeName.equals(((Class<?>)type).getName())) {
+                            continue;
+                        }
+                        
+>>>>>>> YOURS;<<<<<<< MINE
+                        
+                        if (type instanceof Class && typeName.equals(((Class<?>)type).getName())) {
+                            if (lexer.token() == JSONToken.RBRACE) {
+                                lexer.nextToken();
+                                break;
+                            }
+                            continue;
+                        }
+                        
+=======
+                        
+                        if (type instanceof Class && typeName.equals(((Class<?>)type).getName())) {
+                            continue;
+                        }
+                        
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a/src/main/java/com/alibaba/fastjson/parser/deserializer/ArrayDeserializer.java;<<<<<<< MINE
+        
+        array.setRelatedArray(objArray);
+        array.setComponentType(componentType);
+=======
+        
+        array.setRelatedArray((Object[]) objArray);
+        array.setComponentType(componentType);
+>>>>>>> YOURS;<<<<<<< MINE
+        
+        array.setRelatedArray(objArray);
+        array.setComponentType(componentType);
+=======
+        
+        array.setRelatedArray((Object[]) objArray);
+        array.setComponentType(componentType);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a/src/test/java/com/alibaba/json/bvt/ArrayRefTest2.java;<<<<<<< MINE
+        
+        Assert.assertNotNull(groups[0]);
+        Assert.assertNotNull(groups[1]);
+        Assert.assertNotNull(groups[2]);
+        Assert.assertNotNull(groups[3]);
+        Assert.assertNotNull(groups[4]);
+        Assert.assertNotNull(groups[5]);
+        
+        Assert.assertEquals(0, groups[0].getId());
+        Assert.assertEquals(1, groups[1].getId());
+        Assert.assertEquals(2, groups[2].getId());
+        Assert.assertEquals(0, groups[3].getId());
+        Assert.assertEquals(1, groups[4].getId());
+        Assert.assertEquals(2, groups[5].getId());
+=======
+        
+        Assert.assertEquals(0, groups[0].getId());
+        Assert.assertEquals(1, groups[1].getId());
+        Assert.assertEquals(2, groups[2].getId());
+        Assert.assertEquals(0, groups[3].getId());
+        Assert.assertEquals(1, groups[4].getId());
+        Assert.assertEquals(2, groups[5].getId());
+>>>>>>> YOURS;<<<<<<< MINE
+        
+        Assert.assertNotNull(groups[0]);
+        Assert.assertNotNull(groups[1]);
+        Assert.assertNotNull(groups[2]);
+        Assert.assertNotNull(groups[3]);
+        Assert.assertNotNull(groups[4]);
+        Assert.assertNotNull(groups[5]);
+        
+        Assert.assertEquals(0, groups[0].getId());
+        Assert.assertEquals(1, groups[1].getId());
+        Assert.assertEquals(2, groups[2].getId());
+        Assert.assertEquals(0, groups[3].getId());
+        Assert.assertEquals(1, groups[4].getId());
+        Assert.assertEquals(2, groups[5].getId());
+=======
+        
+        Assert.assertEquals(0, groups[0].getId());
+        Assert.assertEquals(1, groups[1].getId());
+        Assert.assertEquals(2, groups[2].getId());
+        Assert.assertEquals(0, groups[3].getId());
+        Assert.assertEquals(1, groups[4].getId());
+        Assert.assertEquals(2, groups[5].getId());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+                    Object obj = this.parseObject(new JSONObject(), key);
+                    checkMapResolve(object, key.toString());
+                    
+=======
+                    Object obj = this.parseObject(new JSONObject(), key);
+>>>>>>> YOURS;<<<<<<< MINE
+                    Object obj = this.parseObject(new JSONObject(), key);
+                    checkMapResolve(object, key.toString());
+                    
+=======
+                    Object obj = this.parseObject(new JSONObject(), key);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_a637069_a8ce537/rev_a637069-a8ce537/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_a637069_a8ce537/rev_a637069-a8ce537/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_a637069_a8ce537/rev_a637069-a8ce537/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+        sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_a637069_a8ce537/rev_a637069-a8ce537/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+        sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5e3ede7_3ec60f2/rev_5e3ede7-3ec60f2/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5e3ede7_3ec60f2/rev_5e3ede7-3ec60f2/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5e3ede7_3ec60f2/rev_5e3ede7-3ec60f2/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+        sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5e3ede7_3ec60f2/rev_5e3ede7-3ec60f2/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+        sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_3d572a0_90ae5a9/rev_3d572a0-90ae5a9/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_3d572a0_90ae5a9/rev_3d572a0-90ae5a9/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_3d572a0_90ae5a9/rev_3d572a0-90ae5a9/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+        sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_3d572a0_90ae5a9/rev_3d572a0-90ae5a9/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+        sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_79e5def_fbfa4b2/rev_79e5def-fbfa4b2/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_79e5def_fbfa4b2/rev_79e5def-fbfa4b2/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_79e5def_fbfa4b2/rev_79e5def-fbfa4b2/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+        sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_79e5def_fbfa4b2/rev_79e5def-fbfa4b2/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+        sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_9246b46_76fc26d/rev_9246b46-76fc26d/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_9246b46_76fc26d/rev_9246b46-76fc26d/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_9246b46_76fc26d/rev_9246b46-76fc26d/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+        sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_9246b46_76fc26d/rev_9246b46-76fc26d/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+        sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_72d5e1f_4292acc/rev_72d5e1f-4292acc/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_72d5e1f_4292acc/rev_72d5e1f-4292acc/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_72d5e1f_4292acc/rev_72d5e1f-4292acc/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+        sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_72d5e1f_4292acc/rev_72d5e1f-4292acc/src/test/java/com/alibaba/json/bvtVO/PushMsg.java;<<<<<<< MINE
+=======
+                sb.append("\n>>>>>>> YOURS;<<<<<<< MINE
+=======
+        sb.append("\n>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/parser/JSONScanner.java;<<<<<<< MINE
+            // return text.substring(np + 1, np + 1 + sp);
+            return this.subString(np + 1, sp);
+=======
+            //return text.substring(np + 1, np + 1 + sp);
+            return this.subString(np + 1, sp);
+>>>>>>> YOURS;<<<<<<< MINE
+            // return text.substring(np + 1, np + 1 + sp);
+            return this.subString(np + 1, sp);
+=======
+            //return text.substring(np + 1, np + 1 + sp);
+            return this.subString(np + 1, sp);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/parser/JSONScanner.java;<<<<<<< MINE
+                    // strVal = text.substring(start, index - 1);
+                    strVal = this.subString(start, index - start - 1);
+=======
+                    strVal = this.subString(start, index - start - 1);
+                    // strVal = text.substring(start, index - 1);
+>>>>>>> YOURS;<<<<<<< MINE
+                    // strVal = text.substring(start, index - 1);
+                    strVal = this.subString(start, index - start - 1);
+=======
+                    strVal = this.subString(start, index - start - 1);
+                    // strVal = text.substring(start, index - 1);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/util/TypeUtils.java;<<<<<<< MINE
+            
+            if ("null".equals(strVal)) {
+                return null;
+            }
+            
+=======
+            
+            if ("null".equals(strVal) || "NULL".equals(strVal)) {
+                return null;
+            }
+            
+>>>>>>> YOURS;<<<<<<< MINE
+            
+            if ("null".equals(strVal)) {
+                return null;
+            }
+            
+=======
+            
+            if ("null".equals(strVal) || "NULL".equals(strVal)) {
+                return null;
+            }
+            
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/util/TypeUtils.java;<<<<<<< MINE
+            
+            if ("null".equals(strVal)) {
+                return null;
+            }
+            
+=======
+            
+            if ("null".equals(strVal) || "NULL".equals(strVal)) {
+                return null;
+            }
+            
+>>>>>>> YOURS;<<<<<<< MINE
+            
+            if ("null".equals(strVal)) {
+                return null;
+            }
+            
+=======
+            
+            if ("null".equals(strVal) || "NULL".equals(strVal)) {
+                return null;
+            }
+            
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/util/TypeUtils.java;<<<<<<< MINE
+            
+            if ("null".equals(strVal)) {
+                return null;
+            }
+            
+=======
+            
+            if ("null".equals(strVal) || "NULL".equals(strVal)) {
+                return null;
+            }
+            
+>>>>>>> YOURS;<<<<<<< MINE
+            
+            if ("null".equals(strVal)) {
+                return null;
+            }
+=======
+            
+            if ("null".equals(strVal) || "NULL".equals(strVal)) {
+                return null;
+            }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/util/TypeUtils.java;<<<<<<< MINE
+            
+            if ("null".equals(strVal)) {
+                return null;
+            }
+            
+=======
+            
+            if ("null".equals(strVal) || "NULL".equals(strVal)) {
+                return null;
+            }
+            
+>>>>>>> YOURS;<<<<<<< MINE
+            
+            if ("null".equals(strVal)) {
+                return null;
+            }
+            
+=======
+            
+            if ("null".equals(strVal) || "NULL".equals(strVal)) {
+                return null;
+            }
+            
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/util/TypeUtils.java;<<<<<<< MINE
+            
+            if ("null".equals(strVal)) {
+                return null;
+            }
+            
+=======
+            
+            if ("null".equals(strVal) || "NULL".equals(strVal)) {
+                return null;
+            }
+            
+>>>>>>> YOURS;<<<<<<< MINE
+            
+            if ("null".equals(strVal)) {
+                return null;
+            }
+=======
+            
+            if ("null".equals(strVal) || "NULL".equals(strVal)) {
+                return null;
+            }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/util/TypeUtils.java;<<<<<<< MINE
+            String strVal = (String) value;
+            if (strVal.length() == 0) {
+=======
+            String strVal = (String) value;
+            
+            if (strVal.length() == 0) {
+>>>>>>> YOURS;<<<<<<< MINE
+            String strVal = (String) value;
+            if (strVal.length() == 0) {
+=======
+            String strVal = (String) value;
+            
+            if (strVal.length() == 0) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_69f677f_8af0afb/rev_69f677f-8af0afb/src/main/java/com/alibaba/fastjson/util/TypeUtils.java;<<<<<<< MINE
+            
+            if ("null".equals(strVal)) {
+                return null;
+            }
+            
+=======
+            
+            if ("null".equals(strVal) || "NULL".equals(strVal)) {
+                return null;
+            }
+            
+>>>>>>> YOURS;<<<<<<< MINE
+            
+            if ("null".equals(strVal)) {
+                return null;
+            }
+=======
+            
+            if ("null".equals(strVal) || "NULL".equals(strVal)) {
+                return null;
+            }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/strategy/concurrency/HystrixContextScheduler.java;<<<<<<< MINE
+public HystrixContextScheduler(Scheduler scheduler) {
+        this(HystrixPlugins.getInstance().getConcurrencyStrategy(), scheduler);
+    }
+=======
+public HystrixContextScheduler(Scheduler scheduler) {
+        this.actualScheduler = scheduler;
+        this.concurrencyStrategy = HystrixPlugins.getInstance().getConcurrencyStrategy();
+        this.threadPool = null;
+    }
+>>>>>>> YOURS;<<<<<<< MINE
+    public HystrixContextScheduler(Scheduler scheduler) {
+        this(HystrixPlugins.getInstance().getConcurrencyStrategy(), scheduler);
+    }
+    
+=======
+    public HystrixContextScheduler(Scheduler scheduler) {
+        this.actualScheduler = scheduler;
+        this.concurrencyStrategy = HystrixPlugins.getInstance().getConcurrencyStrategy();
+        this.threadPool = null;
+    }
+    
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_f793f44_93c8240/rev_f793f44-93c8240/hystrix-core/src/main/java/com/netflix/hystrix/AbstractCommand.java;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_cfa3ae1_b223782/rev_cfa3ae1-b223782/hystrix-core/src/main/java/com/netflix/hystrix/AbstractCommand.java;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_3b4ef6c_b4ab356/rev_3b4ef6c-b4ab356/hystrix-core/src/main/java/com/netflix/hystrix/AbstractCommand.java;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_ad3ed06_2137cb1/rev_ad3ed06-2137cb1/hystrix-core/src/main/java/com/netflix/hystrix/AbstractCommand.java;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_2b0955a_5c796a4/rev_2b0955a-5c796a4/hystrix-core/src/main/java/com/netflix/hystrix/AbstractCommand.java;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_cb7c038_74e105a/rev_cb7c038-74e105a/hystrix-core/src/main/java/com/netflix/hystrix/AbstractCommand.java;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e57de32_4fb44db/rev_e57de32-4fb44db/hystrix-core/src/main/java/com/netflix/hystrix/AbstractCommand.java;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_7c8db71_1de4b10/rev_7c8db71-1de4b10/hystrix-core/src/main/java/com/netflix/hystrix/AbstractCommand.java;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_c602a01_7021050/rev_c602a01-7021050/hystrix-core/src/main/java/com/netflix/hystrix/AbstractCommand.java;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_f0c4c90_223b1ea/rev_f0c4c90-223b1ea/hystrix-core/src/main/java/com/netflix/hystrix/AbstractCommand.java;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS;<<<<<<< MINE
+=======
+                    System.out.println(">>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_b8123b9_1494af2/rev_b8123b9-1494af2/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java;<<<<<<< MINE
+
+                    if (beanInfo.jsonType != null) {
+                        for (Class<?> seeAlsoClass : beanInfo.jsonType.seeAlso()) {
+                            if (Enum.class.isAssignableFrom(seeAlsoClass)) {
+                                try {
+                                    Enum<?> e = Enum.valueOf((Class<Enum>) seeAlsoClass, strVal);
+                                    return (T) e;
+                                } catch (IllegalArgumentException e) {
+                                    // skip
+                                }
+=======
+                    if (beanInfo.jsonType != null) {
+                        for (Class<?> seeAlsoClass : beanInfo.jsonType.seeAlso()) {
+                            if (Enum.class.isAssignableFrom(seeAlsoClass)) {
+                                try {
+                                    Enum<?> e = Enum.valueOf((Class<Enum>)seeAlsoClass, strVal);
+                                    return (T)e;
+                                } catch (IllegalArgumentException e) {
+                                    // skip
+                                }
+>>>>>>> YOURS;<<<<<<< MINE
+
+                    if (beanInfo.jsonType != null) {
+                        for (Class<?> seeAlsoClass : beanInfo.jsonType.seeAlso()) {
+                            if (Enum.class.isAssignableFrom(seeAlsoClass)) {
+                                try {
+                                    Enum<?> e = Enum.valueOf((Class<Enum>) seeAlsoClass, strVal);
+                                    return (T) e;
+                                } catch (IllegalArgumentException e) {
+                                    // skip
+                                }
+=======
+                    if (beanInfo.jsonType != null) {
+                        for (Class<?> seeAlsoClass : beanInfo.jsonType.seeAlso()) {
+                            if (Enum.class.isAssignableFrom(seeAlsoClass)) {
+                                try {
+                                    Enum<?> e = Enum.valueOf((Class<Enum>)seeAlsoClass, strVal);
+                                    return (T)e;
+                                } catch (IllegalArgumentException e) {
+                                    // skip
+                                }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_3dfa3e7_4b38429/rev_3dfa3e7-4b38429/src/jvm/backtype/storm/coordination/CoordinatedBolt.java;<<<<<<< MINE
+            boolean failed = checkFinishId(tuple);
+            if(failed) {
+                _collector.fail(tuple);
+            } else {
+                _collector.ack(tuple);
+            }
+        } else if(!_sourceArgs.isEmpty()
+                && tuple.getSourceStreamId().equals(Constants.COORDINATED_STREAM_ID)) {
+=======
+            checkFinishId(tuple, type);            
+        } else if(type==TupleType.COORD) {
+>>>>>>> YOURS;<<<<<<< MINE
+            boolean failed = checkFinishId(tuple);
+            if(failed) {
+                _collector.fail(tuple);
+            } else {
+                _collector.ack(tuple);
+            }
+        } else if(!_sourceArgs.isEmpty()
+                && tuple.getSourceStreamId().equals(Constants.COORDINATED_STREAM_ID)) {
+=======
+            checkFinishId(tuple, type);            
+        } else if(type==TupleType.COORD) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/backtype/storm/security/serialization/BlowfishTupleSerializer.java;<<<<<<< MINE
+        String encryption_key = null;
+        try {
+            encryption_key = (String)storm_conf.get(SECRET_KEY);
+            LOG.debug("Blowfish serializer being constructed ...");
+            if (encryption_key == null) {
+                LOG.error("Encryption key not specified");
+                throw new RuntimeException("Blowfish encryption key not specified");
+            }
+            byte[] bytes =  Hex.decodeHex(encryption_key.toCharArray());
+            _serializer = new BlowfishSerializer(new ListDelegateSerializer(), bytes);
+        } catch (org.apache.commons.codec.DecoderException ex) {
+            LOG.error("Invalid encryption key", ex);
+            throw new RuntimeException("Blowfish encryption key invalid", ex);
+        }
+=======
+        String encryption_key = null;
+        try {
+            encryption_key = (String)storm_conf.get(SECRET_KEY);
+            LOG.debug("Blowfish serializer being constructed ...");
+            if (encryption_key == null) {
+                throw new RuntimeException("Blowfish encryption key not specified");
+            }
+            byte[] bytes =  Hex.decodeHex(encryption_key.toCharArray());
+            _serializer = new BlowfishSerializer(new ListDelegateSerializer(), bytes);
+        } catch (org.apache.commons.codec.DecoderException ex) {
+            throw new RuntimeException("Blowfish encryption key invalid", ex);
+        }
+>>>>>>> YOURS;<<<<<<< MINE
+        String encryption_key = null;
+        try {
+            encryption_key = (String)storm_conf.get(SECRET_KEY);
+            LOG.debug("Blowfish serializer being constructed ...");
+            if (encryption_key == null) {
+                LOG.error("Encryption key not specified");
+                throw new RuntimeException("Blowfish encryption key not specified");
+            }
+            byte[] bytes =  Hex.decodeHex(encryption_key.toCharArray());
+            _serializer = new BlowfishSerializer(new ListDelegateSerializer(), bytes);
+        } catch (org.apache.commons.codec.DecoderException ex) {
+            LOG.error("Invalid encryption key", ex);
+            throw new RuntimeException("Blowfish encryption key invalid", ex);
+        }
+=======
+        String encryption_key = null;
+        try {
+            encryption_key = (String)storm_conf.get(SECRET_KEY);
+            LOG.debug("Blowfish serializer being constructed ...");
+            if (encryption_key == null) {
+                throw new RuntimeException("Blowfish encryption key not specified");
+            }
+            byte[] bytes =  Hex.decodeHex(encryption_key.toCharArray());
+            _serializer = new BlowfishSerializer(new ListDelegateSerializer(), bytes);
+        } catch (org.apache.commons.codec.DecoderException ex) {
+            throw new RuntimeException("Blowfish encryption key invalid", ex);
+        }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/backtype/storm/security/serialization/BlowfishTupleSerializer.java;<<<<<<< MINE
+    	_serializer.write(kryo, output, object);
+=======
+        _serializer.write(kryo, output, object);
+>>>>>>> YOURS;<<<<<<< MINE
+    	_serializer.write(kryo, output, object);
+=======
+        _serializer.write(kryo, output, object);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_6398179_7970fee/rev_6398179-7970fee/src/jvm/backtype/storm/security/serialization/BlowfishTupleSerializer.java;<<<<<<< MINE
+    	return (ListDelegate)_serializer.read(kryo, input, type);
+=======
+        return (ListDelegate)_serializer.read(kryo, input, type);
+>>>>>>> YOURS;<<<<<<< MINE
+    	return (ListDelegate)_serializer.read(kryo, input, type);
+=======
+        return (ListDelegate)_serializer.read(kryo, input, type);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Vert.x-Core/revisions/rev_464dede_c381820/rev_464dede-c381820/vertx-core/src/test/java/io/vertx/test/core/VertxOptionsTest.java;<<<<<<< MINE
+        put("clusterPort", clusterPort).
+        put("eventLoopPoolSize", eventLoopPoolSize).
+        put("internalBlockingPoolSize", internalBlockingPoolSize).
+        put("workerPoolSize", workerPoolSize).
+        put("blockedThreadCheckPeriod", blockedThreadCheckPeriod).
+        put("clusterHost", clusterHost).
+        put("maxEventLoopExecuteTime", maxEventLoopExecuteTime).
+        put("maxWorkerExecuteTime", maxWorkerExecuteTime).
+        put("proxyOperationTimeout", proxyOperationTimeout).
+        put("haEnabled", haEnabled).
+        put("quorumSize", quorumSize).
+        put("haGroup", haGroup).
+        put("metricsEnabled", metricsEnabled).
+        put("jmxEnabled", jmxEnabled).
+        put("jmxDomain", jmxDomain)
+=======
+        putNumber("clusterPort", clusterPort).
+        putNumber("eventLoopPoolSize", eventLoopPoolSize).
+        putNumber("internalBlockingPoolSize", internalBlockingPoolSize).
+        putNumber("workerPoolSize", workerPoolSize).
+        putNumber("blockedThreadCheckPeriod", blockedThreadCheckPeriod).
+        putString("clusterHost", clusterHost).
+        putNumber("clusterPingInterval", clusterPingInterval).
+        putNumber("clusterPingReplyInterval", clusterPingReplyInterval).
+        putNumber("maxEventLoopExecuteTime", maxEventLoopExecuteTime).
+        putNumber("maxWorkerExecuteTime", maxWorkerExecuteTime).
+        putNumber("proxyOperationTimeout", proxyOperationTimeout).
+        putBoolean("haEnabled", haEnabled).
+        putNumber("quorumSize", quorumSize).
+        putString("haGroup", haGroup).
+        putBoolean("metricsEnabled", metricsEnabled).
+        putBoolean("jmxEnabled", jmxEnabled).
+        putString("jmxDomain", jmxDomain)
+>>>>>>> YOURS;<<<<<<< MINE
+        put("clusterPort", clusterPort).
+        put("eventLoopPoolSize", eventLoopPoolSize).
+        put("internalBlockingPoolSize", internalBlockingPoolSize).
+        put("workerPoolSize", workerPoolSize).
+        put("blockedThreadCheckPeriod", blockedThreadCheckPeriod).
+        put("clusterHost", clusterHost).
+        put("maxEventLoopExecuteTime", maxEventLoopExecuteTime).
+        put("maxWorkerExecuteTime", maxWorkerExecuteTime).
+        put("proxyOperationTimeout", proxyOperationTimeout).
+        put("haEnabled", haEnabled).
+        put("quorumSize", quorumSize).
+        put("haGroup", haGroup).
+        put("metricsEnabled", metricsEnabled).
+        put("jmxEnabled", jmxEnabled).
+        put("jmxDomain", jmxDomain)
+=======
+        putNumber("clusterPort", clusterPort).
+        putNumber("eventLoopPoolSize", eventLoopPoolSize).
+        putNumber("internalBlockingPoolSize", internalBlockingPoolSize).
+        putNumber("workerPoolSize", workerPoolSize).
+        putNumber("blockedThreadCheckPeriod", blockedThreadCheckPeriod).
+        putString("clusterHost", clusterHost).
+        putNumber("clusterPingInterval", clusterPingInterval).
+        putNumber("clusterPingReplyInterval", clusterPingReplyInterval).
+        putNumber("maxEventLoopExecuteTime", maxEventLoopExecuteTime).
+        putNumber("maxWorkerExecuteTime", maxWorkerExecuteTime).
+        putNumber("proxyOperationTimeout", proxyOperationTimeout).
+        putBoolean("haEnabled", haEnabled).
+        putNumber("quorumSize", quorumSize).
+        putString("haGroup", haGroup).
+        putBoolean("metricsEnabled", metricsEnabled).
+        putBoolean("jmxEnabled", jmxEnabled).
+        putString("jmxDomain", jmxDomain)
+>>>>>>> YOURS

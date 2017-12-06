@@ -1,0 +1,636 @@
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeStringWithDoubleQuote(String);;private void writeStringWithDoubleQuote(String text) {
+        // final boolean[] specicalFlags_doubleQuotes =
+        // CharTypes.specicalFlags_doubleQuotes;
+        // final int len_flags = specicalFlags_doubleQuotes.length;
+
+        if (text == null) {
+            writeNull();
+            return;
+        }
+
+        int len = text.length();
+        int newcount = count + len + 2;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+
+        int start = count + 1;
+        int end = start + len;
+
+        buf[count] = '\"';
+        text.getChars(0, len, buf, start);
+
+        count = newcount;
+        
+        if (isEnabled(SerializerFeature.BrowserCompatible)) {
+            int lastSpecialIndex = -1;
+            
+            for (int i = start; i < end; ++i) {
+                char ch = buf[i];
+                
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+                
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+                
+                if (ch < 32) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+                
+                if (CharTypes.isEmoji(ch)) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+            }
+            
+            
+            if (newcount > buf.length) {
+                expandCapacity(newcount);
+            }
+            count = newcount;
+            
+            for (int i = lastSpecialIndex; i >= start; --i) {
+                char ch = buf[i];
+                
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end += 1;
+                    continue;
+                }
+                
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = ch;
+                    end += 1;
+                    continue;
+                }
+                
+                if (ch < 32) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = '0';
+                    buf[i + 3] = '0';
+                    buf[i + 4] = CharTypes.ASCII_CHARS[ch * 2];
+                    buf[i + 5] = CharTypes.ASCII_CHARS[ch * 2 + 1];
+                    end += 5;
+                    continue;
+                }
+                
+                if (CharTypes.isEmoji(ch)) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = CharTypes.digits[(ch >>> 12) & 15];
+                    buf[i + 3] = CharTypes.digits[(ch >>> 8) & 15];
+                    buf[i + 4] = CharTypes.digits[(ch >>> 4) & 15];
+                    buf[i + 5] = CharTypes.digits[ch & 15];
+                    end += 5;
+                }
+            }
+            
+            buf[count - 1] = '\"';
+            return;
+        }
+        
+        int specialCount = 0;
+        int lastSpecialIndex = -1;
+        char lastSpecial = '\0';
+        for (int i = start; i < end; ++i) {
+            char ch = buf[i];
+            
+            if (ch < CharTypes.specicalFlags_doubleQuotes.length && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                specialCount++;
+                lastSpecialIndex = i;
+                lastSpecial = ch;
+            }
+        }
+
+        newcount += specialCount;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+        count = newcount;
+
+        if (specialCount == 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+        } else if (specialCount > 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+            end++;
+            for (int i = lastSpecialIndex - 2; i >= start; --i) {
+                char ch = buf[i];
+
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length && CharTypes.specicalFlags_doubleQuotes[ch] //
+                        || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                        || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end++;
+                }
+            }
+        }
+
+        buf[count - 1] = '\"';
+    };private void writeStringWithDoubleQuote(String text) {
+        // final boolean[] specicalFlags_doubleQuotes =
+        // CharTypes.specicalFlags_doubleQuotes;
+        // final int len_flags = specicalFlags_doubleQuotes.length;
+
+        if (text == null) {
+            writeNull();
+            return;
+        }
+
+        int len = text.length();
+        int newcount = count + len + 2;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+
+        int start = count + 1;
+        int end = start + len;
+
+        buf[count] = '\"';
+        text.getChars(0, len, buf, start);
+
+        count = newcount;
+
+        if (isEnabled(SerializerFeature.BrowserCompatible)) {
+            int lastSpecialIndex = -1;
+
+            for (int i = start; i < end; ++i) {
+                char ch = buf[i];
+
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+
+                if (ch < 32) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+
+                if (CharTypes.isEmoji(ch)) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+            }
+
+            if (newcount > buf.length) {
+                expandCapacity(newcount);
+            }
+            count = newcount;
+
+            for (int i = lastSpecialIndex; i >= start; --i) {
+                char ch = buf[i];
+
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end += 1;
+                    continue;
+                }
+
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = ch;
+                    end += 1;
+                    continue;
+                }
+
+                if (ch < 32) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = '0';
+                    buf[i + 3] = '0';
+                    buf[i + 4] = CharTypes.ASCII_CHARS[ch * 2];
+                    buf[i + 5] = CharTypes.ASCII_CHARS[ch * 2 + 1];
+                    end += 5;
+                    continue;
+                }
+
+                if (CharTypes.isEmoji(ch)) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = CharTypes.digits[(ch >>> 12) & 15];
+                    buf[i + 3] = CharTypes.digits[(ch >>> 8) & 15];
+                    buf[i + 4] = CharTypes.digits[(ch >>> 4) & 15];
+                    buf[i + 5] = CharTypes.digits[ch & 15];
+                    end += 5;
+                }
+            }
+
+            buf[count - 1] = '\"';
+            return;
+        }
+
+        int specialCount = 0;
+        int lastSpecialIndex = -1;
+        char lastSpecial = '\0';
+        for (int i = start; i < end; ++i) {
+            char ch = buf[i];
+
+            if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                && CharTypes.specicalFlags_doubleQuotes[ch] //
+                || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                specialCount++;
+                lastSpecialIndex = i;
+                lastSpecial = ch;
+            }
+        }
+
+        newcount += specialCount;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+        count = newcount;
+
+        if (specialCount == 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+        } else if (specialCount > 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+            end++;
+            for (int i = lastSpecialIndex - 2; i >= start; --i) {
+                char ch = buf[i];
+
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                    && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end++;
+                }
+            }
+        }
+
+        buf[count - 1] = '\"';
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeStringWithDoubleQuote(String);;private void writeStringWithDoubleQuote(String text) {
+        // final boolean[] specicalFlags_doubleQuotes =
+        // CharTypes.specicalFlags_doubleQuotes;
+        // final int len_flags = specicalFlags_doubleQuotes.length;
+
+        if (text == null) {
+            writeNull();
+            return;
+        }
+
+        int len = text.length();
+        int newcount = count + len + 2;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+
+        int start = count + 1;
+        int end = start + len;
+
+        buf[count] = '\"';
+        text.getChars(0, len, buf, start);
+
+        count = newcount;
+        
+        if (isEnabled(SerializerFeature.BrowserCompatible)) {
+            int lastSpecialIndex = -1;
+            
+            for (int i = start; i < end; ++i) {
+                char ch = buf[i];
+                
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+                
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+                
+                if (ch < 32) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+                
+                if (CharTypes.isEmoji(ch)) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+            }
+            
+            
+            if (newcount > buf.length) {
+                expandCapacity(newcount);
+            }
+            count = newcount;
+            
+            for (int i = lastSpecialIndex; i >= start; --i) {
+                char ch = buf[i];
+                
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end += 1;
+                    continue;
+                }
+                
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = ch;
+                    end += 1;
+                    continue;
+                }
+                
+                if (ch < 32) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = '0';
+                    buf[i + 3] = '0';
+                    buf[i + 4] = CharTypes.ASCII_CHARS[ch * 2];
+                    buf[i + 5] = CharTypes.ASCII_CHARS[ch * 2 + 1];
+                    end += 5;
+                    continue;
+                }
+                
+                if (CharTypes.isEmoji(ch)) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = CharTypes.digits[(ch >>> 12) & 15];
+                    buf[i + 3] = CharTypes.digits[(ch >>> 8) & 15];
+                    buf[i + 4] = CharTypes.digits[(ch >>> 4) & 15];
+                    buf[i + 5] = CharTypes.digits[ch & 15];
+                    end += 5;
+                }
+            }
+            
+            buf[count - 1] = '\"';
+            return;
+        }
+        
+        int specialCount = 0;
+        int lastSpecialIndex = -1;
+        char lastSpecial = '\0';
+        for (int i = start; i < end; ++i) {
+            char ch = buf[i];
+            
+            if (ch < CharTypes.specicalFlags_doubleQuotes.length && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                specialCount++;
+                lastSpecialIndex = i;
+                lastSpecial = ch;
+            }
+        }
+
+        newcount += specialCount;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+        count = newcount;
+
+        if (specialCount == 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+        } else if (specialCount > 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+            end++;
+            for (int i = lastSpecialIndex - 2; i >= start; --i) {
+                char ch = buf[i];
+
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length && CharTypes.specicalFlags_doubleQuotes[ch] //
+                        || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                        || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end++;
+                }
+            }
+        }
+
+        buf[count - 1] = '\"';
+    };private void writeStringWithDoubleQuote(String text) {
+        // final boolean[] specicalFlags_doubleQuotes =
+        // CharTypes.specicalFlags_doubleQuotes;
+        // final int len_flags = specicalFlags_doubleQuotes.length;
+
+        if (text == null) {
+            writeNull();
+            return;
+        }
+
+        int len = text.length();
+        int newcount = count + len + 2;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+
+        int start = count + 1;
+        int end = start + len;
+
+        buf[count] = '\"';
+        text.getChars(0, len, buf, start);
+
+        count = newcount;
+
+        if (isEnabled(SerializerFeature.BrowserCompatible)) {
+            int lastSpecialIndex = -1;
+
+            for (int i = start; i < end; ++i) {
+                char ch = buf[i];
+
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+
+                if (ch < 32) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+
+                if (CharTypes.isEmoji(ch)) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+            }
+
+            if (newcount > buf.length) {
+                expandCapacity(newcount);
+            }
+            count = newcount;
+
+            for (int i = lastSpecialIndex; i >= start; --i) {
+                char ch = buf[i];
+
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end += 1;
+                    continue;
+                }
+
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = ch;
+                    end += 1;
+                    continue;
+                }
+
+                if (ch < 32) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = '0';
+                    buf[i + 3] = '0';
+                    buf[i + 4] = CharTypes.ASCII_CHARS[ch * 2];
+                    buf[i + 5] = CharTypes.ASCII_CHARS[ch * 2 + 1];
+                    end += 5;
+                    continue;
+                }
+
+                if (CharTypes.isEmoji(ch)) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = CharTypes.digits[(ch >>> 12) & 15];
+                    buf[i + 3] = CharTypes.digits[(ch >>> 8) & 15];
+                    buf[i + 4] = CharTypes.digits[(ch >>> 4) & 15];
+                    buf[i + 5] = CharTypes.digits[ch & 15];
+                    end += 5;
+                }
+            }
+
+            buf[count - 1] = '\"';
+            return;
+        }
+
+        int specialCount = 0;
+        int lastSpecialIndex = -1;
+        char lastSpecial = '\0';
+        for (int i = start; i < end; ++i) {
+            char ch = buf[i];
+
+            if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                && CharTypes.specicalFlags_doubleQuotes[ch] //
+                || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                specialCount++;
+                lastSpecialIndex = i;
+                lastSpecial = ch;
+            }
+        }
+
+        newcount += specialCount;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+        count = newcount;
+
+        if (specialCount == 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+        } else if (specialCount > 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+            end++;
+            for (int i = lastSpecialIndex - 2; i >= start; --i) {
+                char ch = buf[i];
+
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                    && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end++;
+                }
+            }
+        }
+
+        buf[count - 1] = '\"';
+    }
+/home/paper219/Desktop/analysis/demonstration//projects/Javaee7-samples/revisions/rev_cff6c96_6e8180b/rev_cff6c96-6e8180b;/websocket/binary/src/test/java/org/javaee7/websocket/binary/test/WebsocketByteBufferEndpointTest;createDeployment();;@Deployment(testable = false) @TargetsContainer("wildfly-arquillian")
+	public static WebArchive createDeployment(){
+		WebArchive war = ShrinkWrap.create(WebArchive.class).
+				addClass(MyEndpointByteBuffer.class).
+				addClass(MyEndpointByteArray.class).
+				addClass(MyEndpointInputStream.class).
+				addAsWebResource(new File(WEBAPP_SRC,"index.jsp")).
+				addAsWebResource(new File(WEBAPP_SRC,"websocket.js"));
+		return war;
+	};@Deployment(testable = false)
+    @TargetsContainer("wildfly-arquillian")
+    public static WebArchive createDeployment() {
+        WebArchive war = ShrinkWrap.create(WebArchive.class).
+                addClass(MyEndpointByteBuffer.class).
+                addClass(MyEndpointByteArray.class).
+                addClass(MyEndpointInputStream.class).
+                addAsWebResource(new File(WEBAPP_SRC, "index.jsp")).
+                addAsWebResource(new File(WEBAPP_SRC, "websocket.js"));
+        return war;
+    }

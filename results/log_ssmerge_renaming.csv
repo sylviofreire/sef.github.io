@@ -1,0 +1,13 @@
+revision;file;methodSignature
+/home/paper219/Desktop/analysis/demonstration//projects/Mybatis-3/revisions/rev_da6dca2_151e90e/rev_da6dca2-151e90e;/src/test/java/org/apache/ibatis/type/usesjava8/Jsr310TypeHandlerRegistryTest;testFor_v1_0_2();
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeStringWithDoubleQuote(String);
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be;/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter;writeStringWithDoubleQuote(String);private void writeStringWithDoubleQuote(String text) {
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_a3e83d9_441164d/rev_a3e83d9-441164d;/src/main/java/com/alibaba/fastjson/parser/JSONScanner;next();
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_a3e83d9_441164d/rev_a3e83d9-441164d;/src/main/java/com/alibaba/fastjson/parser/JSONReaderScanner;next();
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce;/hystrix-core/src/main/java/com/netflix/hystrix/HystrixCommand;testSemaphorePermitsInUse();@Test        public void testSemaphorePermitsInUse() {
+/home/paper219/Desktop/analysis/demonstration//projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce;/hystrix-core/src/main/java/com/netflix/hystrix/HystrixCollapser;testRequestVariableLifecycle2();@Test        public void testRequestVariableLifecycle2() throws Exception {
+/home/paper219/Desktop/analysis/demonstration//projects/Fastjson/revisions/rev_c76d44b_a12ff69/rev_c76d44b-a12ff69;/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer;deserialze(DefaultJSONParser,Type,Object,Object,int);
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_dea4c8b_d12c335/rev_dea4c8b-d12c335;/src/jvm/storm/trident/topology/state/RotatingTransactionalState;cleanupBefore(long);
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_dea4c8b_d12c335/rev_dea4c8b-d12c335;/src/jvm/backtype/storm/metric/SystemBolt;getValueAndReset();
+/home/paper219/Desktop/analysis/demonstration//projects/Vert;/vertx-core/src/test/java/io/vertx/test/core/SharedDataTest;setUp();@Before  public void setUp() {
+/home/paper219/Desktop/analysis/demonstration//projects/Javaee7-samples/revisions/rev_cff6c96_6e8180b/rev_cff6c96-6e8180b;/websocket/binary/src/test/java/org/javaee7/websocket/binary/test/WebsocketByteBufferEndpointTest;testEndPointByteBuffer();

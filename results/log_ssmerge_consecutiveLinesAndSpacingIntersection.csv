@@ -1,0 +1,18 @@
+revision;file;methodsignature;leftbody;basebody;rightbody
+/home/paper219/Desktop/analysis/demonstration//projects/Storm/revisions/rev_3dfa3e7_4b38429/rev_3dfa3e7-4b38429;/src/jvm/backtype/storm/coordination/CoordinatedBolt;execute(Tuple);            boolean failed = checkFinishId(tuple);
+            if(failed) {
+                _collector.fail(tuple);
+            } else {
+                _collector.ack(tuple);
+            }
+        } else if(!_sourceArgs.isEmpty()
+                && tuple.getSourceStreamId().equals(Constants.COORDINATED_STREAM_ID)) {;            boolean failed = checkFinishId(tuple);
+            if(failed) {
+                _collector.fail(tuple);
+            } else {
+                _collector.ack(tuple);
+            }
+            
+        } else if(!_sourceArgs.isEmpty()
+                && tuple.getSourceStreamId().equals(Constants.COORDINATED_STREAM_ID)) {;            checkFinishId(tuple, type);            
+        } else if(type==TupleType.COORD) {

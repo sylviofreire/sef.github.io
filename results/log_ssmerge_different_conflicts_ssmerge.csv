@@ -1,0 +1,2434 @@
+file;ssmergeConf
+/home/paper219/Desktop/analysis/demonstration/projects/Mybatis-3/revisions/rev_da6dca2_151e90e/rev_da6dca2-151e90e/src/test/java/org/apache/ibatis/type/usesjava8/Jsr310TypeHandlerRegistryTest.java;<<<<<<< MINE
+=======
+@Test
+  public void testFor_v1_0_0() throws ClassNotFoundException {
+    assertThat(getTypeHandler("java.time.Instant")).isInstanceOf(InstantTypeHandler.class);
+    assertThat(getTypeHandler("java.time.LocalDateTime")).isInstanceOf(LocalDateTimeTypeHandler.class);
+    assertThat(getTypeHandler("java.time.LocalDate")).isInstanceOf(LocalDateTypeHandler.class);
+    assertThat(getTypeHandler("java.time.LocalTime")).isInstanceOf(LocalTimeTypeHandler.class);
+    assertThat(getTypeHandler("java.time.OffsetDateTime")).isInstanceOf(OffsetDateTimeTypeHandler.class);
+    assertThat(getTypeHandler("java.time.OffsetTime")).isInstanceOf(OffsetTimeTypeHandler.class);
+    assertThat(getTypeHandler("java.time.ZonedDateTime")).isInstanceOf(ZonedDateTimeTypeHandler.class);
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Mybatis-3/revisions/rev_da6dca2_151e90e/rev_da6dca2-151e90e/src/test/java/org/apache/ibatis/type/usesjava8/Jsr310TypeHandlerRegistryTest.java;<<<<<<< MINE
+=======
+@Test
+  public void testFor_v1_0_1() throws ClassNotFoundException {
+    assertThat(getTypeHandler("java.time.Month")).isInstanceOf(MonthTypeHandler.class);
+    assertThat(getTypeHandler("java.time.Year")).isInstanceOf(YearTypeHandler.class);
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Mybatis-3/revisions/rev_da6dca2_151e90e/rev_da6dca2-151e90e/src/test/java/org/apache/ibatis/type/usesjava8/Jsr310TypeHandlerRegistryTest.java;<<<<<<< MINE
+=======
+@Test
+  public void testFor_v1_0_2() throws ClassNotFoundException {
+    assertThat(getTypeHandler("java.time.YearMonth")).isInstanceOf(YearMonthTypeHandler.class);
+    assertThat(getTypeHandler("java.time.chrono.JapaneseDate")).isInstanceOf(JapaneseDateTypeHandler.class);
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_77a6605_f48bb05/rev_77a6605-f48bb05/src/test/java/com/alibaba/json/bvt/parser/deser/StackTraceElementDeserializerTest.java;<<<<<<< MINE
+public void test_stack() throws Exception {
+        Assert.assertNull(JSON.parseObject("null", StackTraceElement.class));
+        Assert.assertNull(JSON.parseArray("null", StackTraceElement.class));
+        Assert.assertNull(JSON.parseArray("[null]", StackTraceElement.class).get(0));
+        Assert.assertNull(JSON.parseObject("{\"value\":null}", VO.class).getValue());
+        Assert.assertNull(JSON.parseObject("{\"className\":\"int\",\"methodName\":\"parseInt\"}",
+                                           StackTraceElement.class).getFileName());
+        
+        Assert.assertEquals(StackTraceElement.class, ((StackTraceElement) JSON.parse("{\"@type\":\"java.lang.StackTraceElement\",\"className\":\"int\",\"methodName\":\"parseInt\"}")).getClass());
+    }
+=======
+public void test_stack() throws Exception {
+        Assert.assertNull(JSON.parseObject("null", StackTraceElement.class));
+        Assert.assertNull(JSON.parseArray("null", StackTraceElement.class));
+        Assert.assertNull(JSON.parseArray("[null]", StackTraceElement.class).get(0));
+        Assert.assertNull(JSON.parseObject("{\"value\":null}", VO.class).getValue());
+        Assert.assertNull(JSON.parseObject("{\"className\":\"int\",\"methodName\":\"parseInt\"}", StackTraceElement.class).getFileName());
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_22e12be_162ae20/rev_22e12be-162ae20/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+=======
+private void writeStringWithDoubleQuote(String text) {
+        // final boolean[] specicalFlags_doubleQuotes =
+        // CharTypes.specicalFlags_doubleQuotes;
+        // final int len_flags = specicalFlags_doubleQuotes.length;
+
+        if (text == null) {
+            writeNull();
+            return;
+        }
+
+        int len = text.length();
+        int newcount = count + len + 2;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+
+        int start = count + 1;
+        int end = start + len;
+
+        buf[count] = '\"';
+        text.getChars(0, len, buf, start);
+
+        count = newcount;
+
+        if (isEnabled(SerializerFeature.BrowserCompatible)) {
+            int lastSpecialIndex = -1;
+
+            for (int i = start; i < end; ++i) {
+                char ch = buf[i];
+
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+
+                if (ch < 32) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+
+                if (CharTypes.isEmoji(ch)) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+            }
+
+            if (newcount > buf.length) {
+                expandCapacity(newcount);
+            }
+            count = newcount;
+
+            for (int i = lastSpecialIndex; i >= start; --i) {
+                char ch = buf[i];
+
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end += 1;
+                    continue;
+                }
+
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = ch;
+                    end += 1;
+                    continue;
+                }
+
+                if (ch < 32) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = '0';
+                    buf[i + 3] = '0';
+                    buf[i + 4] = CharTypes.ASCII_CHARS[ch * 2];
+                    buf[i + 5] = CharTypes.ASCII_CHARS[ch * 2 + 1];
+                    end += 5;
+                    continue;
+                }
+
+                if (CharTypes.isEmoji(ch)) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = CharTypes.digits[(ch >>> 12) & 15];
+                    buf[i + 3] = CharTypes.digits[(ch >>> 8) & 15];
+                    buf[i + 4] = CharTypes.digits[(ch >>> 4) & 15];
+                    buf[i + 5] = CharTypes.digits[ch & 15];
+                    end += 5;
+                }
+            }
+
+            buf[count - 1] = '\"';
+            return;
+        }
+
+        int specialCount = 0;
+        int lastSpecialIndex = -1;
+        char lastSpecial = '\0';
+        for (int i = start; i < end; ++i) {
+            char ch = buf[i];
+
+            if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                && CharTypes.specicalFlags_doubleQuotes[ch] //
+                || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                specialCount++;
+                lastSpecialIndex = i;
+                lastSpecial = ch;
+            }
+        }
+
+        newcount += specialCount;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+        count = newcount;
+
+        if (specialCount == 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+        } else if (specialCount > 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+            end++;
+            for (int i = lastSpecialIndex - 2; i >= start; --i) {
+                char ch = buf[i];
+
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                    && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end++;
+                }
+            }
+        }
+
+        buf[count - 1] = '\"';
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_162ae20_22e12be/rev_162ae20-22e12be/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java;<<<<<<< MINE
+private void writeStringWithDoubleQuote(String text) {
+        // final boolean[] specicalFlags_doubleQuotes =
+        // CharTypes.specicalFlags_doubleQuotes;
+        // final int len_flags = specicalFlags_doubleQuotes.length;
+
+        if (text == null) {
+            writeNull();
+            return;
+        }
+
+        int len = text.length();
+        int newcount = count + len + 2;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+
+        int start = count + 1;
+        int end = start + len;
+
+        buf[count] = '\"';
+        text.getChars(0, len, buf, start);
+
+        count = newcount;
+
+        if (isEnabled(SerializerFeature.BrowserCompatible)) {
+            int lastSpecialIndex = -1;
+
+            for (int i = start; i < end; ++i) {
+                char ch = buf[i];
+
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    lastSpecialIndex = i;
+                    newcount += 1;
+                    continue;
+                }
+
+                if (ch < 32) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+
+                if (CharTypes.isEmoji(ch)) {
+                    lastSpecialIndex = i;
+                    newcount += 5;
+                    continue;
+                }
+            }
+
+            if (newcount > buf.length) {
+                expandCapacity(newcount);
+            }
+            count = newcount;
+
+            for (int i = lastSpecialIndex; i >= start; --i) {
+                char ch = buf[i];
+
+                if (ch == '\b' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end += 1;
+                    continue;
+                }
+
+                if (ch == '"' || ch == '/' || ch == '\\') {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = ch;
+                    end += 1;
+                    continue;
+                }
+
+                if (ch < 32) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = '0';
+                    buf[i + 3] = '0';
+                    buf[i + 4] = CharTypes.ASCII_CHARS[ch * 2];
+                    buf[i + 5] = CharTypes.ASCII_CHARS[ch * 2 + 1];
+                    end += 5;
+                    continue;
+                }
+
+                if (CharTypes.isEmoji(ch)) {
+                    System.arraycopy(buf, i + 1, buf, i + 6, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = 'u';
+                    buf[i + 2] = CharTypes.digits[(ch >>> 12) & 15];
+                    buf[i + 3] = CharTypes.digits[(ch >>> 8) & 15];
+                    buf[i + 4] = CharTypes.digits[(ch >>> 4) & 15];
+                    buf[i + 5] = CharTypes.digits[ch & 15];
+                    end += 5;
+                }
+            }
+
+            buf[count - 1] = '\"';
+            return;
+        }
+
+        int specialCount = 0;
+        int lastSpecialIndex = -1;
+        char lastSpecial = '\0';
+        for (int i = start; i < end; ++i) {
+            char ch = buf[i];
+
+            if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                && CharTypes.specicalFlags_doubleQuotes[ch] //
+                || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                specialCount++;
+                lastSpecialIndex = i;
+                lastSpecial = ch;
+            }
+        }
+
+        newcount += specialCount;
+        if (newcount > buf.length) {
+            expandCapacity(newcount);
+        }
+        count = newcount;
+
+        if (specialCount == 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+        } else if (specialCount > 1) {
+            System.arraycopy(buf, lastSpecialIndex + 1, buf, lastSpecialIndex + 2, end - lastSpecialIndex - 1);
+            buf[lastSpecialIndex] = '\\';
+            buf[++lastSpecialIndex] = replaceChars[(int) lastSpecial];
+            end++;
+            for (int i = lastSpecialIndex - 2; i >= start; --i) {
+                char ch = buf[i];
+
+                if (ch < CharTypes.specicalFlags_doubleQuotes.length
+                    && CharTypes.specicalFlags_doubleQuotes[ch] //
+                    || (ch == '\t' && isEnabled(SerializerFeature.WriteTabAsSpecial))
+                    || (ch == '/' && isEnabled(SerializerFeature.WriteSlashAsSpecial))) {
+                    System.arraycopy(buf, i + 1, buf, i + 2, end - i - 1);
+                    buf[i] = '\\';
+                    buf[i + 1] = replaceChars[(int) ch];
+                    end++;
+                }
+            }
+        }
+
+        buf[count - 1] = '\"';
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_4.java;<<<<<<< MINE
+public void test_for_objectKey() throws Exception {
+        Map<Map<String, String>, String> map = new HashMap<Map<String, String>, String>();
+        Map<String, String> submap = new HashMap<String, String>();
+        submap.put("subkey", "subvalue");
+        map.put(submap, "value");
+        String jsonString = JSON.toJSONString(map, SerializerFeature.WriteClassName);
+        System.out.println(jsonString);
+        Object object = JSON.parse(jsonString);
+        JSON.parseObject(jsonString);
+        
+        System.out.println(object.toString());
+    }
+=======
+public void test_for_objectKey() throws Exception {
+        Map<Map<String, String>, String> map = new HashMap<Map<String, String>, String>();
+        Map<String, String> submap = new HashMap<String, String>();
+        submap.put("subkey", "subvalue");
+        map.put(submap, "value");
+        String jsonString = JSON.toJSONString(map, SerializerFeature.WriteClassName);
+        System.out.println(jsonString);
+        Object object = JSON.parse(jsonString);
+        System.out.println(object.toString());
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_3c528ef_eb32b05/rev_3c528ef-eb32b05/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_4.java;<<<<<<< MINE
+public void test_for_objectKey() throws Exception {
+        Map<Map<String, String>, String> map = new HashMap<Map<String, String>, String>();
+        Map<String, String> submap = new HashMap<String, String>();
+        submap.put("subkey", "subvalue");
+        map.put(submap, "value");
+        String jsonString = JSON.toJSONString(map, SerializerFeature.WriteClassName);
+        System.out.println(jsonString);
+        Object object = JSON.parse(jsonString);
+        JSON.parseObject(jsonString);
+        
+        System.out.println(object.toString());
+    }
+=======
+public void test_for_objectKey() throws Exception {
+        Map<Map<String, String>, String> map = new HashMap<Map<String, String>, String>();
+        Map<String, String> submap = new HashMap<String, String>();
+        submap.put("subkey", "subvalue");
+        map.put(submap, "value");
+        String jsonString = JSON.toJSONString(map, SerializerFeature.WriteClassName);
+        System.out.println(jsonString);
+        Object object = JSON.parse(jsonString);
+        System.out.println(object.toString());
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_c9ee9c5_b9da86b/rev_c9ee9c5-b9da86b/src/test/java/com/alibaba/json/bvt/TestExternal5.java;<<<<<<< MINE
+public void test_0() throws Exception {
+        ExtClassLoader classLoader = new ExtClassLoader();
+        Class<?> clazz = classLoader.loadClass("com.alibaba.dubbo.demo.MyEsbResultModel2");
+
+        Object obj = clazz.newInstance();
+
+        {
+            String text = JSON.toJSONString(obj);
+            System.out.println(text);
+        }
+
+        String text = JSON.toJSONString(obj, SerializerFeature.WriteClassName, SerializerFeature.WriteMapNullValue);
+        System.out.println(text);
+        JSON.parseObject(text, clazz);
+        JSONObject jsonObj = JSON.parseObject(text);
+        Assert.assertEquals(jsonObj.getString("@type"), "com.alibaba.dubbo.demo.MyEsbResultModel2");
+    }
+=======
+public void test_0() throws Exception {
+        ExtClassLoader classLoader = new ExtClassLoader();
+        Class<?> clazz = classLoader.loadClass("com.alibaba.dubbo.demo.MyEsbResultModel2");
+
+        Object obj = clazz.newInstance();
+
+        {
+            String text = JSON.toJSONString(obj);
+            System.out.println(text);
+        }
+
+        String text = JSON.toJSONString(obj, SerializerFeature.WriteClassName);
+        System.out.println(text);
+        JSON.parseObject(text, clazz);
+        JSONObject jsonObj = JSON.parseObject(text);
+        Assert.assertEquals(jsonObj.getString("@type"), "com.alibaba.dubbo.demo.MyEsbResultModel2");
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_b9da86b_c9ee9c5/rev_b9da86b-c9ee9c5/src/test/java/com/alibaba/json/bvt/TestExternal5.java;<<<<<<< MINE
+public void test_0() throws Exception {
+        ExtClassLoader classLoader = new ExtClassLoader();
+        Class<?> clazz = classLoader.loadClass("com.alibaba.dubbo.demo.MyEsbResultModel2");
+
+        Object obj = clazz.newInstance();
+
+        {
+            String text = JSON.toJSONString(obj);
+            System.out.println(text);
+        }
+
+        String text = JSON.toJSONString(obj, SerializerFeature.WriteClassName);
+        System.out.println(text);
+        JSON.parseObject(text, clazz);
+        JSONObject jsonObj = JSON.parseObject(text);
+        Assert.assertEquals(jsonObj.getString("@type"), "com.alibaba.dubbo.demo.MyEsbResultModel2");
+    }
+=======
+public void test_0() throws Exception {
+        ExtClassLoader classLoader = new ExtClassLoader();
+        Class<?> clazz = classLoader.loadClass("com.alibaba.dubbo.demo.MyEsbResultModel2");
+
+        Object obj = clazz.newInstance();
+
+        {
+            String text = JSON.toJSONString(obj);
+            System.out.println(text);
+        }
+
+        String text = JSON.toJSONString(obj, SerializerFeature.WriteClassName, SerializerFeature.WriteMapNullValue);
+        System.out.println(text);
+        JSON.parseObject(text, clazz);
+        JSONObject jsonObj = JSON.parseObject(text);
+        Assert.assertEquals(jsonObj.getString("@type"), "com.alibaba.dubbo.demo.MyEsbResultModel2");
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_05b31f7_708e701/rev_05b31f7-708e701/src/test/java/com/alibaba/json/bvt/bug/Bug_for_wuzhengmao.java;<<<<<<< MINE
+public void test_0() throws Exception {
+        Node node1 = new Node();
+        node1.setId(1);
+        Node node2 = new Node();
+        node2.setId(2);
+        node1.setParent(node2);
+        List<Node> list = Arrays.asList(new Node[] { node1, node2 });
+        String json = JSON.toJSONString(list, true);
+        System.out.println(json);
+        List<Node> result = JSON.parseArray(json, Node.class);
+        Assert.assertEquals(2, result.size());
+        Assert.assertEquals(result.get(0).getParent(), result.get(1));
+    }
+=======
+public void test_0() throws Exception {
+        Node node1 = new Node();
+        node1.setId(1);
+        Node node2 = new Node();
+        node2.setId(2);
+        node1.setParent(node2);
+        List<Node> list = Arrays.asList(new Node[] { node1, node2 });
+        String json = JSON.toJSONString(list, true);
+        System.out.println(json);
+        List<Node> result = JSON.parseArray(json, Node.class);
+        Assert.assertEquals(2, result.size());
+        Assert.assertEquals(1, result.get(0).getId());
+        Assert.assertEquals(2, result.get(1).getId());
+        Assert.assertEquals(result.get(0).getParent(), result.get(1));
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_708e701_05b31f7/rev_708e701-05b31f7/src/test/java/com/alibaba/json/bvt/bug/Bug_for_wuzhengmao.java;<<<<<<< MINE
+public void test_0() throws Exception {
+        Node node1 = new Node();
+        node1.setId(1);
+        Node node2 = new Node();
+        node2.setId(2);
+        node1.setParent(node2);
+        List<Node> list = Arrays.asList(new Node[] { node1, node2 });
+        String json = JSON.toJSONString(list, true);
+        System.out.println(json);
+        List<Node> result = JSON.parseArray(json, Node.class);
+        Assert.assertEquals(2, result.size());
+        Assert.assertEquals(1, result.get(0).getId());
+        Assert.assertEquals(2, result.get(1).getId());
+        Assert.assertEquals(result.get(0).getParent(), result.get(1));
+    }
+=======
+public void test_0() throws Exception {
+        Node node1 = new Node();
+        node1.setId(1);
+        Node node2 = new Node();
+        node2.setId(2);
+        node1.setParent(node2);
+        List<Node> list = Arrays.asList(new Node[] { node1, node2 });
+        String json = JSON.toJSONString(list, true);
+        System.out.println(json);
+        List<Node> result = JSON.parseArray(json, Node.class);
+        Assert.assertEquals(2, result.size());
+        Assert.assertEquals(result.get(0).getParent(), result.get(1));
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a/src/main/java/com/alibaba/fastjson/parser/deserializer/ListResolveFieldDeserializer.java;<<<<<<< MINE
+
+        if (list instanceof JSONArray) {
+            JSONArray jsonArray = (JSONArray) list;
+            Object array = jsonArray.getRelatedArray();
+            int arrayLength = Array.getLength(array);
+            
+            if (array != null && arrayLength > index) {
+                Object item;
+                if (jsonArray.getComponentType() != null) {
+                    item = TypeUtils.cast(value, jsonArray.getComponentType(), parser.getConfig());
+                } else {
+                    item = value;
+                }
+                Array.set(array, index, item);
+            }
+        }
+=======
+
+        if (list instanceof JSONArray) {
+            JSONArray jsonArray = (JSONArray) list;
+            Object[] array = jsonArray.getRelatedArray();
+            if (array != null && array.length > index) {
+                if (jsonArray.getComponentType() != null) {
+                    array[index] = TypeUtils.cast(value, jsonArray.getComponentType(), parser.getConfig());
+                } else {
+                    array[index] = value;
+                }
+            }
+        }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_5df25cb_ebe948a/rev_5df25cb-ebe948a/src/main/java/com/alibaba/fastjson/JSONArray.java;<<<<<<< MINE
+public Object getRelatedArray() {
+        return relatedArray;
+    }
+=======
+public Object[] getRelatedArray() {
+        return relatedArray;
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_62c589a_2c88690/rev_62c589a-2c88690/src/main/java/com/alibaba/fastjson/parser/deserializer/AbstractDateDeserializer.java;<<<<<<< MINE
+@SuppressWarnings("unchecked")
+    public <T> T deserialze(DefaultJSONParser parser, Type clazz, Object fieldName) {
+        Object val;
+        if (parser.getResolveStatus() == DefaultJSONParser.TypeNameRedirect) {
+            parser.accept(JSONToken.COMMA);
+
+            JSONScanner lexer = (JSONScanner) parser.getLexer();
+            if (lexer.token() == JSONToken.LITERAL_STRING) {
+                if (!"val".equals(lexer.stringVal())) {
+                    throw new JSONException("syntax error");
+                }
+                lexer.nextToken();
+            } else {
+                throw new JSONException("syntax error");
+            }
+
+            parser.accept(JSONToken.COLON);
+
+            val = parser.parse();
+
+            parser.accept(JSONToken.RBRACE);
+
+            parser.setResolveStatus(DefaultJSONParser.NONE);
+        } else {
+            val = parser.parse();
+        }
+        
+        return (T) cast(parser, clazz, fieldName, val);
+    }
+=======
+@SuppressWarnings("unchecked")
+    public <T> T deserialze(DefaultJSONParser parser, Type clazz, Object fieldName) {
+        Object val;
+        if (parser.getResolveStatus() == DefaultJSONParser.TypeNameRedirect) {
+            parser.accept(JSONToken.COMMA);
+
+            JSONScanner lexer = (JSONScanner) parser.getLexer();
+            if (lexer.token() == JSONToken.LITERAL_STRING) {
+                if (!"val".equals(lexer.stringVal())) {
+                    throw new JsonParseException("syntax error");
+                }
+                lexer.nextToken();
+            } else {
+                throw new JsonParseException("syntax error");
+            }
+
+            parser.accept(JSONToken.COLON);
+
+            val = parser.parse();
+
+            parser.accept(JSONToken.RBRACE);
+
+            parser.setResolveStatus(DefaultJSONParser.NONE);
+        } else {
+            val = parser.parse();
+        }
+        
+        return (T) cast(parser, clazz, fieldName, val);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java;<<<<<<< MINE
+            this.context = context;
+            this.referenceValue = referenceValue;
+=======
+            this(context, referenceValue, null, null);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_12d54d2_7f38646/rev_12d54d2-7f38646/src/test/java/com/alibaba/json/bvt/bug/Bug_for_lenolix_9.java;<<<<<<< MINE
+public void test_for_objectKey() throws Exception {
+        Map<String, Object> submap4 = new HashMap<String, Object>();
+        Address address = new Address();
+        address.setCity("hangzhou");
+        address.setStreet("wangshang.RD");
+        address.setPostCode(310002);
+        submap4.put("address1", address);
+        submap4.put("address2", address);
+
+        String mapString4 = JSON.toJSONString(submap4, SerializerFeature.WriteClassName,
+                                              SerializerFeature.WriteMapNullValue);
+        
+        System.out.println(mapString4);
+        Object object4 = JSON.parse(mapString4);
+        Assert.assertNotNull(object4);
+        
+        Map<String, Object> map = (Map<String, Object>) object4;
+        
+        Assert.assertNotNull(map.get("address1"));
+        Assert.assertNotNull(map.get("address2"));
+
+    }
+=======
+public void test_for_objectKey() throws Exception {
+        Map<String, Object> submap4 = new HashMap<String, Object>();
+        Address address = new Address();
+        address.setCity("hangzhou");
+        address.setStreet("wangshang.RD");
+        address.setPostCode(310002);
+        submap4.put("address1", address);
+        submap4.put("address2", address);
+
+        String mapString4 = JSON.toJSONString(submap4, SerializerFeature.WriteClassName,
+                                              SerializerFeature.WriteMapNullValue);
+        
+        System.out.println(mapString4);
+        Object object4 = JSON.parse(mapString4);
+        Assert.assertNotNull(object4);
+
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_ad6d97a_055aab7/rev_ad6d97a-055aab7/src/test/java/com/alibaba/json/bvt/bug/Bug_for_hmy8.java;<<<<<<< MINE
+public void test_ser() throws Exception {
+        IEventDto dto = new IEventDto();
+        dto.getEventList().add(new IEvent());
+        
+        JSON.toJSONString(dto);
+    }
+=======
+public void test_ser() throws Exception {
+        IEventDto dto = new IEventDto();
+        
+        JSON.toJSONString(dto);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_a3e83d9_441164d/rev_a3e83d9-441164d/src/main/java/com/alibaba/fastjson/parser/JSONScanner.java;<<<<<<< MINE
+=======
+public final char next() {
+        ch = doNext();
+        if (ch == '/' && isEnabled(Feature.AllowComment)) {
+            skipComment();
+        }
+        return ch;
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_a3e83d9_441164d/rev_a3e83d9-441164d/src/main/java/com/alibaba/fastjson/parser/JSONReaderScanner.java;<<<<<<< MINE
+=======
+public final char next() {
+        ch = doNext();
+        if (ch == '/' && isEnabled(Feature.AllowComment)) {
+            skipComment();
+        }
+        return ch;
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/HystrixCollapser.java;<<<<<<< MINE
+@Test
+        public void testRequestVariableLifecycle2() throws Exception {
+            // simulate request lifecycle
+            HystrixRequestContext requestContext = HystrixRequestContext.initializeContext();
+
+            final TestCollapserTimer timer = new TestCollapserTimer();
+            final ConcurrentLinkedQueue<Future<String>> responses = new ConcurrentLinkedQueue<Future<String>>();
+            ConcurrentLinkedQueue<Thread> threads = new ConcurrentLinkedQueue<Thread>();
+
+            // kick off work (simulating a single request with multiple threads)
+            for (int t = 0; t < 5; t++) {
+                Thread th = new Thread(new HystrixContextRunnable(HystrixPlugins.getInstance().getConcurrencyStrategy(), new Runnable() {
+
+                    @Override
+                    public void run() {
+                        for (int i = 0; i < 100; i++) {
+                            responses.add(new TestRequestCollapser(timer, counter, 1).queue());
+                        }
+                    }
+                }));
+
+                threads.add(th);
+                th.start();
+            }
+
+            for (Thread th : threads) {
+                // wait for each thread to finish
+                th.join();
+            }
+
+            // we expect 5 threads * 100 responses each
+            assertEquals(500, responses.size());
+
+            for (Future<String> f : responses) {
+                // they should not be done yet because the counter hasn't incremented
+                assertFalse(f.isDone());
+            }
+
+            timer.incrementTime(5);
+            Future<String> response2 = new TestRequestCollapser(timer, counter, 2).queue();
+            timer.incrementTime(8);
+            // should execute here
+            Future<String> response3 = new TestRequestCollapser(timer, counter, 3).queue();
+            timer.incrementTime(6);
+            Future<String> response4 = new TestRequestCollapser(timer, counter, 4).queue();
+            timer.incrementTime(8);
+            // should execute here
+            Future<String> response5 = new TestRequestCollapser(timer, counter, 5).queue();
+            timer.incrementTime(10);
+            // should execute here
+
+            // wait for all tasks to complete
+            for (Future<String> f : responses) {
+                assertEquals("1", f.get());
+            }
+            assertEquals("2", response2.get());
+            assertEquals("3", response3.get());
+            assertEquals("4", response4.get());
+            assertEquals("5", response5.get());
+
+            // each task should have been executed 3 times
+            for (TestCollapserTimer.ATask t : timer.tasks) {
+                assertEquals(3, t.task.count.get());
+            }
+
+            // simulate request lifecycle
+            requestContext.shutdown();
+
+            HystrixRequestVariableHolder<RequestCollapser<?, ?, ?>> rv = RequestCollapserFactory.getRequestVariable(new TestRequestCollapser(timer, counter, 1).getCollapserKey().name());
+
+            assertNotNull(rv);
+            // they should have all been removed as part of ThreadContext.remove()
+            assertEquals(0, timer.tasks.size());
+        }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/strategy/concurrency/HystrixContextRunnable.java;<<<<<<< MINE
+public HystrixContextRunnable(Runnable actual) {
+        this(HystrixPlugins.getInstance().getConcurrencyStrategy(), actual);
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/strategy/concurrency/HystrixContextCallable.java;<<<<<<< MINE
+public HystrixContextCallable(Callable<K> actual) {
+        this(HystrixPlugins.getInstance().getConcurrencyStrategy(), actual);
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/HystrixCommand.java;<<<<<<< MINE
+public TimeoutObservable(final Observable<R> o, final HystrixCommand<R> originalCommand, final boolean isNonBlocking) {
+            super(new OnSubscribeFunc<R>() {
+
+                @Override
+                public Subscription onSubscribe(final Observer<? super R> observer) {
+                    // TODO this is using a private API of Rx so either move off of it or get Rx to make it public
+                    // TODO better yet, get TimeoutObservable part of Rx
+                    final SafeObservableSubscription s = new SafeObservableSubscription();
+
+                    /*
+                     * Define the action to perform on timeout outside of the TimerListener to it can capture the HystrixRequestContext
+                     * of the calling thread which doesn't exist on the Timer thread.
+                     */
+                    final HystrixContextRunnable timeoutRunnable = new HystrixContextRunnable(originalCommand.concurrencyStrategy, new Runnable() {
+
+                        @Override
+                        public void run() {
+                            try {
+                                R v = originalCommand.getFallbackOrThrowException(HystrixEventType.TIMEOUT, FailureType.TIMEOUT, "timed-out", new TimeoutException());
+                                observer.onNext(v);
+                                observer.onCompleted();
+                            } catch (HystrixRuntimeException re) {
+                                observer.onError(re);
+                            }
+                        }
+                    });
+                    
+                    TimerListener listener = new TimerListener() {
+
+                        @Override
+                        public void tick() {
+                            // if we can go from NOT_EXECUTED to TIMED_OUT then we do the timeout codepath
+                            // otherwise it means we lost a race and the run() execution completed
+                            if (originalCommand.isCommandTimedOut.compareAndSet(TimedOutStatus.NOT_EXECUTED, TimedOutStatus.TIMED_OUT)) {
+                                // do fallback logic
+
+                                // report timeout failure
+                                originalCommand.metrics.markTimeout(System.currentTimeMillis() - originalCommand.invocationStartTime);
+
+                                // we record execution time because we are returning before 
+                                originalCommand.recordTotalExecutionTime(originalCommand.invocationStartTime);
+
+                                timeoutRunnable.run();
+                            }
+
+                            s.unsubscribe();
+                        }
+
+                        @Override
+                        public int getIntervalTimeInMilliseconds() {
+                            return originalCommand.properties.executionIsolationThreadTimeoutInMilliseconds().get();
+                        }
+                    };
+
+                    Reference<TimerListener> _tl = null;
+                    if (isNonBlocking) {
+                        /*
+                         * Scheduling a separate timer to do timeouts is more expensive
+                         * so we'll only do it if we're being used in a non-blocking manner.
+                         */
+                        _tl = HystrixTimer.getInstance().addTimerListener(listener);
+                    } else {
+                        /*
+                         * Otherwise we just set the hook that queue().get() can trigger if a timeout occurs.
+                         * 
+                         * This allows the blocking and non-blocking approaches to be coded basically the same way
+                         * though it is admittedly awkward if we were just blocking (the use of Reference annoys me for example)
+                         */
+                        _tl = new SoftReference<TimerListener>(listener);
+                    }
+                    final Reference<TimerListener> tl = _tl;
+
+                    // set externally so execute/queue can see this
+                    originalCommand.timeoutTimer.set(tl);
+
+                    return s.wrap(o.subscribe(new Observer<R>() {
+
+                        @Override
+                        public void onCompleted() {
+                            tl.clear();
+                            observer.onCompleted();
+                        }
+
+                        @Override
+                        public void onError(Throwable e) {
+                            tl.clear();
+                            observer.onError(e);
+                        }
+
+                        @Override
+                        public void onNext(R v) {
+                            observer.onNext(v);
+                        }
+
+                    }));
+                }
+            });
+        }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/HystrixCommand.java;<<<<<<< MINE
+private Subscription subscribeWithThreadIsolation(final Observer<? super R> observer) {
+        // mark that we are executing in a thread (even if we end up being rejected we still were a THREAD execution and not SEMAPHORE)
+        isExecutedInThread.set(true);
+
+        // final reference to the current calling thread so the child thread can access it if needed
+        final Thread callingThread = Thread.currentThread();
+
+        final HystrixCommand<R> _this = this;
+
+        try {
+            if (!threadPool.isQueueSpaceAvailable()) {
+                // we are at the property defined max so want to throw a RejectedExecutionException to simulate reaching the real max 
+                throw new RejectedExecutionException("Rejected command because thread-pool queueSize is at rejection threshold.");
+            }
+
+            // wrap the synchronous execute() method in a Callable and execute in the threadpool
+            final Future<R> f = threadPool.getExecutor().submit(new HystrixContextCallable<R>(concurrencyStrategy, new Callable<R>() {
+
+                @Override
+                public R call() throws Exception {
+                	boolean recordDuration = true;
+                    try {
+                        // assign 'callingThread' to our NFExceptionThreadingUtility ThreadLocal variable so that if we blow up
+                        // anywhere along the way the exception knows who the calling thread is and can include it in the stacktrace
+                        ExceptionThreadingUtility.assignCallingThread(callingThread);
+
+                        // execution hook
+                        executionHook.onThreadStart(_this);
+
+                        // count the active thread
+                        threadPool.markThreadExecution();
+
+                        try {
+                            // store the command that is being run
+                            Hystrix.startCurrentThreadExecutingCommand(getCommandKey());
+                            // execute the command
+                            R r = executeCommand();
+                            // if we can go from NOT_EXECUTED to COMPLETED then we did not timeout
+                            if (isCommandTimedOut.compareAndSet(TimedOutStatus.NOT_EXECUTED, TimedOutStatus.COMPLETED)) {
+                                // give the hook an opportunity to modify it
+                                r = executionHook.onComplete(_this, r);
+                                // pass to the observer
+                                observer.onNext(r);
+                                // state changes before termination
+                                preTerminationWork(recordDuration);
+                                /* now complete which releases the consumer */
+                                observer.onCompleted();
+                                return r;
+                            } else {
+                                // this means we lost the race and the timeout logic has or is being executed
+                                // state changes before termination
+                            	// do not recordDuration as this is a timeout and the tick would have set the duration already.
+                            	recordDuration = false;
+                                preTerminationWork(recordDuration);
+                                return null;
+                            }
+                        } finally {
+                            // pop this off the thread now that it's done
+                            Hystrix.endCurrentThreadExecutingCommand();
+                        }
+                    } catch (Exception e) {
+                        // state changes before termination
+                        preTerminationWork(recordDuration);
+                        // if we can go from NOT_EXECUTED to COMPLETED then we did not timeout
+                        if (isCommandTimedOut.compareAndSet(TimedOutStatus.NOT_EXECUTED, TimedOutStatus.COMPLETED)) {
+                            observer.onError(e);
+                        }
+                        throw e;
+                    }
+                }
+
+                private void preTerminationWork(boolean recordDuration) {
+                	if(recordDuration) {
+                		/* execution time (must occur before terminal state otherwise a race condition can occur if requested by client) */
+                		recordTotalExecutionTime(invocationStartTime);
+                	}
+                    threadPool.markThreadCompletion();
+
+                    try {
+                        executionHook.onThreadComplete(_this);
+                    } catch (Exception e) {
+                        logger.warn("ExecutionHook.onThreadComplete threw an exception that will be ignored.", e);
+                    }
+                }
+
+            }));
+
+            return new Subscription() {
+
+                @Override
+                public void unsubscribe() {
+                    f.cancel(properties.executionIsolationThreadInterruptOnTimeout().get());
+                }
+
+            };
+
+        } catch (RejectedExecutionException e) {
+            // mark on counter
+            metrics.markThreadPoolRejection();
+            // use a fallback instead (or throw exception if not implemented)
+            observer.onNext(getFallbackOrThrowException(HystrixEventType.THREAD_POOL_REJECTED, FailureType.REJECTED_THREAD_EXECUTION, "could not be queued for execution", e));
+            observer.onCompleted();
+            return Subscriptions.empty();
+        } catch (Exception e) {
+            // unknown exception
+            logger.error(getLogMessagePrefix() + ": Unexpected exception while submitting to queue.", e);
+            observer.onNext(getFallbackOrThrowException(HystrixEventType.THREAD_POOL_REJECTED, FailureType.REJECTED_THREAD_EXECUTION, "had unexpected exception while attempting to queue for execution.", e));
+            observer.onCompleted();
+            return Subscriptions.empty();
+        }
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/HystrixCommand.java;<<<<<<< MINE
+@Test
+        public void testExecutionSemaphoreWithQueue() {
+            final TestCircuitBreaker circuitBreaker = new TestCircuitBreaker();
+            // single thread should work
+            try {
+                boolean result = new TestSemaphoreCommand(circuitBreaker, 1, 200).queue().get();
+                assertTrue(result);
+            } catch (Exception e) {
+                // we shouldn't fail on this one
+                throw new RuntimeException(e);
+            }
+
+            final AtomicBoolean exceptionReceived = new AtomicBoolean();
+
+            final TryableSemaphore semaphore =
+                    new TryableSemaphore(HystrixProperty.Factory.asProperty(1));
+
+            Runnable r = new HystrixContextRunnable(HystrixPlugins.getInstance().getConcurrencyStrategy(), new Runnable() {
+
+                @Override
+                public void run() {
+                    try {
+                        new TestSemaphoreCommand(circuitBreaker, semaphore, 200).queue().get();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        exceptionReceived.set(true);
+                    }
+                }
+
+            });
+            // 2 threads, the second should be rejected by the semaphore
+            Thread t1 = new Thread(r);
+            Thread t2 = new Thread(r);
+
+            t1.start();
+            t2.start();
+            try {
+                t1.join();
+                t2.join();
+            } catch (Exception e) {
+                e.printStackTrace();
+                fail("failed waiting on threads");
+            }
+
+            if (!exceptionReceived.get()) {
+                fail("We expected an exception on the 2nd get");
+            }
+
+            assertEquals(2, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.SUCCESS));
+            // we don't have a fallback so threw an exception when rejected
+            assertEquals(1, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.EXCEPTION_THROWN));
+            // not a failure as the command never executed so can't fail
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.FAILURE));
+            // no fallback failure as there isn't a fallback implemented
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.FALLBACK_FAILURE));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.FALLBACK_REJECTION));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.FALLBACK_SUCCESS));
+            // we should have rejected via semaphore
+            assertEquals(1, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.SEMAPHORE_REJECTED));
+            // the rest should not be involved in this test
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.SHORT_CIRCUITED));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.THREAD_POOL_REJECTED));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.TIMEOUT));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.RESPONSE_FROM_CACHE));
+
+            assertEquals(3, HystrixRequestLog.getCurrentRequest().getExecutedCommands().size());
+        }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/HystrixCommand.java;<<<<<<< MINE
+@Test
+        public void testExecutionSemaphoreWithExecution() {
+            final TestCircuitBreaker circuitBreaker = new TestCircuitBreaker();
+            // single thread should work
+            try {
+                TestSemaphoreCommand command = new TestSemaphoreCommand(circuitBreaker, 1, 200);
+                boolean result = command.execute();
+                assertFalse(command.isExecutedInThread());
+                assertTrue(result);
+            } catch (Exception e) {
+                // we shouldn't fail on this one
+                throw new RuntimeException(e);
+            }
+
+            final ArrayBlockingQueue<Boolean> results = new ArrayBlockingQueue<Boolean>(2);
+
+            final AtomicBoolean exceptionReceived = new AtomicBoolean();
+
+            final TryableSemaphore semaphore =
+                    new TryableSemaphore(HystrixProperty.Factory.asProperty(1));
+
+            Runnable r = new HystrixContextRunnable(HystrixPlugins.getInstance().getConcurrencyStrategy(), new Runnable() {
+
+                @Override
+                public void run() {
+                    try {
+                        results.add(new TestSemaphoreCommand(circuitBreaker, semaphore, 200).execute());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        exceptionReceived.set(true);
+                    }
+                }
+
+            });
+            // 2 threads, the second should be rejected by the semaphore
+            Thread t1 = new Thread(r);
+            Thread t2 = new Thread(r);
+
+            t1.start();
+            t2.start();
+            try {
+                t1.join();
+                t2.join();
+            } catch (Exception e) {
+                e.printStackTrace();
+                fail("failed waiting on threads");
+            }
+
+            if (!exceptionReceived.get()) {
+                fail("We expected an exception on the 2nd get");
+            }
+
+            // only 1 value is expected as the other should have thrown an exception
+            assertEquals(1, results.size());
+            // should contain only a true result
+            assertTrue(results.contains(Boolean.TRUE));
+            assertFalse(results.contains(Boolean.FALSE));
+
+            assertEquals(2, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.SUCCESS));
+            assertEquals(1, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.EXCEPTION_THROWN));
+            // no failure ... we throw an exception because of rejection but the command does not fail execution
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.FAILURE));
+            // there is no fallback implemented so no failure can occur on it
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.FALLBACK_FAILURE));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.FALLBACK_REJECTION));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.FALLBACK_SUCCESS));
+            // we rejected via semaphore
+            assertEquals(1, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.SEMAPHORE_REJECTED));
+            // the rest should not be involved in this test
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.SHORT_CIRCUITED));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.THREAD_POOL_REJECTED));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.TIMEOUT));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.RESPONSE_FROM_CACHE));
+
+            assertEquals(3, HystrixRequestLog.getCurrentRequest().getExecutedCommands().size());
+        }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/HystrixCommand.java;<<<<<<< MINE
+@Test
+        public void testRejectedExecutionSemaphoreWithFallback() {
+            final TestCircuitBreaker circuitBreaker = new TestCircuitBreaker();
+            final ArrayBlockingQueue<Boolean> results = new ArrayBlockingQueue<Boolean>(2);
+
+            final AtomicBoolean exceptionReceived = new AtomicBoolean();
+
+            Runnable r = new HystrixContextRunnable(HystrixPlugins.getInstance().getConcurrencyStrategy(), new Runnable() {
+
+                @Override
+                public void run() {
+                    try {
+                        results.add(new TestSemaphoreCommandWithFallback(circuitBreaker, 1, 200, false).execute());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        exceptionReceived.set(true);
+                    }
+                }
+
+            });
+
+            // 2 threads, the second should be rejected by the semaphore and return fallback
+            Thread t1 = new Thread(r);
+            Thread t2 = new Thread(r);
+
+            t1.start();
+            t2.start();
+            try {
+                t1.join();
+                t2.join();
+            } catch (Exception e) {
+                e.printStackTrace();
+                fail("failed waiting on threads");
+            }
+
+            if (exceptionReceived.get()) {
+                fail("We should have received a fallback response");
+            }
+
+            // both threads should have returned values
+            assertEquals(2, results.size());
+            // should contain both a true and false result
+            assertTrue(results.contains(Boolean.TRUE));
+            assertTrue(results.contains(Boolean.FALSE));
+
+            assertEquals(1, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.SUCCESS));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.EXCEPTION_THROWN));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.FAILURE));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.FALLBACK_FAILURE));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.FALLBACK_REJECTION));
+            assertEquals(1, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.FALLBACK_SUCCESS));
+            assertEquals(1, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.SEMAPHORE_REJECTED));
+            // the rest should not be involved in this test
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.SHORT_CIRCUITED));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.THREAD_POOL_REJECTED));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.TIMEOUT));
+            assertEquals(0, circuitBreaker.metrics.getRollingCount(HystrixRollingNumberEvent.RESPONSE_FROM_CACHE));
+
+            System.out.println("**** DONE");
+
+            assertEquals(2, HystrixRequestLog.getCurrentRequest().getExecutedCommands().size());
+        }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_678c0d3_fc99fce/rev_678c0d3-fc99fce/hystrix-core/src/main/java/com/netflix/hystrix/HystrixCommand.java;<<<<<<< MINE
+@Test
+        public void testSemaphorePermitsInUse() {
+            final TestCircuitBreaker circuitBreaker = new TestCircuitBreaker();
+
+            // this semaphore will be shared across multiple command instances
+            final TryableSemaphore sharedSemaphore =
+                    new TryableSemaphore(HystrixProperty.Factory.asProperty(3));
+
+            // used to wait until all commands have started
+            final CountDownLatch startLatch = new CountDownLatch(sharedSemaphore.numberOfPermits.get() + 1);
+
+            // used to signal that all command can finish
+            final CountDownLatch sharedLatch = new CountDownLatch(1);
+
+            final Runnable sharedSemaphoreRunnable = new HystrixContextRunnable(HystrixPlugins.getInstance().getConcurrencyStrategy(), new Runnable() {
+                public void run() {
+                    try {
+                        new LatchedSemaphoreCommand(circuitBreaker, sharedSemaphore, startLatch, sharedLatch).execute();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            // creates group of threads each using command sharing a single semaphore
+
+            // I create extra threads and commands so that I can verify that some of them fail to obtain a semaphore
+            final int sharedThreadCount = sharedSemaphore.numberOfPermits.get() * 2;
+            final Thread[] sharedSemaphoreThreads = new Thread[sharedThreadCount];
+            for (int i = 0; i < sharedThreadCount; i++) {
+                sharedSemaphoreThreads[i] = new Thread(sharedSemaphoreRunnable);
+            }
+
+            // creates thread using isolated semaphore
+            final TryableSemaphore isolatedSemaphore =
+                    new TryableSemaphore(HystrixProperty.Factory.asProperty(1));
+
+            final CountDownLatch isolatedLatch = new CountDownLatch(1);
+
+            // tracks failures to obtain semaphores
+            final AtomicInteger failureCount = new AtomicInteger();
+
+            final Thread isolatedThread = new Thread(new HystrixContextRunnable(HystrixPlugins.getInstance().getConcurrencyStrategy(), new Runnable() {
+                public void run() {
+                    try {
+                        new LatchedSemaphoreCommand(circuitBreaker, isolatedSemaphore, startLatch, isolatedLatch).execute();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        failureCount.incrementAndGet();
+                    }
+                }
+            }));
+
+            // verifies no permits in use before starting threads
+            assertEquals("wrong number of permits for shared semaphore", 0, sharedSemaphore.getNumberOfPermitsUsed());
+            assertEquals("wrong number of permits for isolated semaphore", 0, isolatedSemaphore.getNumberOfPermitsUsed());
+
+            for (int i = 0; i < sharedThreadCount; i++) {
+                sharedSemaphoreThreads[i].start();
+            }
+            isolatedThread.start();
+
+            // waits until all commands have started
+            try {
+                startLatch.await(1000, TimeUnit.MILLISECONDS);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+            // verifies that all semaphores are in use
+            assertEquals("wrong number of permits for shared semaphore",
+                    sharedSemaphore.numberOfPermits.get().longValue(), sharedSemaphore.getNumberOfPermitsUsed());
+            assertEquals("wrong number of permits for isolated semaphore",
+                    isolatedSemaphore.numberOfPermits.get().longValue(), isolatedSemaphore.getNumberOfPermitsUsed());
+
+            // signals commands to finish
+            sharedLatch.countDown();
+            isolatedLatch.countDown();
+
+            try {
+                for (int i = 0; i < sharedThreadCount; i++) {
+                    sharedSemaphoreThreads[i].join();
+                }
+                isolatedThread.join();
+            } catch (Exception e) {
+                e.printStackTrace();
+                fail("failed waiting on threads");
+            }
+
+            // verifies no permits in use after finishing threads
+            assertEquals("wrong number of permits for shared semaphore", 0, sharedSemaphore.getNumberOfPermitsUsed());
+            assertEquals("wrong number of permits for isolated semaphore", 0, isolatedSemaphore.getNumberOfPermitsUsed());
+
+            // verifies that some executions failed
+            final int expectedFailures = sharedSemaphore.getNumberOfPermitsUsed();
+            assertEquals("failures expected but did not happen", expectedFailures, failureCount.get());
+        }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_c76d44b_a12ff69/rev_c76d44b-a12ff69/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java;<<<<<<< MINE
+=======
+@SuppressWarnings({ "unchecked", "rawtypes" })
+    protected <T> T deserialze(DefaultJSONParser parser, // 
+                               Type type, // 
+                               Object fieldName, // 
+                               Object object, //
+                               int features) {
+        if (type == JSON.class || type == JSONObject.class) {
+            return (T) parser.parse();
+        }
+
+        final JSONLexerBase lexer = (JSONLexerBase) parser.lexer; // xxx
+
+        int token = lexer.token();
+        if (token == JSONToken.NULL) {
+            lexer.nextToken(JSONToken.COMMA);
+            return null;
+        }
+
+        ParseContext context = parser.getContext();
+        if (object != null && context != null) {
+            context = context.parent;
+        }
+        ParseContext childContext = null;
+
+        try {
+            Map<String, Object> fieldValues = null;
+
+            if (token == JSONToken.RBRACE) {
+                lexer.nextToken(JSONToken.COMMA);
+                if (object == null) {
+                    object = createInstance(parser, type);
+                }
+                return (T) object;
+            }
+
+            if (token == JSONToken.LBRACKET) {
+                final int mask = Feature.SupportArrayToBean.mask;
+                boolean isSupportArrayToBean = (beanInfo.parserFeatures & mask) != 0 //
+                                               || lexer.isEnabled(Feature.SupportArrayToBean) //
+                                               || (features & mask) != 0
+                                               ;
+                if (isSupportArrayToBean) {
+                    return deserialzeArrayMapping(parser, type, fieldName, object);
+                }
+            }
+
+            if (token != JSONToken.LBRACE && token != JSONToken.COMMA) {
+                if (lexer.isBlankInput()) {
+                    return null;
+                }
+
+                if (token == JSONToken.LITERAL_STRING) {
+                    String strVal = lexer.stringVal();
+                    if (strVal.length() == 0) {
+                        lexer.nextToken();
+                        return null;
+                    }
+                }
+
+                if (token == JSONToken.LBRACKET && lexer.getCurrent() == ']') {
+                    lexer.next();
+                    lexer.nextToken();
+                    return null;
+                }
+                
+                StringBuffer buf = (new StringBuffer()) //
+                                                        .append("syntax error, expect {, actual ") //
+                                                        .append(lexer.tokenName()) //
+                                                        .append(", pos ") //
+                                                        .append(lexer.pos()) //
+                ;
+                if (fieldName instanceof String) {
+                    buf //
+                        .append(", fieldName ") //
+                        .append(fieldName);
+                }
+                
+                throw new JSONException(buf.toString());
+            }
+
+            if (parser.resolveStatus == DefaultJSONParser.TypeNameRedirect) {
+                parser.resolveStatus = DefaultJSONParser.NONE;
+            }
+
+            for (int fieldIndex = 0;; fieldIndex++) {
+                String key = null;
+                FieldDeserializer fieldDeser = null;
+                FieldInfo fieldInfo = null;
+                Class<?> fieldClass = null;
+                JSONField feildAnnotation = null;
+                if (fieldIndex < sortedFieldDeserializers.length) {
+                    fieldDeser = sortedFieldDeserializers[fieldIndex];
+                    fieldInfo = fieldDeser.fieldInfo;
+                    fieldClass = fieldInfo.fieldClass;
+                    feildAnnotation = fieldInfo.getAnnotation();
+                }
+
+                boolean matchField = false;
+                boolean valueParsed = false;
+                
+                Object fieldValue = null;
+                if (fieldDeser != null) {
+                    char[] name_chars = fieldInfo.name_chars;
+                    if (fieldClass == int.class || fieldClass == Integer.class) {
+                        fieldValue = lexer.scanFieldInt(name_chars);
+                        
+                        if (lexer.matchStat > 0) {
+                            matchField = true;
+                            valueParsed = true;
+                        } else if (lexer.matchStat == JSONLexer.NOT_MATCH_NAME) {
+                            continue;  
+                        }
+                    } else if (fieldClass == long.class || fieldClass == Long.class) {
+                        fieldValue = lexer.scanFieldLong(name_chars);
+                        
+                        if (lexer.matchStat > 0) {
+                            matchField = true;
+                            valueParsed = true;
+                        } else if (lexer.matchStat == JSONLexer.NOT_MATCH_NAME) {
+                            continue;  
+                        }
+                    } else if (fieldClass == String.class) {
+                        fieldValue = lexer.scanFieldString(name_chars);
+                        
+                        if (lexer.matchStat > 0) {
+                            matchField = true;
+                            valueParsed = true;
+                        } else if (lexer.matchStat == JSONLexer.NOT_MATCH_NAME) {
+                            continue;  
+                        }
+                    } else if (fieldClass == boolean.class || fieldClass == Boolean.class) {
+                        fieldValue = lexer.scanFieldBoolean(name_chars);
+                        
+                        if (lexer.matchStat > 0) {
+                            matchField = true;
+                            valueParsed = true;
+                        } else if (lexer.matchStat == JSONLexer.NOT_MATCH_NAME) {
+                            continue;  
+                        }
+                    } else if (fieldClass == float.class || fieldClass == Float.class) {
+                        fieldValue = lexer.scanFieldFloat(name_chars);
+                        
+                        if (lexer.matchStat > 0) {
+                            matchField = true;
+                            valueParsed = true;
+                        } else if (lexer.matchStat == JSONLexer.NOT_MATCH_NAME) {
+                            continue;  
+                        }
+                    } else if (fieldClass == double.class || fieldClass == Double.class) {
+                        fieldValue = lexer.scanFieldDouble(name_chars);
+                        
+                        if (lexer.matchStat > 0) {
+                            matchField = true;
+                            valueParsed = true;
+                        } else if (lexer.matchStat == JSONLexer.NOT_MATCH_NAME) {
+                            continue;  
+                        }
+                    } else if (fieldClass.isEnum() // 
+                            && parser.getConfig().getDeserializer(fieldClass) instanceof EnumDeserializer
+                            && (feildAnnotation == null || feildAnnotation.deserializeUsing() == Void.class)
+                            ) {
+                        if (fieldDeser instanceof DefaultFieldDeserializer) {
+                            ObjectDeserializer fieldValueDeserilizer = ((DefaultFieldDeserializer) fieldDeser).fieldValueDeserilizer;
+                            fieldValue = this.scanEnum(lexer, name_chars, fieldValueDeserilizer);
+
+                            if (lexer.matchStat > 0) {
+                                matchField = true;
+                                valueParsed = true;
+                            } else if (lexer.matchStat == JSONLexer.NOT_MATCH_NAME) {
+                                continue;
+                            }
+                        }
+                    } else if (fieldClass == int[].class) {
+                        fieldValue = lexer.scanFieldIntArray(name_chars);
+
+                        if (lexer.matchStat > 0) {
+                            matchField = true;
+                            valueParsed = true;
+                        } else if (lexer.matchStat == JSONLexer.NOT_MATCH_NAME) {
+                            continue;
+                        }
+                    } else if (fieldClass == float[].class) {
+                        fieldValue = lexer.scanFieldFloatArray(name_chars);
+
+                        if (lexer.matchStat > 0) {
+                            matchField = true;
+                            valueParsed = true;
+                        } else if (lexer.matchStat == JSONLexer.NOT_MATCH_NAME) {
+                            continue;
+                        }
+                    } else if (fieldClass == float[][].class) {
+                        fieldValue = lexer.scanFieldFloatArray2(name_chars);
+
+                        if (lexer.matchStat > 0) {
+                            matchField = true;
+                            valueParsed = true;
+                        } else if (lexer.matchStat == JSONLexer.NOT_MATCH_NAME) {
+                            continue;
+                        }
+                    } else if (lexer.matchField(name_chars)) {
+                        matchField = true;
+                    } else {
+                        continue;
+                    }
+                }
+                
+                if (!matchField) {
+                    key = lexer.scanSymbol(parser.symbolTable);
+
+                    if (key == null) {
+                        token = lexer.token();
+                        if (token == JSONToken.RBRACE) {
+                            lexer.nextToken(JSONToken.COMMA);
+                            break;
+                        }
+                        if (token == JSONToken.COMMA) {
+                            if (lexer.isEnabled(Feature.AllowArbitraryCommas)) {
+                                continue;
+                            }
+                        }
+                    }
+
+                    if ("$ref" == key) {
+                        lexer.nextTokenWithColon(JSONToken.LITERAL_STRING);
+                        token = lexer.token();
+                        if (token == JSONToken.LITERAL_STRING) {
+                            String ref = lexer.stringVal();
+                            if ("@".equals(ref)) {
+                                object = context.object;
+                            } else if ("..".equals(ref)) {
+                                ParseContext parentContext = context.parent;
+                                if (parentContext.object != null) {
+                                    object = parentContext.object;
+                                } else {
+                                    parser.addResolveTask(new ResolveTask(parentContext, ref));
+                                    parser.resolveStatus = DefaultJSONParser.NeedToResolve;
+                                }
+                            } else if ("$".equals(ref)) {
+                                ParseContext rootContext = context;
+                                while (rootContext.parent != null) {
+                                    rootContext = rootContext.parent;
+                                }
+
+                                if (rootContext.object != null) {
+                                    object = rootContext.object;
+                                } else {
+                                    parser.addResolveTask(new ResolveTask(rootContext, ref));
+                                    parser.resolveStatus = DefaultJSONParser.NeedToResolve;
+                                }
+                            } else {
+                                parser.addResolveTask(new ResolveTask(context, ref));
+                                parser.resolveStatus = DefaultJSONParser.NeedToResolve;
+                            }
+                        } else {
+                            throw new JSONException("illegal ref, " + JSONToken.name(token));
+                        }
+
+                        lexer.nextToken(JSONToken.RBRACE);
+                        if (lexer.token() != JSONToken.RBRACE) {
+                            throw new JSONException("illegal ref");
+                        }
+                        lexer.nextToken(JSONToken.COMMA);
+
+                        parser.setContext(context, object, fieldName);
+
+                        return (T) object;
+                    }
+
+                    if (JSON.DEFAULT_TYPE_KEY == key) {
+                        lexer.nextTokenWithColon(JSONToken.LITERAL_STRING);
+                        if (lexer.token() == JSONToken.LITERAL_STRING) {
+                            String typeName = lexer.stringVal();
+                            lexer.nextToken(JSONToken.COMMA);
+
+                            if (typeName.equals(beanInfo.typeName)|| parser.isEnabled(Feature.IgnoreType)) {
+                                if (lexer.token() == JSONToken.RBRACE) {
+                                    lexer.nextToken();
+                                    break;
+                                }
+                                continue;
+                            }
+                            
+                            ParserConfig config = parser.getConfig();
+                            ObjectDeserializer deserializer = getSeeAlso(config, this.beanInfo, typeName);
+                            Class<?> userType = null;
+                            if (deserializer == null) {
+                                userType = TypeUtils.loadClass(typeName, config.getDefaultClassLoader());
+                                
+                                Class<?> expectClass = TypeUtils.getClass(type);
+                                if (expectClass == null || 
+                                    (userType != null && expectClass.isAssignableFrom(userType))) {
+                                    deserializer = parser.getConfig().getDeserializer(userType);
+                                } else {
+                                    throw new JSONException("type not match");
+                                }
+                            }
+                            
+                            return (T) deserializer.deserialze(parser, userType, fieldName);
+                        } else {
+                            throw new JSONException("syntax error");
+                        }
+                    }
+                }
+
+                if (object == null && fieldValues == null) {
+                    object = createInstance(parser, type);
+                    if (object == null) {
+                        fieldValues = new HashMap<String, Object>(this.fieldDeserializers.length);
+                    }
+                    childContext = parser.setContext(context, object, fieldName);
+                }
+
+                if (matchField) {
+                    if (!valueParsed) {
+                        fieldDeser.parseField(parser, object, type, fieldValues);
+                    } else {
+                        if (object == null) {
+                            fieldValues.put(fieldInfo.name, fieldValue);
+                        } else if (fieldValue == null) {
+                            if (fieldClass != int.class //
+                                    && fieldClass != long.class //
+                                    && fieldClass != float.class //
+                                    && fieldClass != double.class //
+                                    && fieldClass != boolean.class //
+                                    ) {
+                                fieldDeser.setValue(object, fieldValue);
+                            }
+                        } else {
+                            fieldDeser.setValue(object, fieldValue);
+                        }
+                        if (lexer.matchStat == JSONLexer.END) {
+                            break;
+                        }
+                    }
+                } else {
+                    boolean match = parseField(parser, key, object, type, fieldValues);
+                    if (!match) {
+                        if (lexer.token() == JSONToken.RBRACE) {
+                            lexer.nextToken();
+                            break;
+                        }
+
+                        continue;
+                    } else if (lexer.token() == JSONToken.COLON) {
+                        throw new JSONException("syntax error, unexpect token ':'");
+                    }
+                }
+
+                if (lexer.token() == JSONToken.COMMA) {
+                    continue;
+                }
+
+                if (lexer.token() == JSONToken.RBRACE) {
+                    lexer.nextToken(JSONToken.COMMA);
+                    break;
+                }
+
+                if (lexer.token() == JSONToken.IDENTIFIER || lexer.token() == JSONToken.ERROR) {
+                    throw new JSONException("syntax error, unexpect token " + JSONToken.name(lexer.token()));
+                }
+            }
+
+            if (object == null) {
+                if (fieldValues == null) {
+                    object = createInstance(parser, type);
+                    if (childContext == null) {
+                        childContext = parser.setContext(context, object, fieldName);
+                    }
+                    return (T) object;
+                }
+
+                FieldInfo[] fieldInfoList = beanInfo.fields;
+                int size = fieldInfoList.length;
+                Object[] params = new Object[size];
+                for (int i = 0; i < size; ++i) {
+                    FieldInfo fieldInfo = fieldInfoList[i];
+                    Object param = fieldValues.get(fieldInfo.name);
+                    if (param == null) {
+                        Type fieldType = fieldInfo.fieldType;
+                        if (fieldType == byte.class) {
+                            param = (byte) 0;
+                        } else if (fieldType == short.class) {
+                            param = (short) 0;
+                        } else if (fieldType == int.class) {
+                            param = 0;
+                        } else if (fieldType == long.class) {
+                            param = 0L;
+                        } else if (fieldType == float.class) {
+                            param = 0F;
+                        } else if (fieldType == double.class) {
+                            param = 0D;
+                        } else if (fieldType == boolean.class) {
+                            param = Boolean.FALSE;
+                        }
+                    }
+                    params[i] = param;
+                }
+
+                if (beanInfo.creatorConstructor != null) {
+                    try {
+                        object = beanInfo.creatorConstructor.newInstance(params);
+                    } catch (Exception e) {
+                        throw new JSONException("create instance error, "
+                                                + beanInfo.creatorConstructor.toGenericString(), e);
+                    }
+                } else if (beanInfo.factoryMethod != null) {
+                    try {
+                        object = beanInfo.factoryMethod.invoke(null, params);
+                    } catch (Exception e) {
+                        throw new JSONException("create factory method error, " + beanInfo.factoryMethod.toString(), e);
+                    }
+                }
+            }
+            
+            Method buildMethod = beanInfo.buildMethod;
+            if (buildMethod == null) {
+                return (T) object;
+            }
+            
+            
+            Object builtObj;
+            try {
+                builtObj = buildMethod.invoke(object);
+            } catch (Exception e) {
+                throw new JSONException("build object error", e);
+            }
+            
+            return (T) builtObj;
+        } finally {
+            if (childContext != null) {
+                childContext.object = object;
+            }
+            parser.setContext(context);
+        }
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Fastjson/revisions/rev_2292e51_354d504/rev_2292e51-354d504/src/test/java/com/alibaba/json/bvt/issue_1200/Issue1254.java;<<<<<<< MINE
+public void test_for_issue() throws Exception {
+        A a = new A();
+        a._parentId = "001";
+        String test = JSON.toJSONString(a);
+        System.out.println(test);
+        assertEquals("{\"_parentId\":\"001\"}", test);
+
+        B b = new B();
+        b.set_parentId("001");
+
+
+//        Object o = BeanUtils.getProperty(b,"_parentId");
+//        System.out.println(o); //test ok, println 001
+//
+//        //BeanUtils.getProperty(b,"parentId"); //java.lang.NoSuchMethodException: Unknown property 'parentId' on class 'class com.alibaba.json.bvt.issue_1200.Issue1254$B'
+
+        String testB = JSON.toJSONString(b);
+        System.out.println(testB);
+        assertEquals("{\"_parentId\":\"001\"}", testB);
+
+    }
+=======
+public void test_for_issue() throws Exception {
+        A a = new A();
+        a._parentId = "001";
+        String test = JSON.toJSONString(a);
+        System.out.println(test);
+        assertEquals("{\"_parentId\":\"001\"}", test);
+
+        B b = new B();
+        b.set_parentId("001");
+
+
+        String testB = JSON.toJSONString(b);
+        System.out.println(testB);
+        assertEquals("{\"_parentId\":\"001\"}", testB);
+
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest.java;<<<<<<< MINE
+@Setup(Level.Iteration)
+        public void setUp() {
+            counter = new HystrixRollingNumber(
+                    HystrixProperty.Factory.asProperty(100),
+                    HystrixProperty.Factory.asProperty(10));
+        }
+=======
+@Setup(Level.Iteration)
+		public void setUp() {
+			counter = new HystrixRollingNumber(
+					HystrixProperty.Factory.asProperty(100),
+					HystrixProperty.Factory.asProperty(10));
+		}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest.java;<<<<<<< MINE
+@Setup(Level.Invocation)
+        public void setUp() {
+            value = r.nextInt(100);
+        }
+=======
+@Setup(Level.Invocation)
+		public void setUp() {
+			value = r.nextInt(100);
+		}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber writeOnly(CounterState counterState, ValueState valueState) {
+        counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+        return counterState.counter;
+    }
+=======
+@Benchmark
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber writeOnly(CounterState counterState, ValueState valueState) {
+		counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+		return counterState.counter;
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long readOnly(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+    }
+=======
+@Benchmark
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long readOnly(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @Group("writeHeavy")
+    @GroupThreads(7)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber writeHeavyUpdateMax(CounterState counterState, ValueState valueState) {
+        counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+        return counterState.counter;
+    }
+=======
+@Benchmark
+	@Group("writeHeavy")
+	@GroupThreads(7)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber writeHeavyUpdateMax(CounterState counterState, ValueState valueState) {
+		counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+		return counterState.counter;
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @Group("writeHeavy")
+    @GroupThreads(1)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long writeHeavyReadMetrics(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+    }
+=======
+@Benchmark
+	@Group("writeHeavy")
+	@GroupThreads(1)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long writeHeavyReadMetrics(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @Group("evenSplit")
+    @GroupThreads(4)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber evenSplitUpdateMax(CounterState counterState, ValueState valueState) {
+        counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+        return counterState.counter;
+    }
+=======
+@Benchmark
+	@Group("evenSplit")
+	@GroupThreads(4)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber evenSplitUpdateMax(CounterState counterState, ValueState valueState) {
+		counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+		return counterState.counter;
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @Group("evenSplit")
+    @GroupThreads(4)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long evenSplitReadMetrics(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+    }
+=======
+@Benchmark
+	@Group("evenSplit")
+	@GroupThreads(4)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long evenSplitReadMetrics(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @Group("readHeavy")
+    @GroupThreads(1)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber readHeavyUpdateMax(CounterState counterState, ValueState valueState) {
+        counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+        return counterState.counter;
+    }
+=======
+@Benchmark
+	@Group("readHeavy")
+	@GroupThreads(1)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber readHeavyUpdateMax(CounterState counterState, ValueState valueState) {
+		counterState.counter.updateRollingMax(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE, valueState.value);
+		return counterState.counter;
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingMaxPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @Group("readHeavy")
+    @GroupThreads(7)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long readHeavyReadMetrics(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+    }
+=======
+@Benchmark
+	@Group("readHeavy")
+	@GroupThreads(7)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long readHeavyReadMetrics(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getRollingMaxValue(HystrixRollingNumberEvent.COMMAND_MAX_ACTIVE);
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest.java;<<<<<<< MINE
+@Setup(Level.Iteration)
+        public void setUp() {
+            counter = new HystrixRollingNumber(
+                    HystrixProperty.Factory.asProperty(100),
+                    HystrixProperty.Factory.asProperty(10));
+        }
+=======
+@Setup(Level.Iteration)
+		public void setUp() {
+			counter = new HystrixRollingNumber(
+					HystrixProperty.Factory.asProperty(100),
+					HystrixProperty.Factory.asProperty(10));
+		}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest.java;<<<<<<< MINE
+@Setup(Level.Invocation)
+        public void setUp() {
+            value = r.nextInt(100);
+            int typeInt = r.nextInt(3);
+            switch(typeInt) {
+                case 0:
+                    type = HystrixRollingNumberEvent.SUCCESS;
+                    break;
+                case 1:
+                    type = HystrixRollingNumberEvent.FAILURE;
+                    break;
+                case 2:
+                    type = HystrixRollingNumberEvent.TIMEOUT;
+                    break;
+                default: throw new RuntimeException("Unexpected : " + typeInt);
+            }
+        }
+=======
+@Setup(Level.Invocation)
+		public void setUp() {
+			value = r.nextInt(100);
+			int typeInt = r.nextInt(3);
+			switch(typeInt) {
+				case 0:
+					type = HystrixRollingNumberEvent.SUCCESS;
+					break;
+				case 1:
+					type = HystrixRollingNumberEvent.FAILURE;
+					break;
+				case 2:
+					type = HystrixRollingNumberEvent.TIMEOUT;
+					break;
+				default: throw new RuntimeException("Unexpected : " + typeInt);
+			}
+		}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber writeOnly(CounterState counterState, ValueState valueState) {
+        counterState.counter.add(valueState.type, valueState.value);
+        return counterState.counter;
+    }
+=======
+@Benchmark
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber writeOnly(CounterState counterState, ValueState valueState) {
+		counterState.counter.add(valueState.type, valueState.value);
+		return counterState.counter;
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long readOnly(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+                counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+    }
+=======
+@Benchmark
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long readOnly(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+				counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @Group("writeHeavy")
+    @GroupThreads(7)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber writeHeavyCounterAdd(CounterState counterState, ValueState valueState) {
+        counterState.counter.add(valueState.type, valueState.value);
+        return counterState.counter;
+    }
+=======
+@Benchmark
+	@Group("writeHeavy")
+	@GroupThreads(7)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber writeHeavyCounterAdd(CounterState counterState, ValueState valueState) {
+		counterState.counter.add(valueState.type, valueState.value);
+		return counterState.counter;
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @Group("writeHeavy")
+    @GroupThreads(1)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long writeHeavyReadMetrics(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+                counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+    }
+=======
+@Benchmark
+	@Group("writeHeavy")
+	@GroupThreads(1)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long writeHeavyReadMetrics(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+				counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @Group("evenSplit")
+    @GroupThreads(4)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber evenSplitCounterAdd(CounterState counterState, ValueState valueState) {
+        counterState.counter.add(valueState.type, valueState.value);
+        return counterState.counter;
+    }
+=======
+@Benchmark
+	@Group("evenSplit")
+	@GroupThreads(4)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber evenSplitCounterAdd(CounterState counterState, ValueState valueState) {
+		counterState.counter.add(valueState.type, valueState.value);
+		return counterState.counter;
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @Group("evenSplit")
+    @GroupThreads(4)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long evenSplitReadMetrics(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+                counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+    }
+=======
+@Benchmark
+	@Group("evenSplit")
+	@GroupThreads(4)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long evenSplitReadMetrics(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+				counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @Group("readHeavy")
+    @GroupThreads(1)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public HystrixRollingNumber readHeavyCounterAdd(CounterState counterState, ValueState valueState) {
+        counterState.counter.add(valueState.type, valueState.value);
+        return counterState.counter;
+    }
+=======
+@Benchmark
+	@Group("readHeavy")
+	@GroupThreads(1)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public HystrixRollingNumber readHeavyCounterAdd(CounterState counterState, ValueState valueState) {
+		counterState.counter.add(valueState.type, valueState.value);
+		return counterState.counter;
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Hystrix/revisions/rev_e68ed42_ae7aedd/rev_e68ed42-ae7aedd/hystrix-core/src/jmh/java/com/netflix/hystrix/perf/RollingNumberPerfTest.java;<<<<<<< MINE
+@Benchmark
+    @Group("readHeavy")
+    @GroupThreads(7)
+    @BenchmarkMode({Mode.Throughput})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public long readHeavyReadMetrics(CounterState counterState) {
+        HystrixRollingNumber counter = counterState.counter;
+        return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+                counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+                counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+                counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+    }
+=======
+@Benchmark
+	@Group("readHeavy")
+	@GroupThreads(7)
+	@BenchmarkMode({Mode.Throughput})
+	@OutputTimeUnit(TimeUnit.MILLISECONDS)
+	public long readHeavyReadMetrics(CounterState counterState) {
+		HystrixRollingNumber counter = counterState.counter;
+		return counter.getCumulativeSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getCumulativeSum(HystrixRollingNumberEvent.TIMEOUT) +
+				counter.getRollingSum(HystrixRollingNumberEvent.SUCCESS) +
+				counter.getRollingSum(HystrixRollingNumberEvent.FAILURE) +
+				counter.getRollingSum(HystrixRollingNumberEvent.TIMEOUT);
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_f597bb1_c1b8943/rev_f597bb1-c1b8943/src/jvm/backtype/storm/tuple/Tuple.java;<<<<<<< MINE
+        // should change this to get by field name, and push metadata stuff like this
+        // into metadata
+        if(o.equals(STREAM_KEYWORD)) {
+            return getSourceStreamId();
+        } else if(o.equals(COMPONENT_KEYWORD)) {
+            return getSourceComponent();
+        } else if(o.equals(TASK_KEYWORD)) {
+            return getSourceTask();
+=======
+        try {
+            if(o instanceof Keyword) {
+                return getValueByField(((Keyword) o).getName());
+            } else if(o instanceof String) {
+                return getValueByField((String) o);
+            }
+        } catch(IllegalArgumentException e) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_dea4c8b_d12c335/rev_dea4c8b-d12c335/src/jvm/storm/trident/topology/state/RotatingTransactionalState.java;<<<<<<< MINE
+=======
+public void cleanupBefore(long txid) {
+        SortedMap<Long, Object> toDelete = _curr.headMap(txid);
+        for(long tx: new HashSet<Long>(toDelete.keySet())) {
+            _curr.remove(tx);
+            try {
+                _state.delete(txPath(tx));
+            } catch(RuntimeException e) {
+                // Ignore NoNodeExists exceptions because when sync() it may populate _curr with stale data since
+                // zookeeper reads are eventually consistent.
+                if(!Utils.exceptionCauseIsInstanceOf(KeeperException.NoNodeException.class, e)) {
+                    throw e;
+                }
+            }
+        }
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_dea4c8b_d12c335/rev_dea4c8b-d12c335/src/jvm/backtype/storm/metric/SystemBolt.java;<<<<<<< MINE
+=======
+@Override
+        public Object getValueAndReset() {
+            MemoryUsage memUsage = (MemoryUsage)_getUsage.invoke();
+            HashMap m = new HashMap();
+            m.put("maxBytes", memUsage.getMax());
+            m.put("committedBytes", memUsage.getCommitted());
+            m.put("initBytes", memUsage.getInit());
+            m.put("usedBytes", memUsage.getUsed());
+            m.put("virtualFreeBytes", memUsage.getMax() - memUsage.getUsed());
+            m.put("unusedBytes", memUsage.getCommitted() - memUsage.getUsed());
+            return m;
+        }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Storm/revisions/rev_dea4c8b_d12c335/rev_dea4c8b-d12c335/src/jvm/backtype/storm/metric/SystemBolt.java;<<<<<<< MINE
+=======
+@Override
+        public Object getValueAndReset() {
+            Long collectionCountP = _gcBean.getCollectionCount();
+            Long collectionTimeP = _gcBean.getCollectionCount();
+
+            Map ret = null;
+            if(_collectionCount!=null && _collectionTime!=null) {
+                ret = new HashMap();
+                ret.put("count", collectionCountP - _collectionCount);
+                ret.put("timeMs", collectionTimeP - _collectionTime);
+            }
+
+            _collectionCount = collectionCountP;
+            _collectionTime = collectionTimeP;
+            return ret;
+        }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Vert.x-Core/revisions/rev_12bde32_11d3eee/rev_12bde32-11d3eee/vertx-core/src/main/java/io/vertx/core/Vertx.java;<<<<<<< MINE
+@GenIgnore
+  @CacheReturn
+  SharedData sharedData();
+=======
+SharedData sharedData();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Vert.x-Core/revisions/rev_12bde32_11d3eee/rev_12bde32-11d3eee/vertx-core/src/test/java/io/vertx/test/core/SharedDataTest.java;<<<<<<< MINE
+@Before
+  public void setUp() {
+    vertx = Vertx.vertx();
+    sharedData = vertx.sharedData();
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Vert.x-Core/revisions/rev_3d6677c_7ef9592/rev_3d6677c-7ef9592/src/main/java/io/vertx/core/impl/launcher/commands/ExecUtils.java;<<<<<<< MINE
+public static String quoteArgument(final String argument) {
+
+    String cleanedArgument = argument.trim();
+
+    // strip the quotes from both ends
+    while (cleanedArgument.startsWith(SINGLE_QUOTE) || cleanedArgument.startsWith(DOUBLE_QUOTE)) {
+      cleanedArgument = cleanedArgument.substring(1);
+    }
+
+    while (cleanedArgument.endsWith(SINGLE_QUOTE) || cleanedArgument.endsWith(DOUBLE_QUOTE)) {
+      cleanedArgument = cleanedArgument.substring(0, cleanedArgument.length() - 1);
+    }
+
+    final StringBuilder buf = new StringBuilder();
+    if (cleanedArgument.contains(DOUBLE_QUOTE)) {
+      if (cleanedArgument.contains(SINGLE_QUOTE)) {
+        throw new IllegalArgumentException(
+            "Can't handle single and double quotes in same argument");
+      }
+      return buf.append(SINGLE_QUOTE).append(cleanedArgument).append(
+          SINGLE_QUOTE).toString();
+    } else if (cleanedArgument.contains(SINGLE_QUOTE)
+        || cleanedArgument.contains(" ")) {
+      return buf.append(DOUBLE_QUOTE).append(cleanedArgument).append(
+          DOUBLE_QUOTE).toString();
+    } else {
+      return cleanedArgument;
+    }
+  }
+=======
+public static String quoteArgument(final String argument) {
+
+    String cleanedArgument = argument.trim();
+
+    // strip the quotes from both ends
+    while (cleanedArgument.startsWith(SINGLE_QUOTE) && cleanedArgument.endsWith(SINGLE_QUOTE)
+        || cleanedArgument.startsWith(DOUBLE_QUOTE)  && cleanedArgument.endsWith(DOUBLE_QUOTE)) {
+      cleanedArgument = cleanedArgument.substring(1, cleanedArgument.length() - 1);
+    }
+
+    final StringBuilder buf = new StringBuilder();
+    if (cleanedArgument.contains(DOUBLE_QUOTE)) {
+      if (cleanedArgument.contains(SINGLE_QUOTE)) {
+        throw new IllegalArgumentException(
+            "Can't handle single and double quotes in same argument");
+      }
+      return buf.append(SINGLE_QUOTE).append(cleanedArgument).append(
+          SINGLE_QUOTE).toString();
+    } else if (cleanedArgument.contains(SINGLE_QUOTE)
+        || cleanedArgument.contains(" ")) {
+      return buf.append(DOUBLE_QUOTE).append(cleanedArgument).append(
+          DOUBLE_QUOTE).toString();
+    } else {
+      return cleanedArgument;
+    }
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Javaee7-samples/revisions/rev_cff6c96_6e8180b/rev_cff6c96-6e8180b/websocket/binary/src/test/java/org/javaee7/websocket/binary/test/WebsocketByteBufferEndpointTest.java;<<<<<<< MINE
+=======
+@Deployment(testable = false)
+    @TargetsContainer("wildfly-arquillian")
+    public static WebArchive createDeployment() {
+        WebArchive war = ShrinkWrap.create(WebArchive.class).
+                addClass(MyEndpointByteBuffer.class).
+                addClass(MyEndpointByteArray.class).
+                addClass(MyEndpointInputStream.class).
+                addAsWebResource(new File(WEBAPP_SRC, "index.jsp")).
+                addAsWebResource(new File(WEBAPP_SRC, "websocket.js"));
+        return war;
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Javaee7-samples/revisions/rev_cff6c96_6e8180b/rev_cff6c96-6e8180b/websocket/binary/src/test/java/org/javaee7/websocket/binary/test/WebsocketByteBufferEndpointTest.java;<<<<<<< MINE
+=======
+@Test
+    public void testEndPointByteBuffer() throws URISyntaxException, DeploymentException, IOException {
+        WebSocketContainer wSocketContainer = ContainerProvider.getWebSocketContainer();
+        wSocketContainer.connectToServer(MyEndpointClient.class, new URI("ws://localhost:8080/binary/bytearray"));
+    }
+>>>>>>> YOURS
